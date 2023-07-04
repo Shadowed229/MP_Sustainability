@@ -1,18 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
-    public Rigidbody2D theRB; //"the rigid body"
-    private Vector2 moveInput; //can not edit in the unity editor
-    public float moveSpeed = 6f;
-    public float dashSpeed = 10f;
-    private float activeMoveSpeed;
+    public Rigidbody2D theRB; // rigid body component attached in player
+    private Vector2 moveInput; // to get vecotr2 value of the player object
 
+    [Serializable]
+    public struct PlayerStats
+    {
+        public float moveSpeed;
+        public float dashSpeed;
+        public float stamina;
+    }
+
+    [SerializeField]
+    private PlayerStats stats;
+
+    private float activeMoveSpeed;
+    private float maxStamina = 100f;
+    private float staminaFallRate = 50f;
+    private float staminaChargeRate = 25f;
     private bool CanDash()
     {
-        if(dashCounter <= 0)
+        if(stats.stamina <= 0)
         {
             return false;
         }
@@ -21,12 +34,15 @@ public class PlayerController : MonoBehaviour
             return true;
         }
     }
-    private float dashCounter = 100f;
+    
     
     // Start is called before the first frame update
     void Start()
     {
-        activeMoveSpeed = moveSpeed;
+        stats.moveSpeed = 6f;
+        stats.dashSpeed = 10f;
+        stats.stamina = maxStamina;
+        activeMoveSpeed = stats.moveSpeed;
     }
 
     // Update is called once per frame
@@ -34,6 +50,7 @@ public class PlayerController : MonoBehaviour
     {
         CanDash();
         Movement();
+        Dash();
         
     }
 
@@ -44,21 +61,32 @@ public class PlayerController : MonoBehaviour
 
         moveInput.Normalize(); //make the player movement more consistent by noramlizing all the distance (can imagine the distance to be in a circle)
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            activeMoveSpeed = dashSpeed;
-            dashCounter -= Time.deltaTime * 100;
-        }
-        else if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            activeMoveSpeed = moveSpeed;
-            dashCounter += Time.deltaTime * 50;
-        }
-
-        //transform.position += new Vector3(moveInput.x, moveInput.y, 0) * Time.deltaTime * moveSpeed;
-
+       
         theRB.velocity = moveInput * activeMoveSpeed; //this is to set the speed(velocity) in the rididBody2D by doing vector2 value * moveSpeed(float)
-        Debug.Log(dashCounter);
+        Debug.Log(maxStamina);
+    }
+
+    void Dash()
+    {
+        // Dash
+        if (Input.GetKey(KeyCode.LeftShift) && CanDash() == true)
+        {
+            activeMoveSpeed = stats.dashSpeed;
+            stats.stamina -= Time.deltaTime * staminaChargeRate;
+        }
+        else
+        {
+            activeMoveSpeed = stats.moveSpeed;
+            if (stats.stamina <= maxStamina)
+            {
+                stats.stamina += Time.deltaTime * staminaFallRate;
+                if (stats.stamina >= maxStamina)
+                {
+                    stats.stamina = maxStamina;
+                }
+            }
+
+        }
     }
 
 }
