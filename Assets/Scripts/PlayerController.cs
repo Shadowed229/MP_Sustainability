@@ -20,38 +20,27 @@ public class PlayerController : MonoBehaviour
     private PlayerStats stats;
 
     private float activeMoveSpeed;
-    private float maxStamina = 100f;
-    private float staminaFallRate = 50f;
-    private float staminaChargeRate = 25f;
-    private bool CanDash()
-    {
-        if(stats.stamina <= 0)
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
-    }
-    
-    
+
+    [HideInInspector]
+    public float dashLength = 0.5f, dashCooldown = 1f;
+    [HideInInspector]
+    public float dashCounter;
+    private float dashCoolCounter;
+
     // Start is called before the first frame update
     void Start()
     {
         stats.moveSpeed = 6f;
-        stats.dashSpeed = 10f;
-        stats.stamina = maxStamina;
+        stats.dashSpeed = 20f;
         activeMoveSpeed = stats.moveSpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
-        CanDash();
         Movement();
         Dash();
-        
+        Debug.Log(stats.stamina);
     }
 
     void Movement()
@@ -61,32 +50,38 @@ public class PlayerController : MonoBehaviour
 
         moveInput.Normalize(); //make the player movement more consistent by noramlizing all the distance (can imagine the distance to be in a circle)
 
-       
         theRB.velocity = moveInput * activeMoveSpeed; //this is to set the speed(velocity) in the rididBody2D by doing vector2 value * moveSpeed(float)
-        Debug.Log(maxStamina);
     }
 
     void Dash()
     {
-        // Dash
-        if (Input.GetKey(KeyCode.LeftShift) && CanDash() == true)
+        //-------player dash-------
+        if (Input.GetKeyDown(KeyCode.Space)) //when player press space
         {
-            activeMoveSpeed = stats.dashSpeed;
-            stats.stamina -= Time.deltaTime * staminaChargeRate;
-        }
-        else
-        {
-            activeMoveSpeed = stats.moveSpeed;
-            if (stats.stamina <= maxStamina)
+            
+            if (dashCoolCounter <= 0 && dashCounter <= 0) ///player dashing
             {
-                stats.stamina += Time.deltaTime * staminaFallRate;
-                if (stats.stamina >= maxStamina)
-                {
-                    stats.stamina = maxStamina;
-                }
+                activeMoveSpeed = stats.dashSpeed;
+                dashCounter = dashLength; //declaring how long the dash speed will last
             }
+        }
 
+        if (dashCounter > 0)
+        {
+            dashCounter -= Time.deltaTime*2; //minusing off deltaTime(sescond) from the duration of dash speed
+            if (dashCounter <= 0) //when dashCounter turns to 0, the player will go back to normal speed
+            {
+                activeMoveSpeed = stats.moveSpeed;
+                dashCoolCounter = dashCooldown;
+            }
+        }
+
+        if (dashCoolCounter > 0)
+        {
+            dashCoolCounter -= Time.deltaTime; //minusing off deltaTime(per second) from the duration of dashCooldown
         }
     }
+
+    
 
 }
