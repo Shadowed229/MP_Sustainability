@@ -8,10 +8,11 @@ public class PickUp : MonoBehaviour
     public GameObject trashBag;
     public GameObject rubbish;
     public Transform ItemHolder;
+    private bool holding;
     // Start is called before the first frame update
     void Start()
     {
-        
+        holding = false;
     }
     private void FixedUpdate()
     {
@@ -22,12 +23,24 @@ public class PickUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Pickup"))
+        if (rubbish != null)
         {
-            Vector3 target = new Vector3(100, 0, 0);
-            rubbishpos.transform.position = target;
-            Destroy(rubbish);
-            Instantiate(trashBag, ItemHolder);
+            float distancebetween = Vector3.Distance(transform.position, rubbish.transform.position);
+            if (distancebetween < 3)
+            {
+                if (Input.GetButtonDown("Pickup") && holding == false)
+                {
+                    Vector3 target = new Vector3(100, 0, 0);
+                    rubbishpos.transform.position = target;
+                    RubbishConveyor.maxRubbish -= 1;
+                    Destroy(rubbish);
+                    Instantiate(trashBag, ItemHolder);
+                    holding = true;
+                }
+            }
         }
+        
+        
+        
     }
 }

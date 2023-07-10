@@ -7,19 +7,21 @@ public class RubbishConveyor : MonoBehaviour
 
     public Transform rubbish;
     //public Transform checkPoint;
-    private float speed = 1;
-    private bool occupied;
+    private float speed = 4;
     public GameObject trashBag;
     public Transform spawner;
     private float offset;
-    
+    public static float maxRubbish;
+    public int spawnTime = 3;
+
     //public Vector3 target;
     // Start is called before the first frame update
     void Start()
     {
+        maxRubbish = 0;
         spawner = GameObject.FindGameObjectWithTag("Spawner").transform;
-        Instantiate(trashBag, spawner);
-        occupied = false;
+        //Instantiate(trashBag, spawner);
+
         //rubbish = GameObject.FindGameObjectWithTag("Rubbish").transform;
         //checkPoint = GameObject.FindGameObjectWithTag("checkpoint").transform;
         offset = 0.2f;
@@ -30,41 +32,42 @@ public class RubbishConveyor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //rubbish = GameObject.FindGameObjectWithTag("Rubbish").transform;
-        if (occupied == false)
+        if(maxRubbish < 3)
         {
-            Vector3 target = new Vector3(transform.position.x, transform.position.y + offset , transform.position.z);
-            rubbish = GameObject.FindGameObjectWithTag("Rubbish").transform;
-            rubbish.transform.position = Vector3.MoveTowards(rubbish.transform.position, target, Time.deltaTime * speed);
+            Invoke("Spawn",spawnTime);
         }
-            
-        
         
     }
-    private void FixedUpdate()
-    {
-        rubbish = GameObject.FindGameObjectWithTag("Rubbish").transform;
-    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Rubbish"))
         {
             Debug.Log("Rubbish has Entered!");
-            occupied = true;
+
         }
-        
+
     }
     void OnTriggerExit2D(Collider2D col)
     {
         if (col.CompareTag("Rubbish"))
         {
-            occupied = false;
 
             Instantiate(trashBag, spawner);
             Debug.Log("Rubbish has spawned!");
             
         }
 
+    }
+
+    void Spawn()
+    {
+        if (maxRubbish < 3)
+        {
+            Instantiate(trashBag, spawner);
+            maxRubbish = maxRubbish + 1;
+        }
+        
     }
 
 

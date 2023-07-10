@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1508368313777140122, guid: 4ddb2dd9ec660eb46902e6d937bbfce5, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2719603342688973542, guid: 4ddb2dd9ec660eb46902e6d937bbfce5, type: 3}
       propertyPath: m_Name
       value: Rubbish Bag Variant
@@ -59,5 +63,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2719603342688973546, guid: 4ddb2dd9ec660eb46902e6d937bbfce5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5006417419006025498, guid: 4ddb2dd9ec660eb46902e6d937bbfce5, type: 3}
+    - {fileID: 2719603342688973546, guid: 4ddb2dd9ec660eb46902e6d937bbfce5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4ddb2dd9ec660eb46902e6d937bbfce5, type: 3}

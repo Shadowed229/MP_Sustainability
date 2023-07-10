@@ -7,6 +7,7 @@ TagManager:
   - Spawner
   - Rubbish
   - Trash
+  - CheckPoint
   layers:
   - Default
   - TransparentFX
