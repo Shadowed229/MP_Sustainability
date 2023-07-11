@@ -9,6 +9,7 @@ public class RubbishConveyor : MonoBehaviour
     //public Transform checkPoint;
     private float speed = 4;
     public GameObject trashBag;
+    public GameObject plasticTrash;
     public Transform spawner;
     private float offset;
     public static float maxRubbish;
@@ -64,8 +65,21 @@ public class RubbishConveyor : MonoBehaviour
     {
         if (maxRubbish < 3)
         {
-            Instantiate(trashBag, spawner);
-            maxRubbish = maxRubbish + 1;
+            
+            int whichrubbish = Random.Range(0, 2);
+            if(whichrubbish == 0)
+            {
+                Instantiate(trashBag, spawner);
+                maxRubbish = maxRubbish + 1;
+                whichrubbish = Random.Range(0, 2);
+            }
+            else if (whichrubbish == 1)
+            {
+                Instantiate(plasticTrash, spawner);
+                maxRubbish = maxRubbish + 1;
+                whichrubbish = Random.Range(0, 2);
+            }
+            
         }
         
     }

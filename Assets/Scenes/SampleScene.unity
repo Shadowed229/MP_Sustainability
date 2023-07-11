@@ -537,6 +537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rubbish: {fileID: 0}
   trashBag: {fileID: 2719603342688973542, guid: 4ddb2dd9ec660eb46902e6d937bbfce5, type: 3}
+  plasticTrash: {fileID: 2992826908193944928, guid: 86faf76256943c84397c189c237c189b, type: 3}
   spawner: {fileID: 0}
   spawnTime: 5
 --- !u!1 &1833190817
@@ -712,6 +713,8 @@ MonoBehaviour:
   dashLength: 0.5
   dashCooldown: 1
   dashCounter: 0
+  joystickSize: {x: 100, y: 100}
+  joystick: {fileID: 0}
 --- !u!4 &2030717226
 Transform:
   m_ObjectHideFlags: 0
