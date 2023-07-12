@@ -8,6 +8,7 @@ TagManager:
   - Rubbish
   - Trash
   - CheckPoint
+  - Plastic
   layers:
   - Default
   - TransparentFX
