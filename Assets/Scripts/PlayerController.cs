@@ -26,9 +26,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public float dashLength = 0.5f, dashCooldown = 1f;
     [HideInInspector]
-    public float dashCounter;
-    private float dashCoolCounter;
-
+    public float dashCounter, dashCoolCounter;
     // Joystick
     [SerializeField]
     private Vector2 joystickSize = new Vector2(100, 100);
@@ -37,6 +35,8 @@ public class PlayerController : MonoBehaviour
 
     private Finger movementFinger;
     private Vector2 movementAmount;
+
+    private bool canDash;
 
     private void OnEnable()
     {
@@ -127,8 +127,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Movement();
-        //Dash();
-        Debug.Log(dashCounter);
+        Dash();
+        Debug.Log(activeMoveSpeed);
     }
     
     void Movement()
@@ -141,20 +141,24 @@ public class PlayerController : MonoBehaviour
         theRB.velocity = moveInput * activeMoveSpeed; //this is to set the speed(velocity) in the rididBody2D by doing vector2 value * moveSpeed(float)
     }
     
-    
+    public void DashButton()
+    {
+        canDash = true;
+    }
     public void Dash()
     {
-        //-------player dash-------
-        if (dashCoolCounter <= 0 && dashCounter <= 0) ///player dashing
+        if (canDash == true) //when player press space
         {
-            activeMoveSpeed = stats.dashSpeed;
-            StartCoroutine(dashTimer());
-            dashCounter = dashLength; //declaring how long the dash speed will last
+            if (dashCoolCounter <= 0 && dashCounter <= 0) ///player dashing
+            {
+                activeMoveSpeed = stats.dashSpeed;
+                dashCounter = dashLength; //declaring how long the dash speed will last
+            }
         }
-        /*
+
         if (dashCounter > 0)
         {
-            dashCounter -= Time.deltaTime*2; //minusing off deltaTime(sescond) from the duration of dash speed
+            dashCounter -= Time.deltaTime*3; //minusing off deltaTime(sescond) from the duration of dash speed
             if (dashCounter <= 0) //when dashCounter turns to 0, the player will go back to normal speed
             {
                 activeMoveSpeed = stats.moveSpeed;
@@ -165,26 +169,8 @@ public class PlayerController : MonoBehaviour
         if (dashCoolCounter > 0)
         {
             dashCoolCounter -= Time.deltaTime; //minusing off deltaTime(per second) from the duration of dashCooldown
+            canDash = false;
         }
-        */
+
     }
-
-    IEnumerator dashTimer()
-    {
-        yield return dashCounter;
-        dashCounter = 0;
-        activeMoveSpeed = stats.moveSpeed;
-        dashCoolCounter = dashCooldown;
-        StartCoroutine(dashCD());
-    }
-
-    IEnumerator dashCD()
-    {
-        yield return dashCoolCounter;
-        dashCoolCounter = 0;
-    }
-
-
-
-
 }
