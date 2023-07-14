@@ -11,16 +11,18 @@ public class WorkStation : MonoBehaviour
     public Transform placeholder2;
     public Transform placeholder3;
     public static bool occupied;
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (PickUp.holding == true && occupied == false && PickUp.trashhold == true)
+        float distancebetweenPlayer = Vector3.Distance(transform.position, player.transform.position);
+        if (PickUp.holding == true && occupied == false && PickUp.trashhold == true && distancebetweenPlayer < 2)
         {
             if (Input.GetButtonDown("Pickup"))
             {

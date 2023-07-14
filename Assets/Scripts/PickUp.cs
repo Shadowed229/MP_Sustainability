@@ -32,8 +32,10 @@ public class PickUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (rubbish != null)
+        Debug.Log(holding);
+        if (rubbish != null || plastic != null)
         {
+            Debug.Log("Looking for rubbish!");
             float distancebetweenRubbish = Vector3.Distance(transform.position, rubbish.transform.position);
             float distancebetweenPlastic = Vector3.Distance(transform.position, plastic.transform.position);
             if (distancebetweenRubbish < 2)
