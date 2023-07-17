@@ -7,6 +7,7 @@ using System;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
     public Rigidbody2D theRB; // rigid body component attached in player
     private Vector2 moveInput; // to get vecotr2 value of the player object
 
@@ -36,8 +37,13 @@ public class PlayerController : MonoBehaviour
     private Finger movementFinger;
     private Vector2 movementAmount;
 
-    private bool canDash;
+    [HideInInspector]
+    public bool canDash;
 
+    private void Awake()
+    {
+        instance = this;
+    }
     private void OnEnable()
     {
         EnhancedTouchSupport.Enable();
@@ -141,10 +147,6 @@ public class PlayerController : MonoBehaviour
         theRB.velocity = moveInput * activeMoveSpeed; //this is to set the speed(velocity) in the rididBody2D by doing vector2 value * moveSpeed(float)
     }
     
-    public void DashButton()
-    {
-        canDash = true;
-    }
     public void Dash()
     {
         if (canDash == true) //when player press space
