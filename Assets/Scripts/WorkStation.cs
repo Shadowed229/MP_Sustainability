@@ -24,6 +24,7 @@ public class WorkStation : MonoBehaviour
         float distancebetweenPlayer = Vector3.Distance(transform.position, player.transform.position);
         if (PickUp.holding == true && occupied == false && PickUp.trashhold == true && distancebetweenPlayer < 2)
         {
+            Debug.Log("Access Passed"); 
             if (Input.GetButtonDown("Pickup"))
             {
                 PickUp.trashhold = false;

@@ -32,38 +32,42 @@ public class PickUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(holding);
+        //Debug.Log(holding);
         if (rubbish != null || plastic != null)
         {
             Debug.Log("Looking for rubbish!");
             float distancebetweenRubbish = Vector3.Distance(transform.position, rubbish.transform.position);
             float distancebetweenPlastic = Vector3.Distance(transform.position, plastic.transform.position);
-            if (distancebetweenRubbish < 2)
+            if (holding == false)
             {
-                if (Input.GetButtonDown("Pickup") && holding == false )
+                if (Input.GetButtonDown("Pickup"))
                 {
-                    Vector3 target = new Vector3(100, 0, 0);
-                    rubbishpos.transform.position = target;
-                    RubbishConveyor.maxRubbish -= 1;
-                    Destroy(rubbish);
-                    Instantiate(trashBagPrefab, ItemHolder);
-                    holding = true;
-                    trashhold = true;
+                    if(distancebetweenRubbish < 1.5)
+                    {
+                        Vector3 target = new Vector3(100, 0, 0);
+                        rubbishpos.transform.position = target;
+                        holding = true;
+                        RubbishConveyor.maxRubbish -= 1;
+                        Destroy(rubbish);
+                        Instantiate(trashBagPrefab, ItemHolder);
+
+                        trashhold = true;
+                    }
+                    else if (distancebetweenPlastic < 1.5)
+                    {
+                        Vector3 target = new Vector3(100, 0, 0);
+                        plasticpos.transform.position = target;
+                        holding = true;
+                        RubbishConveyor.maxRubbish -= 1;
+                        Destroy(plastic);
+                        Instantiate(plasticPrefab, ItemHolder);
+                        
+                        plastichold = true;
+                    }
+
                 }
             }
-            if (distancebetweenPlastic < 2)
-            {
-                if (Input.GetButtonDown("Pickup") && holding == false)
-                {
-                    Vector3 target = new Vector3(100, 0, 0);
-                    plasticpos.transform.position = target;
-                    RubbishConveyor.maxRubbish -= 1;
-                    Destroy(plastic);
-                    Instantiate(plasticPrefab, ItemHolder);
-                    holding = true;
-                    plastichold = true;
-                }
-            }
+            
         }
         
         
