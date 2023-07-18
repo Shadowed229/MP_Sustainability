@@ -9,6 +9,7 @@ public class UIController : MonoBehaviour
 
     public Image pauseScreen;
     public Button interactBtn;
+    public Text pauseTxt;
     public Button aimBtn;
     public Image optionScreen;
     public Slider progressbar;
@@ -29,9 +30,22 @@ public class UIController : MonoBehaviour
         PlayerController.instance.canDash = true;
     }
 
-    void PauseBtn()
+    public void PauseBtn()
     {
-
+        if (Time.timeScale > 0)
+        {
+            Time.timeScale = 0;
+            pauseScreen.enabled = true;
+            pauseTxt.text = "Unpause";
+            LevelManager.instance.isPaused = true;
+        }
+        else if(Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+            pauseScreen.enabled = false;
+            pauseTxt.text = "Pause";
+            LevelManager.instance.isPaused = false;
+        }
     }
 
     void OptionBtn()
