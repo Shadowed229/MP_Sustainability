@@ -9,6 +9,7 @@ TagManager:
   - Trash
   - CheckPoint
   - Plastic
+  - TrashPile
   layers:
   - Default
   - TransparentFX

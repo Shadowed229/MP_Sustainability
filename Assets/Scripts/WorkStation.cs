@@ -22,12 +22,12 @@ public class WorkStation : MonoBehaviour
     void Update()
     {
         float distancebetweenPlayer = Vector3.Distance(transform.position, player.transform.position);
-        if (PickUp.holding == true && occupied == false && PickUp.trashhold == true && distancebetweenPlayer < 2)
+        if (PickUp.trashholding == true && occupied == false  && distancebetweenPlayer < 2)
         {
             Debug.Log("Access Passed"); 
             if (Input.GetButtonDown("Pickup"))
             {
-                PickUp.trashhold = false;
+                PickUp.trashholding = false;
                 trash = GameObject.FindGameObjectWithTag("Trash");
                 Destroy(trash);
                 PickUp.holding = false;
