@@ -96,7 +96,11 @@ public class PlayerController : MonoBehaviour
         {
             movementFinger = TouchedFinger;
             movementAmount = Vector2.zero;
-            joystick.gameObject.SetActive(true);
+            if (LevelManager.instance.isPaused == false)
+            {
+                joystick.gameObject.SetActive(true);
+            }
+            
             joystick.rectTransform.sizeDelta = joystickSize;
             joystick.rectTransform.anchoredPosition = ClampStartPosition(TouchedFinger.screenPosition);
         }
@@ -132,9 +136,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movement();
-        Dash();
-        Debug.Log(activeMoveSpeed);
+        if (LevelManager.instance.isPaused == false)
+        {
+            Movement();
+            Dash();
+            Debug.Log(activeMoveSpeed);
+        }
+        
     }
     
     void Movement()

@@ -14,6 +14,9 @@ public class UIController : MonoBehaviour
     public Image optionScreen;
     public Slider progressbar;
     public Text timerText;
+    public GameObject dashButton;
+
+
     // Start is called before the first frame update
 
     private void Awake()
@@ -22,7 +25,8 @@ public class UIController : MonoBehaviour
     }
     void Start()
     {
-        
+        LevelManager.instance.isPaused = false;
+
     }
 
     public void DashBtn()
@@ -36,13 +40,16 @@ public class UIController : MonoBehaviour
         {
             Time.timeScale = 0;
             pauseScreen.enabled = true;
+            dashButton.SetActive(false);
             pauseTxt.text = "Unpause";
             LevelManager.instance.isPaused = true;
+
         }
         else if(Time.timeScale == 0)
         {
             Time.timeScale = 1;
             pauseScreen.enabled = false;
+            dashButton.SetActive(true);
             pauseTxt.text = "Pause";
             LevelManager.instance.isPaused = false;
         }
