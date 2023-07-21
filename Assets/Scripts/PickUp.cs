@@ -6,6 +6,7 @@ public class PickUp : MonoBehaviour
 {
 
     private Transform trashpile;
+    public Transform Workstation;
     public GameObject trashBagPrefab;
     public Transform ItemHolder;
     public static bool holding;
@@ -44,6 +45,20 @@ public class PickUp : MonoBehaviour
                 }
             }
             
+        }
+        if (WorkStation.occupied == true)
+        {
+            float distancebetweenWorkstation = Vector3.Distance(transform.position, Workstation.transform.position);
+            GameObject egg = GameObject.FindGameObjectWithTag("Egg");
+            GameObject can = GameObject.FindGameObjectWithTag("Can");
+            GameObject plasticBottle = GameObject.FindGameObjectWithTag("PlasticBottle");
+            if (holding == false)
+            {
+                if (distancebetweenWorkstation < 2)
+                {
+                    
+                }
+            }
         }
         
         
