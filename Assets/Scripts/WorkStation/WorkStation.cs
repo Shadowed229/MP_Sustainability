@@ -38,8 +38,8 @@ public class WorkStation : MonoBehaviour
                 trash = GameObject.FindGameObjectWithTag("Trash");
                 Destroy(trash);
                 PickUp.holding = false;
-                occupied = true;
-                int whichrubbish = Random.Range(0, 2);
+                //occupied = true;
+                int whichrubbish = Random.Range(0, 12);
                 int rubbishspawn = Random.Range(0, 3);
                 if (rubbishspawn == 0) //1 rubbish spawn
                 {
