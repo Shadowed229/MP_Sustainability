@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public static PlayerController instance;
     public Rigidbody2D theRB; // rigid body component attached in player
     private Vector2 moveInput; // to get vecotr2 value of the player object
+    
 
     [Serializable]
     public struct PlayerStats
@@ -131,6 +132,7 @@ public class PlayerController : MonoBehaviour
         stats.moveSpeed = 6f;
         stats.dashSpeed = 20f;
         activeMoveSpeed = stats.moveSpeed;
+
     }
 
     // Update is called once per frame
@@ -142,7 +144,7 @@ public class PlayerController : MonoBehaviour
             Dash();
             Debug.Log(activeMoveSpeed);
         }
-        
+         
     }
     
     void Movement()
