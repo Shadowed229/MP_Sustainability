@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9177760022419711426}
   - component: {fileID: 2351370518388831252}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlasticBottle
-  m_TagString: PlasticBottle
+  m_TagString: Plastic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

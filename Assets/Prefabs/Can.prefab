@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1951750733078485912}
   - component: {fileID: 54301770658932482}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Can
-  m_TagString: Can
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

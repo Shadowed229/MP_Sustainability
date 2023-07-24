@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6279083013511930283}
   - component: {fileID: 2751733685568582857}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Newspaper
-  m_TagString: Untagged
+  m_TagString: Paper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WorkStation : MonoBehaviour
 {
+    
     private GameObject trash;
     public GameObject[] allTrash;
 
@@ -29,15 +30,15 @@ public class WorkStation : MonoBehaviour
     void Update()
     {
         float distancebetweenPlayer = Vector3.Distance(transform.position, player.transform.position);
-        if (PickUp.trashholding == true && occupied == false  && distancebetweenPlayer < 2)
+        if (PickUp.instance.trashholding == true && occupied == false  && distancebetweenPlayer < 2)
         {
             Debug.Log("Close to Workstation!"); 
             if (Input.GetButtonDown("Pickup"))
             {
-                PickUp.trashholding = false;
+                PickUp.instance.trashholding = false;
                 trash = GameObject.FindGameObjectWithTag("Trash");
                 Destroy(trash);
-                PickUp.holding = false;
+                PickUp.instance.holding = false;
                 occupied = true;
                 int whichrubbish = Random.Range(0, 12);
                 int rubbishspawn = Random.Range(0, 3);
@@ -74,4 +75,5 @@ public class WorkStation : MonoBehaviour
             }
         }
     }
+    
 }

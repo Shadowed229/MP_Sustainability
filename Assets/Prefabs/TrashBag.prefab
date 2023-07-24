@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7501736612262998386}
   - component: {fileID: 2310627754524546218}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TrashBag
   m_TagString: Trash
   m_Icon: {fileID: 0}
