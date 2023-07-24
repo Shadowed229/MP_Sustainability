@@ -10,7 +10,9 @@ public class PlayerController : MonoBehaviour
     public static PlayerController instance;
     public Rigidbody2D theRB; // rigid body component attached in player
     private Vector2 moveInput; // to get vecotr2 value of the player object
-    
+    AudioSource audioSource;
+    float x;
+
 
     [Serializable]
     public struct PlayerStats
@@ -69,7 +71,7 @@ public class PlayerController : MonoBehaviour
             float maxMovement = joystickSize.x / 2;
             ETouch.Touch currentTouch = MovedFinger.currentTouch;
 
-            if(Vector2.Distance(currentTouch.screenPosition, joystick.rectTransform.anchoredPosition) > maxMovement)
+            if (Vector2.Distance(currentTouch.screenPosition, joystick.rectTransform.anchoredPosition) > maxMovement)
             {
                 knobPosition = (currentTouch.screenPosition - joystick.rectTransform.anchoredPosition).normalized * maxMovement;
             }
@@ -101,7 +103,7 @@ public class PlayerController : MonoBehaviour
             {
                 joystick.gameObject.SetActive(true);
             }
-            
+
             joystick.rectTransform.sizeDelta = joystickSize;
             joystick.rectTransform.anchoredPosition = ClampStartPosition(TouchedFinger.screenPosition);
         }
@@ -109,7 +111,7 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 ClampStartPosition(Vector2 startPosition)
     {
-        if(startPosition.x < joystickSize.x / 2)
+        if (startPosition.x < joystickSize.x / 2)
         {
             startPosition.x = joystickSize.x / 2;
         }
@@ -118,7 +120,7 @@ public class PlayerController : MonoBehaviour
         {
             startPosition.y = joystickSize.y / 2;
         }
-        else if(startPosition.y > Screen.height - joystickSize.y / 2)
+        else if (startPosition.y > Screen.height - joystickSize.y / 2)
         {
             startPosition.y = Screen.height - joystickSize.y / 2;
         }
@@ -132,7 +134,7 @@ public class PlayerController : MonoBehaviour
         stats.moveSpeed = 6f;
         stats.dashSpeed = 20f;
         activeMoveSpeed = stats.moveSpeed;
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -144,9 +146,11 @@ public class PlayerController : MonoBehaviour
             Dash();
             Debug.Log(activeMoveSpeed);
         }
-         
     }
-    
+
+   
+
+
     void Movement()
     {
         moveInput.x = movementAmount.x; //using unity input system to get the value of x (right: 1, Left: -1)
@@ -155,6 +159,19 @@ public class PlayerController : MonoBehaviour
         moveInput.Normalize(); //make the player movement more consistent by noramlizing all the distance (can imagine the distance to be in a circle)
 
         theRB.velocity = moveInput * activeMoveSpeed; //this is to set the speed(velocity) in the rididBody2D by doing vector2 value * moveSpeed(float)
+        if (theRB.velocity.x != 0 || theRB.velocity.y != 0)
+        {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+
+            }
+        }
+        else
+        {
+            audioSource.Stop();
+        }
+        
     }
     
     public void Dash()
