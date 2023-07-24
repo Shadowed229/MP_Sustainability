@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveInput; // to get vecotr2 value of the player object
     AudioSource audioSource;
     float x;
+    public bool isWorking;
 
 
     [Serializable]
@@ -140,7 +141,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (LevelManager.instance.isPaused == false)
+        if (LevelManager.instance.isPaused == false || isWorking == false)
         {
             Movement();
             Dash();

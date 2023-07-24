@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WorkStation : MonoBehaviour
 {
     
     private GameObject trash;
+    private Slider progress;
     public GameObject[] allTrash;
 
     public Transform placeholder;
@@ -16,6 +18,7 @@ public class WorkStation : MonoBehaviour
     public static bool Rubbish2;
     public static bool Rubbish3;
     public GameObject player;
+    private float fillTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +27,7 @@ public class WorkStation : MonoBehaviour
         Rubbish2 = false;
         Rubbish3 = false;
         occupied = false;
+        progress = (Slider)FindObjectOfType(typeof(Slider));
     }
 
     // Update is called once per frame
@@ -42,6 +46,7 @@ public class WorkStation : MonoBehaviour
                 occupied = true;
                 int whichrubbish = Random.Range(0, 12);
                 int rubbishspawn = Random.Range(0, 3);
+                Cooldown();
                 if (rubbishspawn == 0) //1 rubbish spawn
                 {
                     GameObject spawnable = allTrash[whichrubbish];
@@ -70,10 +75,19 @@ public class WorkStation : MonoBehaviour
                     Instantiate(spawnable3, placeholder3);
                     Rubbish3 = true;
                 }
+                progress.gameObject.SetActive(false);
+                progress.value = progress.minValue;
 
 
             }
         }
+    }
+    public void Cooldown()
+    {
+        progress.gameObject.SetActive(true);
+        fillTime += 0.375f * Time.deltaTime;
+        progress.value = Mathf.Lerp(progress.minValue, progress.maxValue, fillTime);
+
     }
     
 }
