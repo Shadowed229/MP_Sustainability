@@ -7,7 +7,7 @@ public class WorkStation : MonoBehaviour
 {
     
     private GameObject trash;
-    private Slider progress;
+    public Slider progress;
     public GameObject[] allTrash;
 
     public Transform placeholder;
@@ -27,14 +27,15 @@ public class WorkStation : MonoBehaviour
         Rubbish2 = false;
         Rubbish3 = false;
         occupied = false;
-        progress = (Slider)FindObjectOfType(typeof(Slider));
+        //progress = (Slider)FindObjectOfType(typeof(Slider));
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         float distancebetweenPlayer = Vector3.Distance(transform.position, player.transform.position);
-        if (PickUp.instance.trashholding == true && occupied == false  && distancebetweenPlayer < 2)
+        if (PickUp.instance.holding == true && occupied == false  && distancebetweenPlayer < 2)
         {
             Debug.Log("Close to Workstation!"); 
             if (Input.GetButtonDown("Pickup"))
@@ -44,50 +45,66 @@ public class WorkStation : MonoBehaviour
                 Destroy(trash);
                 PickUp.instance.holding = false;
                 occupied = true;
-                int whichrubbish = Random.Range(0, 12);
-                int rubbishspawn = Random.Range(0, 3);
-                Cooldown();
-                if (rubbishspawn == 0) //1 rubbish spawn
-                {
-                    GameObject spawnable = allTrash[whichrubbish];
-                    Instantiate(spawnable,placeholder);
-                    whichrubbish = Random.Range(0, 2);
-                    Rubbish1 = true;
-                }
-                else if (rubbishspawn == 1) //2 rubbish spawn
-                {
-                    GameObject spawnable = allTrash[whichrubbish];
-                    Instantiate(spawnable, placeholder);
-                    whichrubbish = Random.Range(0, 2);
-                    GameObject spawnable2 = allTrash[whichrubbish];
-                    Instantiate(spawnable2, placeholder2);
-                    Rubbish2 = true;
-                }
-                else if (rubbishspawn == 2) //3 rubbish spawn
-                {
-                    GameObject spawnable = allTrash[whichrubbish];
-                    Instantiate(spawnable, placeholder);
-                    whichrubbish = Random.Range(0, 2);
-                    GameObject spawnable2 = allTrash[whichrubbish];
-                    Instantiate(spawnable2, placeholder2);
-                    whichrubbish = Random.Range(0, 2);
-                    GameObject spawnable3 = allTrash[whichrubbish];
-                    Instantiate(spawnable3, placeholder3);
-                    Rubbish3 = true;
-                }
-                progress.gameObject.SetActive(false);
-                progress.value = progress.minValue;
-
-
+                StartCoroutine(UpdateProgressBar());
+                
             }
         }
     }
-    public void Cooldown()
+    IEnumerator UpdateProgressBar()
     {
+        Debug.Log("Updating");
+        
         progress.gameObject.SetActive(true);
-        fillTime += 0.375f * Time.deltaTime;
-        progress.value = Mathf.Lerp(progress.minValue, progress.maxValue, fillTime);
 
+        float score = 0f;
+        while (score < 3f)
+        {
+            yield return new WaitForSeconds(1f);
+            score += 1;
+            Debug.Log(score);
+            progress.value = score;
+        }
+        if(score == 3f)
+        {
+            StartCoroutine(WorkstationSpawn());
+        }
+           
     }
-    
+    IEnumerator WorkstationSpawn()
+    {
+        int whichrubbish = Random.Range(0, 12);
+        int rubbishspawn = Random.Range(0, 3);
+        if (rubbishspawn == 0) //1 rubbish spawn
+        {
+            GameObject spawnable = allTrash[whichrubbish];
+            Instantiate(spawnable, placeholder);
+            whichrubbish = Random.Range(0, 2);
+            Rubbish1 = true;
+        }
+        else if (rubbishspawn == 1) //2 rubbish spawn
+        {
+            GameObject spawnable = allTrash[whichrubbish];
+            Instantiate(spawnable, placeholder);
+            whichrubbish = Random.Range(0, 2);
+            GameObject spawnable2 = allTrash[whichrubbish];
+            Instantiate(spawnable2, placeholder2);
+            Rubbish2 = true;
+        }
+        else if (rubbishspawn == 2) //3 rubbish spawn
+        {
+            GameObject spawnable = allTrash[whichrubbish];
+            Instantiate(spawnable, placeholder);
+            whichrubbish = Random.Range(0, 2);
+            GameObject spawnable2 = allTrash[whichrubbish];
+            Instantiate(spawnable2, placeholder2);
+            whichrubbish = Random.Range(0, 2);
+            GameObject spawnable3 = allTrash[whichrubbish];
+            Instantiate(spawnable3, placeholder3);
+            Rubbish3 = true;
+        }
+        progress.gameObject.SetActive(false);
+        progress.value = progress.minValue;
+        yield break;
+    }
+
 }
