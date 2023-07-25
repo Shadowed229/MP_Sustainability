@@ -79,7 +79,7 @@ public class PickUp : MonoBehaviour
             {
                 itemColliders = Physics2D.OverlapCircleAll(transform.position, pickupRadius, pickupLayer);
 
-                if (itemColliders != null)
+                if (itemColliders.Length >= 1)
                 {
                     // We create two temporary variables that exist only in the scope of this if statement...
                     // Both are initialized in regards to the first element in the array...
