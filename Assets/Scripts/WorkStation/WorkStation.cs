@@ -57,14 +57,18 @@ public class WorkStation : MonoBehaviour
         progress.gameObject.SetActive(true);
 
         float score = 0f;
-        if (score < 5f)
+        while (score < 3f)
         {
             yield return new WaitForSeconds(1f);
             score += 1;
             Debug.Log(score);
             progress.value = score;
         }
-        StartCoroutine(WorkstationSpawn());    
+        if(score == 3f)
+        {
+            StartCoroutine(WorkstationSpawn());
+        }
+           
     }
     IEnumerator WorkstationSpawn()
     {
