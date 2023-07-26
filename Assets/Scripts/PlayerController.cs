@@ -141,8 +141,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (LevelManager.instance.isPaused == false || isWorking == false)
+        if (LevelManager.instance.isPaused == false)
         {
+            Debug.Log("Able to move");
             Movement();
             Dash();
             Debug.Log(activeMoveSpeed);
@@ -154,25 +155,33 @@ public class PlayerController : MonoBehaviour
 
     void Movement()
     {
-        moveInput.x = movementAmount.x; //using unity input system to get the value of x (right: 1, Left: -1)
-        moveInput.y = movementAmount.y; //using unity input system to get the value of y (up: 1, down: -1)
-
-        moveInput.Normalize(); //make the player movement more consistent by noramlizing all the distance (can imagine the distance to be in a circle)
-
-        theRB.velocity = moveInput * activeMoveSpeed; //this is to set the speed(velocity) in the rididBody2D by doing vector2 value * moveSpeed(float)
-        if (theRB.velocity.x != 0 || theRB.velocity.y != 0)
+        if (isWorking == true)
         {
-            if (!audioSource.isPlaying)
-            {
-                audioSource.Play();
-
-            }
+            moveInput.x = 0;
+            moveInput.y = 0;
+            theRB.velocity = Vector2.zero;
         }
         else
         {
-            audioSource.Stop();
+            moveInput.x = movementAmount.x; //using unity input system to get the value of x (right: 1, Left: -1)
+            moveInput.y = movementAmount.y; //using unity input system to get the value of y (up: 1, down: -1)
+
+            moveInput.Normalize(); //make the player movement more consistent by noramlizing all the distance (can imagine the distance to be in a circle)
+
+            theRB.velocity = moveInput * activeMoveSpeed; //this is to set the speed(velocity) in the rididBody2D by doing vector2 value * moveSpeed(float)
+            if (theRB.velocity.x != 0 || theRB.velocity.y != 0)
+            {
+                if (!audioSource.isPlaying)
+                {
+                    audioSource.Play();
+
+                }
+            }
+            else
+            {
+                audioSource.Stop();
+            }
         }
-        
     }
     
     public void Dash()

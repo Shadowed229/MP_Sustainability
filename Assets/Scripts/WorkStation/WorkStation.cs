@@ -53,7 +53,7 @@ public class WorkStation : MonoBehaviour
     IEnumerator UpdateProgressBar()
     {
         Debug.Log("Updating");
-        
+        PlayerController.instance.isWorking = true;
         progress.gameObject.SetActive(true);
 
         float score = 0f;
@@ -103,6 +103,7 @@ public class WorkStation : MonoBehaviour
             Rubbish3 = true;
         }
         progress.gameObject.SetActive(false);
+        PlayerController.instance.isWorking = false;
         progress.value = progress.minValue;
         yield break;
     }
