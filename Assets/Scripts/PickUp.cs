@@ -110,7 +110,7 @@ public class PickUp : MonoBehaviour
             else if (holding == true)
             {
                 Debug.Log("You dropped up an item!");
-                closestObject.transform.position = ItemHolder.position;
+                closestObject.transform.Translate(Vector3.down * 2);
                 closestObject.transform.SetParent(null);
                 holding = false;
 
