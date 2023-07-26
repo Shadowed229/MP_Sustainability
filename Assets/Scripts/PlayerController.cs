@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem.EnhancedTouch;
 using ETouch = UnityEngine.InputSystem.EnhancedTouch;
 using System;
@@ -13,7 +14,8 @@ public class PlayerController : MonoBehaviour
     AudioSource audioSource;
     float x;
     public bool isWorking;
-
+    public Image DashImage;
+   
 
     [Serializable]
     public struct PlayerStats
@@ -138,6 +140,7 @@ public class PlayerController : MonoBehaviour
         stats.dashSpeed = 20f;
         activeMoveSpeed = stats.moveSpeed;
         audioSource = GetComponent<AudioSource>();
+        DashImage.fillAmount = 0;
     }
 
     // Update is called once per frame
@@ -192,6 +195,7 @@ public class PlayerController : MonoBehaviour
         {
             if (dashCoolCounter <= 0 && dashCounter <= 0) ///player dashing
             {
+                DashImage.fillAmount = 1;
                 activeMoveSpeed = stats.dashSpeed;
                 dashCounter = dashLength; //declaring how long the dash speed will last
             }
@@ -210,7 +214,13 @@ public class PlayerController : MonoBehaviour
         if (dashCoolCounter > 0)
         {
             dashCoolCounter -= Time.deltaTime; //minusing off deltaTime(per second) from the duration of dashCooldown
-            canDash = false;
+            DashImage.fillAmount -= 1 / dashCoolCounter * Time.deltaTime;
+            if(DashImage.fillAmount <= 0)
+            {
+                DashImage.fillAmount = 0;
+                canDash = false;
+            }
+            
         }
 
     }
