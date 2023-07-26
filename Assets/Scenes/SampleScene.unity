@@ -2020,7 +2020,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3388470942375834213, guid: 23890a1c41b613742bbc8932a5d65122, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7199167956610158628, guid: 23890a1c41b613742bbc8932a5d65122, type: 3}
       propertyPath: player
