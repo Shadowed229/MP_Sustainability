@@ -43,6 +43,8 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector]
     public bool canDash;
+    [HideInInspector]
+    public bool isColliding;
 
     private void Awake()
     {

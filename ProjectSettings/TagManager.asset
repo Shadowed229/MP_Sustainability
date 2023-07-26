@@ -16,6 +16,7 @@ TagManager:
   - Regulated
   - NonRegulated
   - Compostable
+  - Station
   layers:
   - Default
   - TransparentFX
