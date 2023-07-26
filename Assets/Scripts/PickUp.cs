@@ -73,7 +73,8 @@ public class PickUp : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetButtonDown("Pickup"))
+
+        if (Input.GetButtonDown("Pickup") )
         {
             if(holding == false)
             {
@@ -107,10 +108,10 @@ public class PickUp : MonoBehaviour
                     holding = true;
                 }
             }
-            else if (holding == true)
+            else if (holding == true && WorkStation.isClose == false)
             {
                 Debug.Log("You dropped up an item!");
-                closestObject.transform.position = ItemHolder.position;
+                closestObject.transform.Translate(Vector3.down * 2);
                 closestObject.transform.SetParent(null);
                 holding = false;
 
@@ -119,6 +120,8 @@ public class PickUp : MonoBehaviour
 
         }
     }
+
+    
 
     private void OnDrawGizmosSelected()
     {

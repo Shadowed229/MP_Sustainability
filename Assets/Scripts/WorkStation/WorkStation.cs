@@ -19,6 +19,8 @@ public class WorkStation : MonoBehaviour
     public static bool Rubbish3;
     public GameObject player;
     private float fillTime;
+
+    public static bool isClose;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +37,16 @@ public class WorkStation : MonoBehaviour
     {
         
         float distancebetweenPlayer = Vector3.Distance(transform.position, player.transform.position);
-        if (PickUp.instance.holding == true && occupied == false  && distancebetweenPlayer < 2)
+        if(distancebetweenPlayer < 3.5)
+        {
+            isClose = true;
+        }
+        else
+        {
+            isClose = false;
+        }
+
+        if (PickUp.instance.holding == true && occupied == false  && isClose == true)
         {
             Debug.Log("Close to Workstation!"); 
             if (Input.GetButtonDown("Pickup"))
@@ -50,10 +61,11 @@ public class WorkStation : MonoBehaviour
             }
         }
     }
+    
     IEnumerator UpdateProgressBar()
     {
         Debug.Log("Updating");
-        
+        PlayerController.instance.isWorking = true;
         progress.gameObject.SetActive(true);
 
         float score = 0f;
@@ -103,6 +115,7 @@ public class WorkStation : MonoBehaviour
             Rubbish3 = true;
         }
         progress.gameObject.SetActive(false);
+        PlayerController.instance.isWorking = false;
         progress.value = progress.minValue;
         yield break;
     }

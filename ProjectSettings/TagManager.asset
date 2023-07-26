@@ -16,6 +16,7 @@ TagManager:
   - Regulated
   - NonRegulated
   - Compostable
+  - Station
   layers:
   - Default
   - TransparentFX
@@ -52,4 +53,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Tiles
+    uniqueID: 870857967
+    locked: 0
+  - name: Furnitures
+    uniqueID: 768538735
+    locked: 0
+  - name: PickUps
+    uniqueID: 330455205
+    locked: 0
+  - name: Player
+    uniqueID: 3675490691
     locked: 0

@@ -41,7 +41,7 @@ public class UIController : MonoBehaviour
             Time.timeScale = 0;
             pauseScreen.enabled = true;
             dashButton.SetActive(false);
-            pauseTxt.text = "Unpause";
+            //pauseTxt.text = "Unpause";
             LevelManager.instance.isPaused = true;
 
         }
@@ -50,7 +50,7 @@ public class UIController : MonoBehaviour
             Time.timeScale = 1;
             pauseScreen.enabled = false;
             dashButton.SetActive(true);
-            pauseTxt.text = "Pause";
+            //pauseTxt.text = "Pause";
             LevelManager.instance.isPaused = false;
         }
     }
