@@ -6,6 +6,7 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
     public bool isPaused;
+    public bool isGameOver;
     
     
     private void Awake()
