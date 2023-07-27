@@ -44,7 +44,7 @@ public class TrashPile : MonoBehaviour
 
 
                     PickUp.instance.holding = true;
-                    PickUp.instance.objectHolding = Instantiate(trashBagPrefab, PlayerController.instance.itemHolder);
+                    PlayerController.instance.objectHolding = Instantiate(trashBagPrefab, PlayerController.instance.itemHolder);
 
                 }
                 else
