@@ -54,7 +54,7 @@ public class WashingBasin : MonoBehaviour
         if(Input.GetButtonDown("Pickup") && (PlayerController.instance.objectHolding.tag == "ContaminatedPlastic" || PlayerController.instance.objectHolding.tag == "ContaminatedMetal"))
         {
             PickUp.instance.holding = false;
-            PlayerController.instance.objectHolding.SetActive(false);
+            //PlayerController.instance.objectHolding.SetActive(false);
             StartCoroutine(UpdateProgressBar());
         }
         
@@ -88,7 +88,8 @@ public class WashingBasin : MonoBehaviour
         {
             for (int i = 0; i < contaminatedPlastic.Length; i++)
             {
-                if(PlayerController.instance.objectHolding == contaminatedPlastic[i])
+                //UnityEditor.PrefabUtility.GetPrefabParent(go) == arrayGO
+                if (PlayerController.instance.objectHolding == PrefabUtility.GetCorrespondingObjectFromSource(contaminatedPlastic[i]))
                 {
                     PlayerController.instance.objectHolding = cleanPlastic[i];
                     Debug.Log("cleaned plastic");
