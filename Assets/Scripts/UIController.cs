@@ -28,6 +28,11 @@ public class UIController : MonoBehaviour
         LevelManager.instance.isPaused = false;
 
     }
+    void Update()
+    {
+        Debug.Log(LevelManager.instance.isPaused);
+
+    }
 
     public void DashBtn()
     {
@@ -39,7 +44,7 @@ public class UIController : MonoBehaviour
         if (Time.timeScale > 0)
         {
             Time.timeScale = 0;
-            pauseScreen.enabled = true;
+            //pauseScreen.enabled = true;
             dashButton.SetActive(false);
             //pauseTxt.text = "Unpause";
             LevelManager.instance.isPaused = true;
@@ -48,7 +53,7 @@ public class UIController : MonoBehaviour
         else if(Time.timeScale == 0)
         {
             Time.timeScale = 1;
-            pauseScreen.enabled = false;
+            //pauseScreen.enabled = false;
             dashButton.SetActive(true);
             //pauseTxt.text = "Pause";
             LevelManager.instance.isPaused = false;

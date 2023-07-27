@@ -20,7 +20,7 @@ public class Timer : MonoBehaviour
         {
             Debug.Log("GAME OVER!!!");
             LevelManager.instance.isGameOver = true;
-            SceneManager.LoadScene("GameOver");
+            
         }
         DisplayTime(timeValue);
     }

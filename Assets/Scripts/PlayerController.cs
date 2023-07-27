@@ -179,7 +179,7 @@ public class PlayerController : MonoBehaviour
             theRB.velocity = moveInput * activeMoveSpeed; //this is to set the speed(velocity) in the rididBody2D by doing vector2 value * moveSpeed(float)
             if (theRB.velocity.x != 0 || theRB.velocity.y != 0)
             {
-                if (!audioSource.isPlaying)
+                if (!audioSource.isPlaying && LevelManager.instance.isPaused == false && LevelManager.instance.isGameOver == false)
                 {
                     audioSource.Play();
 

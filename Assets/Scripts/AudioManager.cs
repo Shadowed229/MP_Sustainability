@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    AudioSource audioSource;
+    public AudioSource audioSource;
     private void Update()
     {
-        if (!audioSource.isPlaying)
+        if (!audioSource.isPlaying && LevelManager.instance.isPaused == false && LevelManager.instance.isGameOver == false)
         {
             audioSource.Play();
-            Debug.Log("randal is gay");
+            
+        }
+        if(LevelManager.instance.isPaused == true)
+        {
+            audioSource.Stop();
         }
     }
 
