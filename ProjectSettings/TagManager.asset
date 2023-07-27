@@ -57,6 +57,9 @@ TagManager:
   - name: Tiles
     uniqueID: 870857967
     locked: 0
+  - name: Floor
+    uniqueID: 2634615339
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
