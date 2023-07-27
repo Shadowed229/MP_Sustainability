@@ -68,7 +68,7 @@ public class RecyclingBin : MonoBehaviour
         if (Input.GetButtonDown("Pickup"))
         {
             Destroy(PlayerController.instance.objectHolding);
-            // add points or in progress bar
+            LevelManager.instance.score += 1;
             PickUp.instance.holding = false;
             //StartCoroutine(UpdateProgressBar());
 
