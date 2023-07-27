@@ -18,15 +18,17 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         score = 0;
+        UIController.instance.progressbar.maxValue = 3;
     }
 
     // Update is called once per frame
     void Update()
     {
         UIController.instance.progressbar.value = score;
-        if (score >= 10)
+        if (score >= 3)
         {
             Debug.Log("YOU WIN!");
+            isGameOver = true;
         }
     }
 }

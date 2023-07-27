@@ -110,7 +110,7 @@ public class PickUp : MonoBehaviour
                     holding = true;
                 }
             }
-            else if (holding == true && WorkStation.isClose == false && TrashPile.instance.isClose == false && RecyclingBin.isClose == false)
+            else if (holding == true && WorkStation.isClose == false && TrashPile.instance.isClose == false && RecyclingBin.isClose == false && WashingBasin.isClose == false)
             {
                 Debug.Log("You dropped up an item!");
                 PlayerController.instance.objectHolding.transform.Translate(Vector3.down * 2);

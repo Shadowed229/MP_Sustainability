@@ -37,7 +37,7 @@ public class WorkStation : MonoBehaviour
     {
         
         float distancebetweenPlayer = Vector3.Distance(transform.position, player.transform.position);
-        if(distancebetweenPlayer < 3.5)
+        if(distancebetweenPlayer < 4)
         {
             isClose = true;
         }
@@ -90,20 +90,20 @@ public class WorkStation : MonoBehaviour
     }
     IEnumerator WorkstationSpawn()
     {
-        int whichrubbish = Random.Range(0, 12);
+        int whichrubbish = Random.Range(0, 7);
         int rubbishspawn = Random.Range(0, 3);
         if (rubbishspawn == 0) //1 rubbish spawn
         {
             GameObject spawnable = allTrash[whichrubbish];
             Instantiate(spawnable, placeholder);
-            whichrubbish = Random.Range(0, 12);
+            whichrubbish = Random.Range(0, 7);
             Rubbish1 = true;
         }
         else if (rubbishspawn == 1) //2 rubbish spawn
         {
             GameObject spawnable = allTrash[whichrubbish];
             Instantiate(spawnable, placeholder);
-            whichrubbish = Random.Range(0, 12);
+            whichrubbish = Random.Range(0, 7);
             GameObject spawnable2 = allTrash[whichrubbish];
             Instantiate(spawnable2, placeholder2);
             Rubbish2 = true;
@@ -112,10 +112,10 @@ public class WorkStation : MonoBehaviour
         {
             GameObject spawnable = allTrash[whichrubbish];
             Instantiate(spawnable, placeholder);
-            whichrubbish = Random.Range(0, 12);
+            whichrubbish = Random.Range(0, 7);
             GameObject spawnable2 = allTrash[whichrubbish];
             Instantiate(spawnable2, placeholder2);
-            whichrubbish = Random.Range(0, 12);
+            whichrubbish = Random.Range(0, 7);
             GameObject spawnable3 = allTrash[whichrubbish];
             Instantiate(spawnable3, placeholder3);
             Rubbish3 = true;

@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     AudioSource audioSource;
     public bool isWorking;
     public Image DashImage;
-   
+
 
     [Serializable]
     public struct PlayerStats
@@ -158,12 +158,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-   
+
 
 
     void Movement()
     {
-        if (isWorking == true)
+        if (isWorking == true || LevelManager.instance.isGameOver == true)
         {
             moveInput.x = 0;
             moveInput.y = 0;
