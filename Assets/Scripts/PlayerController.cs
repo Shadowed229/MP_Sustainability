@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
     public bool isColliding;
 
     public Transform itemHolder;
-
+    public GameObject objectHolding;
     private void Awake()
     {
         instance = this;

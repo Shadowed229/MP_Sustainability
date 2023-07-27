@@ -49,10 +49,10 @@ public class WorkStation : MonoBehaviour
         if (PickUp.instance.holding == true && occupied == false  && isClose == true)
         {
             Debug.Log("Close to Workstation!"); 
-            if (Input.GetButtonDown("Pickup") && PickUp.instance.objectHolding.tag == "Trash")
+            if (Input.GetButtonDown("Pickup") && PlayerController.instance.objectHolding.tag == "Trash")
             {
                 PickUp.instance.trashholding = false;
-                Destroy(PickUp.instance.objectHolding);
+                Destroy(PlayerController.instance.objectHolding);
                 PickUp.instance.holding = false;
                 StartCoroutine(UpdateProgressBar());
                 

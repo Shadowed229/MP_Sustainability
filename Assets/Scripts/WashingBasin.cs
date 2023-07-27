@@ -1,23 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using UnityEngine.UI;
 
 public class WashingBasin : MonoBehaviour
 {
-    private GameObject trash;
+    
     public Slider progress;
-    public GameObject[] allTrash;
-
-    public Transform placeholder;
-    public Transform placeholder2;
-    public Transform placeholder3;
-    public static bool occupied;
-    public static bool Rubbish1;
-    public static bool Rubbish2;
-    public static bool Rubbish3;
-    public GameObject player;
-    private float fillTime;
+    public GameObject[] contaminatedPlastic;
+    public GameObject[] cleanPlastic;
+    public GameObject[] contaminatedMetal;
+    public GameObject[] cleanMetal;
 
     public static bool isClose;
 
@@ -30,10 +24,40 @@ public class WashingBasin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        DistanceFromPlayer();
+
+        if(isClose && PickUp.instance.holding == true && PlayerController.instance.objectHolding != null)
+        {
+            WashingWaste();
+        }
+        else
+        {
+            //Debug.Log("invalid action"); //maybe can do some prompt to show the action that they are doing is not possible
+        }
     }
 
-    IEnumerator UpdateProgressBar()
+    void DistanceFromPlayer()
+    {
+        float distancebetweenPlayer = Vector3.Distance(transform.position, PlayerController.instance.transform.position);
+        if (distancebetweenPlayer < 3.5)
+        {
+            isClose = true;
+        }
+        else
+        {
+            isClose = false;
+        }
+    }
+
+    void WashingWaste()
+    {
+        if(Input.GetButtonDown("Pickup") && (PlayerController.instance.objectHolding.tag == "ContaminatedPlastic" || PlayerController.instance.objectHolding.tag == "ContaminatedMetal"))
+        PickUp.instance.holding = false;
+        PlayerController.instance.objectHolding.SetActive(false);
+        StartCoroutine(UpdateProgressBar());
+    }
+
+    IEnumerator UpdateProgressBar() //washing anim
     {
         Debug.Log("Updating");
         PlayerController.instance.isWorking = true;
@@ -49,44 +73,38 @@ public class WashingBasin : MonoBehaviour
         }
         if (score == 3f)
         {
-            StartCoroutine(WorkstationSpawn());
+            StartCoroutine(FinishWashing());
         }
 
     }
-    IEnumerator WorkstationSpawn()
+    IEnumerator FinishWashing()
     {
-        int whichrubbish = Random.Range(0, 12);
-        int rubbishspawn = Random.Range(0, 3);
-        if (rubbishspawn == 0) //1 rubbish spawn
-        {
-            GameObject spawnable = allTrash[whichrubbish];
-            Instantiate(spawnable, placeholder);
-            whichrubbish = Random.Range(0, 2);
-            Rubbish1 = true;
-        }
-        else if (rubbishspawn == 1) //2 rubbish spawn
-        {
-            GameObject spawnable = allTrash[whichrubbish];
-            Instantiate(spawnable, placeholder);
-            whichrubbish = Random.Range(0, 2);
-            GameObject spawnable2 = allTrash[whichrubbish];
-            Instantiate(spawnable2, placeholder2);
-            Rubbish2 = true;
-        }
-        else if (rubbishspawn == 2) //3 rubbish spawn
-        {
-            GameObject spawnable = allTrash[whichrubbish];
-            Instantiate(spawnable, placeholder);
-            whichrubbish = Random.Range(0, 2);
-            GameObject spawnable2 = allTrash[whichrubbish];
-            Instantiate(spawnable2, placeholder2);
-            whichrubbish = Random.Range(0, 2);
-            GameObject spawnable3 = allTrash[whichrubbish];
-            Instantiate(spawnable3, placeholder3);
-            Rubbish3 = true;
-        }
         progress.gameObject.SetActive(false);
         PlayerController.instance.isWorking = false;
+        if(PlayerController.instance.objectHolding.tag == "ContaminatedPlastic")
+        {
+            for (int i = 0; i < contaminatedPlastic.Length; i++)
+            {
+                if(PlayerController.instance.objectHolding == contaminatedPlastic[i])
+                {
+                    PlayerController.instance.objectHolding = cleanPlastic[i];
+                    Debug.Log("cleaned plastic");
+                    break;
+                }
+            }
+        }
+        else if(PlayerController.instance.objectHolding.tag == "ContaminatedMetal")
+        {
+            for (int i = 0; i < contaminatedMetal.Length; i++)
+            {
+                if (PlayerController.instance.objectHolding == contaminatedMetal[i])
+                {
+                    PlayerController.instance.objectHolding = cleanMetal[i];
+                    break;
+                }
+            }
+        }
+        
         progress.value = progress.minValue;
         yield break;
     }

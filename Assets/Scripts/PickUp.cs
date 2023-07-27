@@ -66,7 +66,7 @@ public class PickUp : MonoBehaviour
     //private Collider2D itemCollider;
     private Collider2D[] itemColliders;
     public GameObject closestObject;
-    public GameObject objectHolding;
+    //public GameObject objectHolding;
 
     private void Awake()
     {
@@ -103,18 +103,18 @@ public class PickUp : MonoBehaviour
                             
                         }
                     }
-                    objectHolding= closestObject;
+                    PlayerController.instance.objectHolding= closestObject;
                     Debug.Log("You picked up an item!");
-                    objectHolding.transform.position = PlayerController.instance.itemHolder.position;
-                    objectHolding.transform.SetParent(PlayerController.instance.itemHolder.transform);
+                    PlayerController.instance.objectHolding.transform.position = PlayerController.instance.itemHolder.position;
+                    PlayerController.instance.objectHolding.transform.SetParent(PlayerController.instance.itemHolder.transform);
                     holding = true;
                 }
             }
             else if (holding == true && WorkStation.isClose == false && TrashPile.instance.isClose == false)
             {
                 Debug.Log("You dropped up an item!");
-                objectHolding.transform.Translate(Vector3.down * 2);
-                objectHolding.transform.SetParent(null);
+                PlayerController.instance.objectHolding.transform.Translate(Vector3.down * 2);
+                PlayerController.instance.objectHolding.transform.SetParent(null);
                 holding = false;
 
 
