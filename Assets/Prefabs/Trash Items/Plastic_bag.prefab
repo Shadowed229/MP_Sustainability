@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -2372576948491441409}
   m_Layer: 6
   m_Name: Plastic_bag
-  m_TagString: Plastic
+  m_TagString: GeneralWaste
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 330455205
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -1069005200, guid: 7494b5eaa38008f42b281a078527ecf7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

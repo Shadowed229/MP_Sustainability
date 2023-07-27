@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class Timer : MonoBehaviour
         {
             Debug.Log("GAME OVER!!!");
             LevelManager.instance.isGameOver = true;
+            SceneManager.LoadScene("GameOver");
         }
         DisplayTime(timeValue);
     }
@@ -32,6 +34,6 @@ public class Timer : MonoBehaviour
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
 
-        timeText.text = string.Format("{0:00} : {1:00}", minutes, seconds);
+        timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }
