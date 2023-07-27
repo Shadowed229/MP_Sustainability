@@ -85,14 +85,14 @@ public class PickUp : MonoBehaviour
                 {
                     // We create two temporary variables that exist only in the scope of this if statement...
                     // Both are initialized in regards to the first element in the array...
-                    float shortestDistanceSoFar = Vector2.Distance(this.gameObject.transform.position, itemColliders[0].gameObject.transform.position);
+                    float shortestDistanceSoFar = Vector2.Distance(gameObject.transform.position, itemColliders[0].gameObject.transform.position);
                     closestObject = itemColliders[0].gameObject;
 
                     // We loop through each element of the array...
                     for (int i = 0; i < itemColliders.Length; i++)
                     {
                         // Using a temporary float variable that holds the calculated distance for each element...
-                        float currentDistance = Vector2.Distance(this.gameObject.transform.position, itemColliders[i].gameObject.transform.position);
+                        float currentDistance = Vector2.Distance(gameObject.transform.position, itemColliders[i].gameObject.transform.position);
 
                         // We check if said distance is smaller than the shortest distance we have stored so far...
                         if (currentDistance < shortestDistanceSoFar)
@@ -110,7 +110,7 @@ public class PickUp : MonoBehaviour
                     holding = true;
                 }
             }
-            else if (holding == true && WorkStation.isClose == false && TrashPile.instance.isClose == false)
+            else if (holding == true && WorkStation.isClose == false && TrashPile.instance.isClose == false && RecyclingBin.isClose == false)
             {
                 Debug.Log("You dropped up an item!");
                 PlayerController.instance.objectHolding.transform.Translate(Vector3.down * 2);
