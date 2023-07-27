@@ -86,12 +86,13 @@ public class WashingBasin : MonoBehaviour
         PlayerController.instance.isWorking = false;
         if(PlayerController.instance.objectHolding.tag == "ContaminatedPlastic")
         {
+            
             for (int i = 0; i < contaminatedPlastic.Length; i++)
             {
-                //UnityEditor.PrefabUtility.GetPrefabParent(go) == arrayGO
-                if (PlayerController.instance.objectHolding == PrefabUtility.GetCorrespondingObjectFromSource(contaminatedPlastic[i]))
+                if (PlayerController.instance.objectHolding.name == contaminatedPlastic[i].name)
                 {
-                    PlayerController.instance.objectHolding = cleanPlastic[i];
+                    Destroy(PlayerController.instance.objectHolding);
+                    PlayerController.instance.objectHolding = Instantiate(cleanPlastic[i], PlayerController.instance.itemHolder);
                     Debug.Log("cleaned plastic");
                     break;
                 }
@@ -101,9 +102,10 @@ public class WashingBasin : MonoBehaviour
         {
             for (int i = 0; i < contaminatedMetal.Length; i++)
             {
-                if (PlayerController.instance.objectHolding == contaminatedMetal[i])
+                if (PlayerController.instance.objectHolding.name == contaminatedMetal[i].name)
                 {
-                    PlayerController.instance.objectHolding = cleanMetal[i];
+                    Destroy(PlayerController.instance.objectHolding);
+                    PlayerController.instance.objectHolding = Instantiate(cleanMetal[i], PlayerController.instance.itemHolder);
                     break;
                 }
             }
