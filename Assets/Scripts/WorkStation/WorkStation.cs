@@ -49,16 +49,23 @@ public class WorkStation : MonoBehaviour
         if (PickUp.instance.holding == true && occupied == false  && isClose == true)
         {
             Debug.Log("Close to Workstation!"); 
-            if (Input.GetButtonDown("Pickup"))
+            if (Input.GetButtonDown("Pickup") && PickUp.instance.objectHolding.tag == "Trash")
             {
                 PickUp.instance.trashholding = false;
-               // trash = GameObject.FindGameObjectWithTag("Trash");
                 Destroy(PickUp.instance.objectHolding);
                 PickUp.instance.holding = false;
-                occupied = true;
                 StartCoroutine(UpdateProgressBar());
                 
             }
+        }
+
+        if(placeholder.childCount == 0 && placeholder2.childCount == 0 && placeholder3.childCount == 0)
+        {
+            occupied = false;
+        }
+        else
+        {
+            occupied = true;
         }
     }
     
