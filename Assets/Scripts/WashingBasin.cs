@@ -89,7 +89,8 @@ public class WashingBasin : MonoBehaviour
             
             for (int i = 0; i < contaminatedPlastic.Length; i++)
             {
-                if (PlayerController.instance.objectHolding.name == contaminatedPlastic[i].name)
+                Debug.Log(PlayerController.instance.objectHolding.name + "(Clone)");
+                if (PlayerController.instance.objectHolding.name == contaminatedPlastic[i].name + "(Clone)")
                 {
                     Destroy(PlayerController.instance.objectHolding);
                     PlayerController.instance.objectHolding = Instantiate(cleanPlastic[i], PlayerController.instance.itemHolder);
@@ -102,7 +103,8 @@ public class WashingBasin : MonoBehaviour
         {
             for (int i = 0; i < contaminatedMetal.Length; i++)
             {
-                if (PlayerController.instance.objectHolding.name == contaminatedMetal[i].name)
+                Debug.Log(PlayerController.instance.objectHolding.name + "(Clone)");
+                if (PlayerController.instance.objectHolding.name == contaminatedMetal[i].name + "(Clone)")
                 {
                     Destroy(PlayerController.instance.objectHolding);
                     PlayerController.instance.objectHolding = Instantiate(cleanMetal[i], PlayerController.instance.itemHolder);

@@ -97,14 +97,14 @@ public class WorkStation : MonoBehaviour
         {
             GameObject spawnable = allTrash[whichrubbish];
             Instantiate(spawnable, placeholder);
-            whichrubbish = Random.Range(0, 2);
+            whichrubbish = Random.Range(0, 12);
             Rubbish1 = true;
         }
         else if (rubbishspawn == 1) //2 rubbish spawn
         {
             GameObject spawnable = allTrash[whichrubbish];
             Instantiate(spawnable, placeholder);
-            whichrubbish = Random.Range(0, 2);
+            whichrubbish = Random.Range(0, 12);
             GameObject spawnable2 = allTrash[whichrubbish];
             Instantiate(spawnable2, placeholder2);
             Rubbish2 = true;
@@ -113,10 +113,10 @@ public class WorkStation : MonoBehaviour
         {
             GameObject spawnable = allTrash[whichrubbish];
             Instantiate(spawnable, placeholder);
-            whichrubbish = Random.Range(0, 2);
+            whichrubbish = Random.Range(0, 12);
             GameObject spawnable2 = allTrash[whichrubbish];
             Instantiate(spawnable2, placeholder2);
-            whichrubbish = Random.Range(0, 2);
+            whichrubbish = Random.Range(0, 12);
             GameObject spawnable3 = allTrash[whichrubbish];
             Instantiate(spawnable3, placeholder3);
             Rubbish3 = true;
