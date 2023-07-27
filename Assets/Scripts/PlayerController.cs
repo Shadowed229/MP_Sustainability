@@ -149,7 +149,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (LevelManager.instance.isPaused == false)
+        if (LevelManager.instance.isPaused == false && LevelManager.instance.isGameOver == false)
         {
             Debug.Log("Able to move");
             Movement();
