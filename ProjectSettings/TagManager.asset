@@ -17,6 +17,9 @@ TagManager:
   - NonRegulated
   - Compostable
   - Station
+  - ContaminatedPlastic
+  - ContaminatedMetal
+  - WrappedGlass
   layers:
   - Default
   - TransparentFX
