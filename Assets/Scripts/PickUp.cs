@@ -60,12 +60,13 @@ public class PickUp : MonoBehaviour
     public float pickupRadius = 1f;
     public LayerMask pickupLayer;
 
-    public Transform ItemHolder;
+    //public Transform itemHolder;
     public bool holding;
     public bool trashholding;
     //private Collider2D itemCollider;
     private Collider2D[] itemColliders;
-    GameObject closestObject;
+    public GameObject closestObject;
+    public GameObject objectHolding;
 
     private void Awake()
     {
@@ -76,7 +77,7 @@ public class PickUp : MonoBehaviour
 
         if (Input.GetButtonDown("Pickup") )
         {
-            if(holding == false)
+            if (holding == false)
             {
                 itemColliders = Physics2D.OverlapCircleAll(transform.position, pickupRadius, pickupLayer);
 
@@ -99,20 +100,21 @@ public class PickUp : MonoBehaviour
                             // If that's true, we make that element the closest object and set the new shortest distance as the current one...
                             closestObject = itemColliders[i].gameObject;
                             shortestDistanceSoFar = currentDistance;
+                            
                         }
                     }
-
+                    objectHolding= closestObject;
                     Debug.Log("You picked up an item!");
-                    closestObject.transform.position = ItemHolder.position;
-                    closestObject.transform.SetParent(ItemHolder.transform);
+                    objectHolding.transform.position = PlayerController.instance.itemHolder.position;
+                    objectHolding.transform.SetParent(PlayerController.instance.itemHolder.transform);
                     holding = true;
                 }
             }
-            else if (holding == true && WorkStation.isClose == false)
+            else if (holding == true && WorkStation.isClose == false && TrashPile.instance.isClose == false)
             {
                 Debug.Log("You dropped up an item!");
-                closestObject.transform.Translate(Vector3.down * 2);
-                closestObject.transform.SetParent(null);
+                objectHolding.transform.Translate(Vector3.down * 2);
+                objectHolding.transform.SetParent(null);
                 holding = false;
 
 

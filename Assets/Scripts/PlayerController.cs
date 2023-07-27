@@ -11,8 +11,8 @@ public class PlayerController : MonoBehaviour
     public static PlayerController instance;
     public Rigidbody2D theRB; // rigid body component attached in player
     private Vector2 moveInput; // to get vecotr2 value of the player object
+    private SpriteRenderer sr; // to get vecotr2 value of the player object
     AudioSource audioSource;
-    float x;
     public bool isWorking;
     public Image DashImage;
    
@@ -48,9 +48,12 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public bool isColliding;
 
+    public Transform itemHolder;
+
     private void Awake()
     {
         instance = this;
+        sr = gameObject.GetComponent<SpriteRenderer>();
     }
     private void OnEnable()
     {
@@ -185,6 +188,16 @@ public class PlayerController : MonoBehaviour
             else
             {
                 audioSource.Stop();
+            }
+
+            if(moveInput.x < 0)
+            {
+                sr.flipX = true;
+                //gameObject.transform.rotation.y + 180;
+            }
+            else if(moveInput.x > 0)
+            {
+                sr.flipX = false;
             }
         }
     }

@@ -52,8 +52,8 @@ public class WorkStation : MonoBehaviour
             if (Input.GetButtonDown("Pickup"))
             {
                 PickUp.instance.trashholding = false;
-                trash = GameObject.FindGameObjectWithTag("Trash");
-                Destroy(trash);
+               // trash = GameObject.FindGameObjectWithTag("Trash");
+                Destroy(PickUp.instance.objectHolding);
                 PickUp.instance.holding = false;
                 occupied = true;
                 StartCoroutine(UpdateProgressBar());
