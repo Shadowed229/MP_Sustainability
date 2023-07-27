@@ -214,12 +214,25 @@ public class PlayerController : MonoBehaviour
         if (dashCoolCounter > 0)
         {
             dashCoolCounter -= Time.deltaTime; //minusing off deltaTime(per second) from the duration of dashCooldown
-            DashImage.fillAmount -= 1 / dashCoolCounter * Time.deltaTime;
-            if(DashImage.fillAmount <= 0)
+            if(dashCoolCounter <= 0f)
             {
-                DashImage.fillAmount = 0;
                 canDash = false;
+                dashCoolCounter = 0f;
+                if (DashImage != null)
+                {
+                    DashImage.fillAmount = 0;
+
+                }
             }
+            else
+            {
+                if (DashImage != null)
+                {
+                    DashImage.fillAmount = dashCoolCounter / dashCooldown;
+
+                }
+            }
+           
             
         }
 
