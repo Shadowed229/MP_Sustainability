@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class RecyclingBin : MonoBehaviour
 {
     public static bool isClose;
+    public Text points;
+    public Transform textTrans;
     //public Slider progress;
     // Start is called before the first frame update
     void Start()
@@ -69,33 +71,27 @@ public class RecyclingBin : MonoBehaviour
         {
             Destroy(PlayerController.instance.objectHolding);
             LevelManager.instance.score += 1;
+            points.color = Color.green;
+            points.text = "+ 10 pts";
             PickUp.instance.holding = false;
-            //StartCoroutine(UpdateProgressBar());
+            points.gameObject.SetActive(true);
+            points.transform.Translate(Vector3.up * Time.deltaTime);
+            StartCoroutine(UpdateTextPos());
 
         }
     }
 
-    /*
-    IEnumerator UpdateProgressBar() //washing anim
+    
+    IEnumerator UpdateTextPos() //washing anim
     {
         Debug.Log("Updating");
-        PlayerController.instance.isWorking = true;
-        progress.gameObject.SetActive(true);
 
-        float score = 0f;
-        while (score < 3f)
-        {
-            yield return new WaitForSeconds(1f);
-            score += 1;
-            Debug.Log(score);
-            progress.value = score;
-        }
-        if (score == 3f)
-        {
-            StartCoroutine(FinishWashing());
-        }
 
+        yield return new WaitForSeconds(1.5f);
+        points.gameObject.SetActive(false);
+        points.gameObject.transform.position = textTrans.position;
     }
+    /*
     IEnumerator FinishWashing()
     {
         progress.gameObject.SetActive(false);
