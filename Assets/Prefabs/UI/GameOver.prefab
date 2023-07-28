@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 2412642449680698998}
   - component: {fileID: 1049216955112148681}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: GameOver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
