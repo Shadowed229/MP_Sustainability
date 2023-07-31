@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     public float dashLength = 0.5f, dashCooldown = 1f;
     [HideInInspector]
     public float dashCounter, dashCoolCounter;
+    /*
     // Joystick
     [SerializeField]
     private Vector2 joystickSize = new Vector2(100, 100);
@@ -43,7 +44,7 @@ public class PlayerController : MonoBehaviour
 
     private Finger movementFinger;
     private Vector2 movementAmount;
-
+    */
     [HideInInspector]
     public bool canDash;
     [HideInInspector]
@@ -56,6 +57,7 @@ public class PlayerController : MonoBehaviour
         instance = this;
         sr = gameObject.GetComponent<SpriteRenderer>();
     }
+    /*
     private void OnEnable()
     {
         EnhancedTouchSupport.Enable();
@@ -137,6 +139,7 @@ public class PlayerController : MonoBehaviour
         return startPosition;
 
     }
+    */
     // Start is called before the first frame update
     void Start()
     {
@@ -173,8 +176,8 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            moveInput.x = movementAmount.x; //using unity input system to get the value of x (right: 1, Left: -1)
-            moveInput.y = movementAmount.y; //using unity input system to get the value of y (up: 1, down: -1)
+            moveInput.x = UIController.instance.movementAmount.x; //using unity input system to get the value of x (right: 1, Left: -1)
+            moveInput.y = UIController.instance.movementAmount.y; //using unity input system to get the value of y (up: 1, down: -1)
 
             moveInput.Normalize(); //make the player movement more consistent by noramlizing all the distance (can imagine the distance to be in a circle)
 

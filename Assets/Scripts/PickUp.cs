@@ -75,7 +75,12 @@ public class PickUp : MonoBehaviour
     private void Update()
     {
 
-        if (Input.GetButtonDown("Pickup") )
+        
+    }
+
+    public void pickUp()
+    {
+        if (Input.GetButtonDown("Pickup"))
         {
             if (holding == false)
             {
@@ -100,10 +105,10 @@ public class PickUp : MonoBehaviour
                             // If that's true, we make that element the closest object and set the new shortest distance as the current one...
                             closestObject = itemColliders[i].gameObject;
                             shortestDistanceSoFar = currentDistance;
-                            
+
                         }
                     }
-                    PlayerController.instance.objectHolding= closestObject;
+                    PlayerController.instance.objectHolding = closestObject;
                     Debug.Log("You picked up an item!");
                     PlayerController.instance.objectHolding.transform.position = PlayerController.instance.itemHolder.position;
                     PlayerController.instance.objectHolding.transform.SetParent(PlayerController.instance.itemHolder.transform);
