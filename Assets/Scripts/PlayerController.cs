@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     AudioSource audioSource;
     public bool isWorking;
     public Image DashImage;
+    public Animator animator; 
 
 
     [Serializable]
@@ -168,6 +169,7 @@ public class PlayerController : MonoBehaviour
             moveInput.x = 0;
             moveInput.y = 0;
             theRB.velocity = Vector2.zero;
+            animator.SetBool("Walking", true);
         }
         else
         {
@@ -211,6 +213,7 @@ public class PlayerController : MonoBehaviour
                 DashImage.fillAmount = 1;
                 activeMoveSpeed = stats.dashSpeed;
                 dashCounter = dashLength; //declaring how long the dash speed will last
+                animator.SetBool("Sprinting", true);
             }
         }
 
