@@ -116,8 +116,6 @@ public class PickUp : MonoBehaviour
                 PlayerController.instance.objectHolding.transform.Translate(Vector3.down * 2);
                 PlayerController.instance.objectHolding.transform.SetParent(null);
                 holding = false;
-
-
             }
 
         }
