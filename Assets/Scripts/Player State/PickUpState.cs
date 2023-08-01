@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IdleState : MoveState
+public class PickUpState : MoveState
 {
-    public IdleState(Player player, StateMachine stateMachine) : base (player, stateMachine){
+    public PickUpState(Player player, StateMachine stateMachine) : base(player, stateMachine)
+    {
 
     }
     public override void Enter()
@@ -20,11 +21,11 @@ public class IdleState : MoveState
     public override void HandleInput()
     {
         base.HandleInput();
-
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+        player.Movement();
     }
 }

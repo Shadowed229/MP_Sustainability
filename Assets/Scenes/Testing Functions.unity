@@ -477,9 +477,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 284157106}
     - target: {fileID: 4550088023322896372, guid: 1873bd422b277a742bf138b1deaf6f85, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550088023322896372, guid: 1873bd422b277a742bf138b1deaf6f85, type: 3}
       propertyPath: itemHolder
       value: 
       objectReference: {fileID: 308511474}
+    - target: {fileID: 4550088023322896374, guid: 1873bd422b277a742bf138b1deaf6f85, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4550088023322896375, guid: 1873bd422b277a742bf138b1deaf6f85, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.4
@@ -527,7 +535,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4550088023322896378, guid: 1873bd422b277a742bf138b1deaf6f85, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1995599886}
   m_SourcePrefab: {fileID: 100100000, guid: 1873bd422b277a742bf138b1deaf6f85, type: 3}
 --- !u!1 &793111949 stripped
 GameObject:
@@ -1449,6 +1460,40 @@ MonoBehaviour:
 --- !u!4 &1995599885 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4550088023322896375, guid: 1873bd422b277a742bf138b1deaf6f85, type: 3}
+  m_PrefabInstance: {fileID: 783259313}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1995599886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793111949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e1df06cc3b14e548af330af512cb90e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theRB: {fileID: 1995599891}
+  moveSpeed: 6
+  sr: {fileID: 1995599889}
+  anim: {fileID: 0}
+  holding: 0
+  itemHolder: {fileID: 0}
+  objectHolding: {fileID: 0}
+  closestObject: {fileID: 0}
+  pickupRadius: 1
+  pickupLayer:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!212 &1995599889 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7100574678455371415, guid: 1873bd422b277a742bf138b1deaf6f85, type: 3}
+  m_PrefabInstance: {fileID: 783259313}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1995599891 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 4550088023322896373, guid: 1873bd422b277a742bf138b1deaf6f85, type: 3}
   m_PrefabInstance: {fileID: 783259313}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1998609685
