@@ -80,7 +80,7 @@ public class PickUp : MonoBehaviour
 
     public void pickUp()
     {
-        if (Input.GetButtonDown("Pickup"))
+        if (InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup"))
         {
             if (holding == false)
             {

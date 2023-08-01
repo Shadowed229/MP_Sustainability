@@ -15,6 +15,7 @@ public class InteractButton : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
     {
         buttonPressed = true;
+        Debug.Log("Button pressed");
     }
 
     void IPointerUpHandler.OnPointerUp(PointerEventData eventData)

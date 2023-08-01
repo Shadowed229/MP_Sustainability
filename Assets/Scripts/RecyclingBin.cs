@@ -67,7 +67,7 @@ public class RecyclingBin : MonoBehaviour
 
     void Recycling()
     {
-        if (Input.GetButtonDown("Pickup"))
+        if (InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup"))
         {
             Destroy(PlayerController.instance.objectHolding);
             LevelManager.instance.score += 1;

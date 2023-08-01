@@ -51,7 +51,7 @@ public class WashingBasin : MonoBehaviour
 
     void WashingWaste()
     {
-        if(Input.GetButtonDown("Pickup") && (PlayerController.instance.objectHolding.tag == "ContaminatedPlastic" || PlayerController.instance.objectHolding.tag == "ContaminatedMetal"))
+        if((InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup")) && (PlayerController.instance.objectHolding.tag == "ContaminatedPlastic" || PlayerController.instance.objectHolding.tag == "ContaminatedMetal"))
         {
             PickUp.instance.holding = false;
             //PlayerController.instance.objectHolding.SetActive(false);

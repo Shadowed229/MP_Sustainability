@@ -37,7 +37,7 @@ public class TrashPile : MonoBehaviour
         if (isClose)
         {
             Debug.Log("Close to Pile");
-            if (Input.GetButtonDown("Pickup"))
+            if (InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup"))
             {
                 if (PickUp.instance.holding == false)
                 {
