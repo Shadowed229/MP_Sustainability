@@ -478,7 +478,7 @@ PrefabInstance:
       objectReference: {fileID: 284157106}
     - target: {fileID: 4550088023322896372, guid: 1873bd422b277a742bf138b1deaf6f85, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4550088023322896372, guid: 1873bd422b277a742bf138b1deaf6f85, type: 3}
       propertyPath: itemHolder
@@ -486,7 +486,11 @@ PrefabInstance:
       objectReference: {fileID: 308511474}
     - target: {fileID: 4550088023322896374, guid: 1873bd422b277a742bf138b1deaf6f85, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550088023322896374, guid: 1873bd422b277a742bf138b1deaf6f85, type: 3}
+      propertyPath: pickupLayer.m_Bits
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 4550088023322896375, guid: 1873bd422b277a742bf138b1deaf6f85, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1469,7 +1473,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 793111949}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e1df06cc3b14e548af330af512cb90e, type: 3}
   m_Name: 
