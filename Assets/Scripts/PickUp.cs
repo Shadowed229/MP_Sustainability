@@ -74,14 +74,14 @@ public class PickUp : MonoBehaviour
     }
     private void Update()
     {
-
-        
+        pickUp();
     }
 
     public void pickUp()
     {
         if (InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup"))
         {
+            Debug.Log("test");
             if (holding == false)
             {
                 
