@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
     public Rigidbody2D theRB; // rigid body component attached in player
-    private Vector2 moveInput; // to get vecotr2 value of the player object
+    public Vector2 moveInput; // to get vecotr2 value of the player object
     private SpriteRenderer sr; // to get vecotr2 value of the player object
     AudioSource audioSource;
     public bool isWorking;

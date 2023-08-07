@@ -27,5 +27,20 @@ public class Tutorial : MonoBehaviour
                 popUps[popUpIndex].SetActive(false);
             }
         }
+
+        if(popUpIndex == 0)
+        {
+            if(PlayerController.instance.theRB.velocity != Vector2.zero)
+            {
+                popUpIndex++;
+            }
+        }
+        else if (popUpIndex == 1)
+        {
+            if (PickUp.instance.holding == true)
+            {
+                popUpIndex++;
+            }
+        }
     }
 }
