@@ -2330,6 +2330,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1717583807355428667, guid: 61ee041a36c12034bbf76ad7d8f93af7, type: 3}
+      propertyPath: cleanMetal.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -1717583807355428667, guid: 61ee041a36c12034bbf76ad7d8f93af7, type: 3}
+      propertyPath: cleanMetal.Array.data[1]
+      value: 
+      objectReference: {fileID: 6441520797120551177, guid: 082842e65b0f0844ea5f24f57025138a, type: 3}
+    - target: {fileID: -1717583807355428667, guid: 61ee041a36c12034bbf76ad7d8f93af7, type: 3}
+      propertyPath: contaminatedMetal.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -1717583807355428667, guid: 61ee041a36c12034bbf76ad7d8f93af7, type: 3}
+      propertyPath: contaminatedMetal.Array.data[1]
+      value: 
+      objectReference: {fileID: 6441520797120551177, guid: 3fd6a28709fe45847a8bfb6967325f11, type: 3}
     - target: {fileID: 2356170510839116020, guid: 61ee041a36c12034bbf76ad7d8f93af7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
