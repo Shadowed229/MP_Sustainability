@@ -2280,6 +2280,42 @@ PrefabInstance:
       propertyPath: boxsize.y
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7199167956610158628, guid: 23890a1c41b613742bbc8932a5d65122, type: 3}
+      propertyPath: allTrash.Array.data[0]
+      value: 
+      objectReference: {fileID: 2274993628138817788, guid: 85c5ccdbe467cf94fa384849b1780ed8, type: 3}
+    - target: {fileID: 7199167956610158628, guid: 23890a1c41b613742bbc8932a5d65122, type: 3}
+      propertyPath: allTrash.Array.data[1]
+      value: 
+      objectReference: {fileID: 3979095348433169421, guid: 70f67d7c785e2b04d90713faa7406cfb, type: 3}
+    - target: {fileID: 7199167956610158628, guid: 23890a1c41b613742bbc8932a5d65122, type: 3}
+      propertyPath: allTrash.Array.data[2]
+      value: 
+      objectReference: {fileID: 6441520797120551177, guid: 3fd6a28709fe45847a8bfb6967325f11, type: 3}
+    - target: {fileID: 7199167956610158628, guid: 23890a1c41b613742bbc8932a5d65122, type: 3}
+      propertyPath: allTrash.Array.data[3]
+      value: 
+      objectReference: {fileID: 4587416890710654011, guid: da3cd21b583a7084588fbedb26932286, type: 3}
+    - target: {fileID: 7199167956610158628, guid: 23890a1c41b613742bbc8932a5d65122, type: 3}
+      propertyPath: allTrash.Array.data[4]
+      value: 
+      objectReference: {fileID: 6441520797120551177, guid: 613a2926cbb3c4047a7c86f14167011a, type: 3}
+    - target: {fileID: 7199167956610158628, guid: 23890a1c41b613742bbc8932a5d65122, type: 3}
+      propertyPath: allTrash.Array.data[5]
+      value: 
+      objectReference: {fileID: 6441520797120551177, guid: cc24cf9572f018c4ea7c094179ebf4fc, type: 3}
+    - target: {fileID: 7199167956610158628, guid: 23890a1c41b613742bbc8932a5d65122, type: 3}
+      propertyPath: allTrash.Array.data[6]
+      value: 
+      objectReference: {fileID: 6441520797120551177, guid: d0db44df3a6328b4db0e2ca00e149806, type: 3}
+    - target: {fileID: 7199167956610158628, guid: 23890a1c41b613742bbc8932a5d65122, type: 3}
+      propertyPath: allTrash.Array.data[7]
+      value: 
+      objectReference: {fileID: 6441520797120551177, guid: 3c6e0170c7810ca468105d6b972a0b1f, type: 3}
+    - target: {fileID: 7199167956610158628, guid: 23890a1c41b613742bbc8932a5d65122, type: 3}
+      propertyPath: allTrash.Array.data[8]
+      value: 
+      objectReference: {fileID: 6441520797120551177, guid: 7caab0cf0b94402438b0b123e449d9f1, type: 3}
     - target: {fileID: 7587960673397695540, guid: 23890a1c41b613742bbc8932a5d65122, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.295

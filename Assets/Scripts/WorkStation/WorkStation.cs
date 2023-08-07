@@ -94,13 +94,15 @@ public class WorkStation : MonoBehaviour
         int rubbishspawn = Random.Range(0, 3);
         if (rubbishspawn == 0) //1 rubbish spawn
         {
+            whichrubbish = Random.Range(0, 2);
             GameObject spawnable = allTrash[whichrubbish];
             Instantiate(spawnable, placeholder);
-            whichrubbish = Random.Range(0, 7);
+            whichrubbish = Random.Range(0, 2);
             Rubbish1 = true;
         }
         else if (rubbishspawn == 1) //2 rubbish spawn
         {
+            whichrubbish = Random.Range(0, 2);
             GameObject spawnable = allTrash[whichrubbish];
             Instantiate(spawnable, placeholder);
             whichrubbish = Random.Range(0, 7);
@@ -110,6 +112,7 @@ public class WorkStation : MonoBehaviour
         }
         else if (rubbishspawn == 2) //3 rubbish spawn
         {
+            whichrubbish = Random.Range(0, 2);
             GameObject spawnable = allTrash[whichrubbish];
             Instantiate(spawnable, placeholder);
             whichrubbish = Random.Range(0, 7);
