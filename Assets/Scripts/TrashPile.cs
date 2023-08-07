@@ -5,9 +5,9 @@ using UnityEngine;
 public class TrashPile : MonoBehaviour
 {
     public static TrashPile instance;
-    private GameObject playerRef;
+    public GameObject playerRef;
     public GameObject trashBagPrefab;
-    private float distancebetweentrashpile;
+    public float distancebetweentrashpile;
     public bool isClose;
     // Start is called before the first frame update
 
