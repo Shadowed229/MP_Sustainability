@@ -668,12 +668,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseScreen: {fileID: 771364541}
   interactBtn: {fileID: 1245781852}
+  InteractBtnPressed: 0
   pauseTxt: {fileID: 0}
   aimBtn: {fileID: 0}
   optionScreen: {fileID: 0}
   progressbar: {fileID: 1963758613}
   timerText: {fileID: 0}
   dashButton: {fileID: 119763587}
+  joystickSize: {x: 100, y: 100}
+  joystick: {fileID: 1415007210}
+  movementAmount: {x: 0, y: 0}
 --- !u!114 &1285935036
 MonoBehaviour:
   m_ObjectHideFlags: 0
