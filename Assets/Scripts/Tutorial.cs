@@ -10,21 +10,22 @@ public class Tutorial : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        popUpIndex = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(popUpIndex);
         for(int i = 0; i<popUps.Length; i++)
         {
             if (i == popUpIndex)
             {
-                popUps[popUpIndex].SetActive(true);
+                popUps[i].SetActive(true);
             }
             else
             {
-                popUps[popUpIndex].SetActive(false);
+                popUps[i].SetActive(false);
             }
         }
 
@@ -44,7 +45,7 @@ public class Tutorial : MonoBehaviour
         }
         else if (popUpIndex == 2)
         {
-
+            //if
         }
     }
 }
