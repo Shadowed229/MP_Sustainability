@@ -6042,6 +6042,10 @@ PrefabInstance:
       propertyPath: DashImage
       value: 
       objectReference: {fileID: 2041379203}
+    - target: {fileID: 4550088023322896374, guid: 1873bd422b277a742bf138b1deaf6f85, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1683771513}
     - target: {fileID: 4550088023322896375, guid: 1873bd422b277a742bf138b1deaf6f85, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6094,6 +6098,11 @@ PrefabInstance:
 --- !u!4 &1683771512 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4550088023322896375, guid: 1873bd422b277a742bf138b1deaf6f85, type: 3}
+  m_PrefabInstance: {fileID: 1683771503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1683771513 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3430768298759785720, guid: 1873bd422b277a742bf138b1deaf6f85, type: 3}
   m_PrefabInstance: {fileID: 1683771503}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &1756008955 stripped
