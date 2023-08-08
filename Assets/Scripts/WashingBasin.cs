@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.UI;
+using JetBrains.Annotations;
 
 public class WashingBasin : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class WashingBasin : MonoBehaviour
     public GameObject[] cleanMetal;
 
     public static bool isClose;
-
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,10 +30,12 @@ public class WashingBasin : MonoBehaviour
         if(isClose && PickUp.instance.holding == true && PlayerController.instance.objectHolding != null)
         {
             WashingWaste();
+           animator.SetTrigger("Basinon");
         }
         else
         {
             //Debug.Log("invalid action"); //maybe can do some prompt to show the action that they are doing is not possible
+           animator.SetTrigger("Basinoff");
         }
     }
 
@@ -56,6 +59,7 @@ public class WashingBasin : MonoBehaviour
             PickUp.instance.holding = false;
             //PlayerController.instance.objectHolding.SetActive(false);
             StartCoroutine(UpdateProgressBar());
+            PlayerController.instance.animator.SetBool("busy", true);
         }
         
     }
@@ -95,8 +99,10 @@ public class WashingBasin : MonoBehaviour
                     Destroy(PlayerController.instance.objectHolding);
                     PlayerController.instance.objectHolding = Instantiate(cleanPlastic[i], PlayerController.instance.itemHolder);
                     Debug.Log("cleaned plastic");
+                    PlayerController.instance.animator.SetBool("busy", false);
                     break;
-                }
+                    
+}
             }
         }
         else if(PlayerController.instance.objectHolding.tag == "ContaminatedMetal")
