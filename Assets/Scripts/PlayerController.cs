@@ -172,7 +172,7 @@ public class PlayerController : MonoBehaviour
             moveInput.x = 0;
             moveInput.y = 0;
             theRB.velocity = Vector2.zero;
-            animator.SetBool("Walking", true);
+            
         }
         else
         {
@@ -189,10 +189,12 @@ public class PlayerController : MonoBehaviour
                     audioSource.Play();
 
                 }
+                animator.SetBool("walking", true);
             }
             else
             {
                 audioSource.Stop();
+                animator.SetBool("walking", false);
             }
 
             if(moveInput.x < 0)
