@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 88359668269870900}
   - component: {fileID: 2783621222110798260}
   m_Layer: 0
-  m_Name: WrappingStation
+  m_Name: Ewaste_Wrapper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 768538735
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2072586573, guid: 7494b5eaa38008f42b281a078527ecf7, type: 3}
+  m_Sprite: {fileID: 1693720135, guid: 7c3b8a554ee79f34289ca488c80e031a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

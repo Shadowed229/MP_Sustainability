@@ -3,31 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RecyclingBin : MonoBehaviour
+public class GeneralWaste : MonoBehaviour
 {
     public static bool isClose;
     public Text points;
     public Transform textTrans;
-    public Animator animator;
     //public Slider progress;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         DistanceFromPlayer();
-        if(PickUp.instance.holding)
+        if (PickUp.instance.holding)
         {
-            if (isClose && isRecyclable())
+            if (isClose && isGeneralWaste())
             {
                 Debug.Log("much close");
                 Recycling();
             }
-        }   
+        }
     }
     void DistanceFromPlayer()
     {
@@ -42,21 +41,9 @@ public class RecyclingBin : MonoBehaviour
         }
     }
 
-    bool isRecyclable()
+    bool isGeneralWaste()
     {
-        if(PlayerController.instance.objectHolding.tag == "Glass")
-        {
-            return true;
-        }
-        else if (PlayerController.instance.objectHolding.tag == "Plastic")
-        {
-            return true;
-        }
-        else if (PlayerController.instance.objectHolding.tag == "Metal")
-        {
-            return true;
-        }
-        else if (PlayerController.instance.objectHolding.tag == "Paper")
+        if (PlayerController.instance.objectHolding.tag == "GeneralWaste")
         {
             return true;
         }
@@ -78,12 +65,11 @@ public class RecyclingBin : MonoBehaviour
             points.gameObject.SetActive(true);
             points.transform.Translate(Vector3.up * Time.deltaTime);
             StartCoroutine(UpdateTextPos());
-            PlayerController.instance.animator.SetTrigger("drop");
 
         }
     }
-    
-    
+
+
     IEnumerator UpdateTextPos() //washing anim
     {
         Debug.Log("Updating");
@@ -92,9 +78,17 @@ public class RecyclingBin : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         points.gameObject.SetActive(false);
         points.gameObject.transform.position = textTrans.position;
-        yield return true;
     }
-    
+    /*
+    IEnumerator FinishWashing()
+    {
+        progress.gameObject.SetActive(false);
+        PlayerController.instance.isWorking = false;
 
-    
+
+        progress.value = progress.minValue;
+        yield break;
+    }
+    */
 }
+
