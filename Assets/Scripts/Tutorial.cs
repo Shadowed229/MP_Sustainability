@@ -42,5 +42,9 @@ public class Tutorial : MonoBehaviour
                 popUpIndex++;
             }
         }
+        else if (popUpIndex == 2)
+        {
+
+        }
     }
 }
