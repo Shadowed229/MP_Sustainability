@@ -9,6 +9,7 @@ public class TrashPile : MonoBehaviour
     public GameObject trashBagPrefab;
     public float distancebetweentrashpile;
     public bool isClose;
+    public Animator animator;
     // Start is called before the first frame update
 
     private void Awake()
@@ -42,7 +43,7 @@ public class TrashPile : MonoBehaviour
                 if (PickUp.instance.holding == false)
                 {
 
-
+                    PlayerController.instance.animator.SetTrigger("carry");
                     PickUp.instance.holding = true;
                     PlayerController.instance.objectHolding = Instantiate(trashBagPrefab, PlayerController.instance.itemHolder);
 
@@ -50,6 +51,7 @@ public class TrashPile : MonoBehaviour
                 else
                 {
                     Debug.Log("drop your item first");
+                    PlayerController.instance.animator.SetTrigger("drop");
                 }
             }
         }

@@ -8,6 +8,7 @@ public class RecyclingBin : MonoBehaviour
     public static bool isClose;
     public Text points;
     public Transform textTrans;
+    public Animator animator;
     //public Slider progress;
     // Start is called before the first frame update
     void Start()
@@ -77,6 +78,7 @@ public class RecyclingBin : MonoBehaviour
             points.gameObject.SetActive(true);
             points.transform.Translate(Vector3.up * Time.deltaTime);
             StartCoroutine(UpdateTextPos());
+            PlayerController.instance.animator.SetTrigger("drop");
 
         }
     }
