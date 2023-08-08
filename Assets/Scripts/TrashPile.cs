@@ -51,7 +51,7 @@ public class TrashPile : MonoBehaviour
                 else
                 {
                     Debug.Log("drop your item first");
-                    PlayerController.instance.animator.SetTrigger("drop");
+                    
                 }
             }
         }
