@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8944629970510754051
 RectTransform:
   m_ObjectHideFlags: 0
@@ -202,6 +202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points: {fileID: 8245469208936531914}
   textTrans: {fileID: 5398236911230688308}
+  animator: {fileID: 0}
 --- !u!1 &9055291353521878208
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5398236911230688308
 RectTransform:
   m_ObjectHideFlags: 0
