@@ -19,7 +19,7 @@ public class WashingBasin : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator.SetTrigger("Idle");
     }
 
     // Update is called once per frame
@@ -30,12 +30,12 @@ public class WashingBasin : MonoBehaviour
         if(isClose && PickUp.instance.holding == true && PlayerController.instance.objectHolding != null)
         {
             WashingWaste();
-           animator.SetTrigger("Basinon");
+           
         }
         else
         {
             //Debug.Log("invalid action"); //maybe can do some prompt to show the action that they are doing is not possible
-           animator.SetTrigger("Basinoff");
+           
         }
     }
 
@@ -60,6 +60,7 @@ public class WashingBasin : MonoBehaviour
             //PlayerController.instance.objectHolding.SetActive(false);
             StartCoroutine(UpdateProgressBar());
             PlayerController.instance.animator.SetBool("busy", true);
+            animator.SetTrigger("Basinon");
         }
         
     }
@@ -81,6 +82,7 @@ public class WashingBasin : MonoBehaviour
         if (score == 3f)
         {
             StartCoroutine(FinishWashing());
+            animator.SetTrigger("Basinoff");
         }
 
     }
@@ -100,6 +102,7 @@ public class WashingBasin : MonoBehaviour
                     PlayerController.instance.objectHolding = Instantiate(cleanPlastic[i], PlayerController.instance.itemHolder);
                     Debug.Log("cleaned plastic");
                     PlayerController.instance.animator.SetBool("busy", false);
+                    
                     break;
                     
 }
