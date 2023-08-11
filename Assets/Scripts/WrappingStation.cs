@@ -5,21 +5,20 @@ using UnityEditor;
 using UnityEngine.UI;
 using JetBrains.Annotations;
 
-public class WashingBasin : MonoBehaviour
+public class WrappingStation : MonoBehaviour
 {
-    
+
     public Slider progress;
-    public GameObject[] contaminatedPlastic;
-    public GameObject[] cleanPlastic;
-    public GameObject[] contaminatedMetal;
-    public GameObject[] cleanMetal;
+    public GameObject[] RegulatedItems;
+    public GameObject Box;
+
 
     public static bool isClose;
     public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator.SetTrigger("Idle");
     }
 
     // Update is called once per frame
@@ -27,15 +26,15 @@ public class WashingBasin : MonoBehaviour
     {
         DistanceFromPlayer();
 
-        if(isClose && PickUp.instance.holding == true && PlayerController.instance.objectHolding != null)
+        if (isClose && PickUp.instance.holding == true && PlayerController.instance.objectHolding != null)
         {
-            WashingWaste();
-           
+            WrappingWaste();
+
         }
         else
         {
             //Debug.Log("invalid action"); //maybe can do some prompt to show the action that they are doing is not possible
-           
+
         }
     }
 
@@ -52,17 +51,16 @@ public class WashingBasin : MonoBehaviour
         }
     }
 
-    void WashingWaste()
+    void WrappingWaste()
     {
-        if((InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup")) && (PlayerController.instance.objectHolding.tag == "ContaminatedPlastic" || PlayerController.instance.objectHolding.tag == "ContaminatedMetal"))
+        if ((InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup")) && (PlayerController.instance.objectHolding.tag == "Regulated"))
         {
             PickUp.instance.holding = false;
             //PlayerController.instance.objectHolding.SetActive(false);
             StartCoroutine(UpdateProgressBar());
-            PlayerController.instance.animator.SetBool("busy", true);
-            animator.SetBool("Basinon", true);
+
         }
-        
+
     }
 
     IEnumerator UpdateProgressBar() //washing anim
@@ -81,47 +79,35 @@ public class WashingBasin : MonoBehaviour
         }
         if (score == 3f)
         {
-            StartCoroutine(FinishWashing());
-            animator.SetBool("Basinoff", false);
+            StartCoroutine(FinishWrapping());
+            //animator.SetTrigger("Basinoff");
         }
 
     }
-    IEnumerator FinishWashing()
+    IEnumerator FinishWrapping()
     {
         progress.gameObject.SetActive(false);
         PlayerController.instance.isWorking = false;
-        if(PlayerController.instance.objectHolding.tag == "ContaminatedPlastic")
+        if (PlayerController.instance.objectHolding.tag == "Regulated")
         {
-            
-            for (int i = 0; i < contaminatedPlastic.Length; i++)
+
+            for (int i = 0; i < RegulatedItems.Length; i++)
             {
                 Debug.Log(PlayerController.instance.objectHolding.name + "(Clone)");
-                if (PlayerController.instance.objectHolding.name == contaminatedPlastic[i].name + "(Clone)")
+                if (PlayerController.instance.objectHolding.name == RegulatedItems[i].name + "(Clone)")
                 {
+                    Debug.Log("Wrapping");
                     Destroy(PlayerController.instance.objectHolding);
-                    PlayerController.instance.objectHolding = Instantiate(cleanPlastic[i], PlayerController.instance.itemHolder);
+                    PlayerController.instance.objectHolding = Instantiate(Box, PlayerController.instance.itemHolder);
                     Debug.Log("cleaned plastic");
-                    PlayerController.instance.animator.SetBool("busy", false);
-                    
+                    //PlayerController.instance.animator.SetBool("busy", false);
+
                     break;
-                    
-}
-            }
-        }
-        else if(PlayerController.instance.objectHolding.tag == "ContaminatedMetal")
-        {
-            for (int i = 0; i < contaminatedMetal.Length; i++)
-            {
-                Debug.Log(PlayerController.instance.objectHolding.name + "(Clone)");
-                if (PlayerController.instance.objectHolding.name == contaminatedMetal[i].name + "(Clone)")
-                {
-                    Destroy(PlayerController.instance.objectHolding);
-                    PlayerController.instance.objectHolding = Instantiate(cleanMetal[i], PlayerController.instance.itemHolder);
-                    break;
+
                 }
             }
         }
-        
+
         progress.value = progress.minValue;
         yield break;
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class TrashPile : MonoBehaviour
 {
     public static TrashPile instance;
-    public GameObject playerRef;
+    private GameObject playerRef;
     public GameObject trashBagPrefab;
     public float distancebetweentrashpile;
     public bool isClose;

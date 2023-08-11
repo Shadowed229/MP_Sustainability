@@ -20,6 +20,7 @@ TagManager:
   - ContaminatedPlastic
   - ContaminatedMetal
   - WrappedGlass
+  - Box
   layers:
   - Default
   - TransparentFX
