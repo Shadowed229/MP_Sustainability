@@ -19,7 +19,7 @@ public class WashingBasin : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animator.SetTrigger("Idle");
+        
     }
 
     // Update is called once per frame
@@ -60,7 +60,7 @@ public class WashingBasin : MonoBehaviour
             //PlayerController.instance.objectHolding.SetActive(false);
             StartCoroutine(UpdateProgressBar());
             PlayerController.instance.animator.SetBool("busy", true);
-            animator.SetTrigger("Basinon");
+            animator.SetBool("Basinon", true);
         }
         
     }
@@ -82,7 +82,7 @@ public class WashingBasin : MonoBehaviour
         if (score == 3f)
         {
             StartCoroutine(FinishWashing());
-            animator.SetTrigger("Basinoff");
+            animator.SetBool("Basinoff", false);
         }
 
     }
