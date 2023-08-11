@@ -88,7 +88,7 @@ public class PickUp : MonoBehaviour
                 
                 
                 itemColliders = Physics2D.OverlapCircleAll(transform.position, pickupRadius, pickupLayer);
-                Debug.Log(itemColliders[0]);
+                //Debug.Log(itemColliders[0]);
                 Debug.Log("why not working");
                 if (itemColliders.Length >= 1)
                 {

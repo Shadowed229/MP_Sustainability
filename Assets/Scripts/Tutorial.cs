@@ -38,14 +38,31 @@ public class Tutorial : MonoBehaviour
         }
         else if (popUpIndex == 1)
         {
-            if (PickUp.instance.holding == true)
+            if (TrashPile.instance.isClose == true)
             {
                 popUpIndex++;
             }
         }
         else if (popUpIndex == 2)
         {
-            //if
+            if (PlayerController.instance.objectHolding.name == "TrashBag" + "(Clone)")
+            {
+                popUpIndex++;
+            }
+        }
+        else if (popUpIndex == 3)
+        {
+            if (WorkStation. isClose == true)
+            {
+                popUpIndex++;
+            }
+        }
+        else if (popUpIndex == 4)
+        {
+            if (PlayerController.instance.isWorking == true)
+            {
+                popUpIndex++;
+            }
         }
     }
 }
