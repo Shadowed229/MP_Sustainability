@@ -8,6 +8,7 @@ public class GeneralWaste : MonoBehaviour
     public static bool isClose;
     public Text points;
     public Transform textTrans;
+    public Animator animator;
     //public Slider progress;
     // Start is called before the first frame update
     void Start()
@@ -45,7 +46,10 @@ public class GeneralWaste : MonoBehaviour
     {
         if (PlayerController.instance.objectHolding.tag == "GeneralWaste")
         {
+            animator.SetTrigger("generalOpen");
             return true;
+           
+
         }
         else
         {
@@ -78,6 +82,8 @@ public class GeneralWaste : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         points.gameObject.SetActive(false);
         points.gameObject.transform.position = textTrans.position;
+        animator.SetTrigger("generalClose");
+
     }
     /*
     IEnumerator FinishWashing()
