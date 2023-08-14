@@ -101,7 +101,7 @@ public class WashingBasin : MonoBehaviour
                     Destroy(PlayerController.instance.objectHolding);
                     PlayerController.instance.objectHolding = Instantiate(cleanPlastic[i], PlayerController.instance.itemHolder);
                     Debug.Log("cleaned plastic");
-                    PlayerController.instance.animator.SetBool("busy", false);
+                    
                     
                     break;
                     
@@ -121,7 +121,7 @@ public class WashingBasin : MonoBehaviour
                 }
             }
         }
-        
+        PlayerController.instance.animator.SetBool("busy", false);
         progress.value = progress.minValue;
         yield break;
     }
