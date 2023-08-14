@@ -46,7 +46,8 @@ public class GeneralWaste : MonoBehaviour
     {
         if (PlayerController.instance.objectHolding.tag == "GeneralWaste")
         {
-            animator.SetTrigger("generalOpen");
+            animator.SetBool("generalOpen", true);
+            
             return true;
            
 
@@ -82,7 +83,7 @@ public class GeneralWaste : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         points.gameObject.SetActive(false);
         points.gameObject.transform.position = textTrans.position;
-        animator.SetTrigger("generalClose");
+        animator.SetBool("generalOpen", false);
 
     }
     /*

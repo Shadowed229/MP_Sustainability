@@ -34,6 +34,7 @@ public class RecyclingBin : MonoBehaviour
         float distancebetweenPlayer = Vector3.Distance(transform.position, PlayerController.instance.transform.position);
         if (distancebetweenPlayer < 3.5)
         {
+            
             isClose = true;
         }
         else
@@ -44,7 +45,8 @@ public class RecyclingBin : MonoBehaviour
 
     bool isRecyclable()
     {
-        if(PlayerController.instance.objectHolding.tag == "Box_Glass")
+        animator.SetBool("recycleOpen", true);
+        if (PlayerController.instance.objectHolding.tag == "Box_Glass")
         {
             return true;
         }
@@ -79,6 +81,7 @@ public class RecyclingBin : MonoBehaviour
             points.transform.Translate(Vector3.up * Time.deltaTime);
             StartCoroutine(UpdateTextPos());
             PlayerController.instance.animator.SetTrigger("drop");
+            
 
         }
     }
@@ -92,6 +95,7 @@ public class RecyclingBin : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         points.gameObject.SetActive(false);
         points.gameObject.transform.position = textTrans.position;
+        animator.SetBool("recycleOpen", false);
         yield return true;
     }
     
