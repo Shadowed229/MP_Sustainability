@@ -43,7 +43,7 @@ public class RBin : MonoBehaviour
 
     bool isRegulated()
     {
-        if (PlayerController.instance.objectHolding.tag == "Box")
+        if (PlayerController.instance.objectHolding.tag == "Box_Ewaste")
         {
             return true;
         }
