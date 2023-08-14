@@ -45,9 +45,12 @@ public class Tutorial : MonoBehaviour
         }
         else if (popUpIndex == 2)
         {
-            if (PlayerController.instance.objectHolding.name == "TrashBag" + "(Clone)")
+            if(PlayerController.instance.objectHolding != null)
             {
-                popUpIndex++;
+                if (PlayerController.instance.objectHolding.name == "TrashBag" + "(Clone)")
+                {
+                    popUpIndex++;
+                }
             }
         }
         else if (popUpIndex == 3)

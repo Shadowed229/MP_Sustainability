@@ -7,24 +7,54 @@ public class InteractButton : MonoBehaviour, IPointerUpHandler, IPointerDownHand
 {
     public static InteractButton instance;
     public bool buttonPressed;
+    public bool buttonHold;
     public bool buttonUp;
+    float clickTime = 0.01f;
+    bool clickable = true;
+
     private void Awake()
     {
         instance = this;
     }
     void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
     {
+      //  buttonHold = true;
        
     }
     void IPointerUpHandler.OnPointerUp(PointerEventData eventData)
     {
-        buttonPressed = false;
+       // buttonUp = true;
     }
-
     void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
     {
-        buttonPressed = true;
+        if(clickable == true)
+        {
+            clickable = false;
+            buttonPressed = true;
+        }
+        
+    }
 
-        Debug.Log("Button pressed");
+    private void Update()
+    {
+        checkClick();
+    }
+    void checkClick()
+    {
+        
+        if (clickable == false)
+        {
+            
+            buttonPressed = false;
+            clickTime -= Time.deltaTime;
+            Debug.Log(clickTime);
+
+            if (clickTime <= 0)
+            {
+                
+                clickTime = 0.01f;
+                clickable = true;
+            }
+        }
     }
 }
