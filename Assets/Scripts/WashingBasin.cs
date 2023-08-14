@@ -82,7 +82,8 @@ public class WashingBasin : MonoBehaviour
         if (score == 3f)
         {
             StartCoroutine(FinishWashing());
-            animator.SetBool("Basinoff", false);
+            animator.SetBool("Basinon", false);
+
         }
 
     }
@@ -102,7 +103,8 @@ public class WashingBasin : MonoBehaviour
                     PlayerController.instance.objectHolding = Instantiate(cleanPlastic[i], PlayerController.instance.itemHolder);
                     Debug.Log("cleaned plastic");
                     PlayerController.instance.animator.SetBool("busy", false);
-                    
+                    animator.SetBool("Basinon", false);
+
                     break;
                     
 }
@@ -117,6 +119,8 @@ public class WashingBasin : MonoBehaviour
                 {
                     Destroy(PlayerController.instance.objectHolding);
                     PlayerController.instance.objectHolding = Instantiate(cleanMetal[i], PlayerController.instance.itemHolder);
+                    PlayerController.instance.animator.SetBool("busy", false);
+                    animator.SetBool("Basinon", false);
                     break;
                 }
             }
