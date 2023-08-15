@@ -6,7 +6,8 @@ public class Tutorial : MonoBehaviour
 {
     public GameObject[] popUps;
     private int popUpIndex;
-
+    private float waitTime = 5f;
+    public float waitTimeIndex;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,9 +30,15 @@ public class Tutorial : MonoBehaviour
             }
         }
 
-        if(popUpIndex == 0)
+        Level1Tutorial();
+        
+    }
+
+    void Level1Tutorial()
+    {
+        if (popUpIndex == 0)
         {
-            if(PlayerController.instance.theRB.velocity != Vector2.zero)
+            if (PlayerController.instance.theRB.velocity != Vector2.zero)
             {
                 popUpIndex++;
             }
@@ -45,7 +52,7 @@ public class Tutorial : MonoBehaviour
         }
         else if (popUpIndex == 2)
         {
-            if(PlayerController.instance.objectHolding != null)
+            if (PlayerController.instance.objectHolding != null)
             {
                 if (PlayerController.instance.objectHolding.name == "TrashBag" + "(Clone)")
                 {
@@ -55,7 +62,7 @@ public class Tutorial : MonoBehaviour
         }
         else if (popUpIndex == 3)
         {
-            if (WorkStation. isClose == true)
+            if (WorkStation.isClose == true)
             {
                 popUpIndex++;
             }
@@ -63,6 +70,34 @@ public class Tutorial : MonoBehaviour
         else if (popUpIndex == 4)
         {
             if (PlayerController.instance.isWorking == true)
+            {
+                popUpIndex++;
+            }
+        }
+        else if (popUpIndex == 5)
+        {
+            waitTimeIndex = waitTime;
+
+            if (waitTimeIndex > 0f && PlayerController.instance.objectHolding != null)
+            {
+                waitTimeIndex -= Time.deltaTime;
+            }
+
+            if (waitTimeIndex <= 0f)
+            { 
+                popUpIndex++;
+            }
+        }
+        else if (popUpIndex == 6)
+        {
+            waitTimeIndex = waitTime;
+
+            if (waitTimeIndex > 0f)
+            {
+                waitTime -= Time.deltaTime;
+            }
+
+            if (waitTimeIndex <= 0f)
             {
                 popUpIndex++;
             }
