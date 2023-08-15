@@ -40,7 +40,7 @@ public class WorkStation : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
         float distancebetweenPlayer = Vector3.Distance(transform.position, player.transform.position);
-        if(distancebetweenPlayer < 4)
+        if(distancebetweenPlayer < 5)
         {
             isClose = true;
         }
