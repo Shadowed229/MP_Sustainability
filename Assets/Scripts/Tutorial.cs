@@ -12,6 +12,7 @@ public class Tutorial : MonoBehaviour
     void Start()
     {
         popUpIndex = 0;
+        waitTimeIndex = waitTime;
     }
 
     // Update is called once per frame
@@ -76,30 +77,24 @@ public class Tutorial : MonoBehaviour
         }
         else if (popUpIndex == 5)
         {
-            waitTimeIndex = waitTime;
-
-            if (waitTimeIndex > 0f && PlayerController.instance.objectHolding != null)
+            if (waitTimeIndex <= 0f)
+            {
+                popUpIndex++;
+            }
+            else if(PlayerController.instance.objectHolding != null)
             {
                 waitTimeIndex -= Time.deltaTime;
-            }
-
-            if (waitTimeIndex <= 0f)
-            { 
-                popUpIndex++;
             }
         }
         else if (popUpIndex == 6)
         {
-            waitTimeIndex = waitTime;
-
-            if (waitTimeIndex > 0f)
-            {
-                waitTime -= Time.deltaTime;
-            }
-
             if (waitTimeIndex <= 0f)
             {
                 popUpIndex++;
+            }
+            else
+            {
+                waitTimeIndex -= Time.deltaTime;
             }
         }
     }
