@@ -59,6 +59,7 @@ public class CompostBin : MonoBehaviour
     {
         if (InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup"))
         {
+            InteractButton.instance.buttonPressed = false;
             Destroy(PlayerController.instance.objectHolding);
             LevelManager.instance.score += 1;
             points.color = Color.green;

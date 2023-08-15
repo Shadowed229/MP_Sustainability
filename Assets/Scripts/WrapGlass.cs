@@ -55,6 +55,7 @@ public class WrapGlass : MonoBehaviour
     {
         if ((InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup")) && (PlayerController.instance.objectHolding.tag == "Glass"))
         {
+            InteractButton.instance.buttonPressed = false;
             PickUp.instance.holding = false;
             //PlayerController.instance.objectHolding.SetActive(false);
             StartCoroutine(UpdateProgressBar());

@@ -54,6 +54,7 @@ public class WorkStation : MonoBehaviour
             Debug.Log("Close to Workstation!"); 
             if ((InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup")) && PlayerController.instance.objectHolding.tag == "Trash")
             {
+                InteractButton.instance.buttonPressed = false;
                 Destroy(PlayerController.instance.objectHolding);
                 PickUp.instance.holding = false;
                 StartCoroutine(UpdateProgressBar());
