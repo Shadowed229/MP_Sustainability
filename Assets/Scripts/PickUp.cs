@@ -82,6 +82,7 @@ public class PickUp : MonoBehaviour
     {
         if (InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup"))
         {
+            InteractButton.instance.buttonPressed = false;
             Debug.Log("test");
             if (holding == false)
             {

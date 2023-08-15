@@ -28,6 +28,7 @@ public class WrappingStation : MonoBehaviour
 
         if (isClose && PickUp.instance.holding == true && PlayerController.instance.objectHolding != null)
         {
+            InteractButton.instance.buttonPressed = false;
             WrappingWaste();
 
         }
