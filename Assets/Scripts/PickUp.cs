@@ -120,6 +120,7 @@ public class PickUp : MonoBehaviour
                     holding = true;
                     PlayerController.instance.animator.SetTrigger("carry");
                     PlayerController.instance.animator.SetBool("carry and walk", true);
+                    Debug.Log("hiiiiii");
                 }
             }
             else if (holding == true && WorkStation.isClose == false && TrashPile.instance.isClose == false && RecyclingBin.isClose == false && WashingBasin.isClose == false)

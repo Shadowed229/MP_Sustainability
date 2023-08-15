@@ -190,6 +190,7 @@ public class PlayerController : MonoBehaviour
 
                 }
                 animator.SetBool("walking", true);
+                
             }
             else
             {
@@ -205,6 +206,17 @@ public class PlayerController : MonoBehaviour
             else if(moveInput.x > 0)
             {
                 sr.flipX = false;
+            }
+            if (objectHolding != null)
+            {
+                animator.SetBool("carry and walk", true);
+                Debug.Log("workkkkkkkkkkkk");
+
+            }
+            else
+            {
+                animator.SetBool("is carrying", false);
+                animator.SetBool("carry and walk", false);
             }
         }
     }
