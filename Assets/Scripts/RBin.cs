@@ -8,6 +8,7 @@ public class RBin : MonoBehaviour
     public static bool isClose;
     public Text points;
     public Transform textTrans;
+    public Animator animator;
     //public Slider progress;
     // Start is called before the first frame update
     void Start()
@@ -45,6 +46,7 @@ public class RBin : MonoBehaviour
     {
         if (PlayerController.instance.objectHolding.tag == "Box_Ewaste")
         {
+            animator.SetBool("ROpen", true);
             return true;
         }
         else
@@ -77,6 +79,7 @@ public class RBin : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
         points.gameObject.SetActive(false);
+        animator.SetBool("ROpen", false);
         points.gameObject.transform.position = textTrans.position;
     }
     /*
