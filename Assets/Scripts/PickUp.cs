@@ -119,6 +119,7 @@ public class PickUp : MonoBehaviour
                     PlayerController.instance.objectHolding.transform.SetParent(PlayerController.instance.itemHolder.transform);
                     holding = true;
                     PlayerController.instance.animator.SetTrigger("carry");
+                    PlayerController.instance.animator.SetBool("carry and walk", true);
                 }
             }
             else if (holding == true && WorkStation.isClose == false && TrashPile.instance.isClose == false && RecyclingBin.isClose == false && WashingBasin.isClose == false)
@@ -128,7 +129,11 @@ public class PickUp : MonoBehaviour
                 PlayerController.instance.objectHolding.transform.SetParent(null);
                 holding = false;
                 PlayerController.instance.animator.SetTrigger("drop");
-              
+                PlayerController.instance.animator.SetBool("carry and walk", false);
+
+
+
+
             }
 
         }
