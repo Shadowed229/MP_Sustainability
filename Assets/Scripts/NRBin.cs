@@ -8,6 +8,7 @@ public class NRBin : MonoBehaviour
     public static bool isClose;
     public Text points;
     public Transform textTrans;
+    public Animator animator;
     //public Slider progress;
     // Start is called before the first frame update
     void Start()
@@ -45,7 +46,9 @@ public class NRBin : MonoBehaviour
     {
         if (PlayerController.instance.objectHolding.tag == "NonRegulated")
         {
+            animator.SetBool("NROpen", true);
             return true;
+            
         }
         else
         {
@@ -77,6 +80,7 @@ public class NRBin : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
         points.gameObject.SetActive(false);
+        animator.SetBool("NROpen", false);
         points.gameObject.transform.position = textTrans.position;
     }
     /*

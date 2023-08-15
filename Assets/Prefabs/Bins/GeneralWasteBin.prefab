@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7647605727723088738}
   - component: {fileID: 5568708894270411854}
   - component: {fileID: 5023993803029525264}
+  - component: {fileID: 2898481702290455136}
   m_Layer: 0
   m_Name: GeneralWasteBin
   m_TagString: Untagged
@@ -100,6 +101,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points: {fileID: 7132496363250848167}
   textTrans: {fileID: 7721743551553887012}
+  animator: {fileID: 0}
+--- !u!95 &2898481702290455136
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4742334302469715888}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e410f71b3f718064593c4c02fdd85a12, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5615310307222040282
 GameObject:
   m_ObjectHideFlags: 0

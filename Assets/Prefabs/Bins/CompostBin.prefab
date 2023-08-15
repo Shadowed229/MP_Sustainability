@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7195715481173130039}
   - component: {fileID: 2824819279780395716}
   - component: {fileID: 3204897341470775499}
+  - component: {fileID: 3375976139636831245}
   m_Layer: 0
   m_Name: CompostBin
   m_TagString: Untagged
@@ -100,6 +101,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points: {fileID: 1911763273316236578}
   textTrans: {fileID: 6692622534647641908}
+--- !u!95 &3375976139636831245
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4557285964091921881}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8cb39e1eebbbaf6479722b03e4eb3817, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5369982686116095362
 GameObject:
   m_ObjectHideFlags: 0

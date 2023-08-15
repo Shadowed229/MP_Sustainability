@@ -82,7 +82,7 @@ public class WashingBasin : MonoBehaviour
         if (score == 3f)
         {
             StartCoroutine(FinishWashing());
-            animator.SetBool("Basinoff", false);
+            animator.SetBool("Basinon", false);
         }
 
     }
