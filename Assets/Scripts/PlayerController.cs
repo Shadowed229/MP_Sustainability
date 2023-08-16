@@ -57,89 +57,7 @@ public class PlayerController : MonoBehaviour
         instance = this;
         sr = gameObject.GetComponent<SpriteRenderer>();
     }
-    /*
-    private void OnEnable()
-    {
-        EnhancedTouchSupport.Enable();
-        ETouch.Touch.onFingerDown += Touch_onFingerDown;
-        ETouch.Touch.onFingerUp += HandleLoseFinger;
-        ETouch.Touch.onFingerMove += Touch_onFingerMove;
-    }
 
-    private void OnDisable()
-    {
-        ETouch.Touch.onFingerDown -= Touch_onFingerDown;
-        ETouch.Touch.onFingerUp -= HandleLoseFinger;
-        ETouch.Touch.onFingerMove -= Touch_onFingerMove;
-        EnhancedTouchSupport.Disable();
-    }
-
-    private void Touch_onFingerMove(Finger MovedFinger)
-    {
-        if (MovedFinger == movementFinger)
-        {
-            Vector2 knobPosition;
-            float maxMovement = joystickSize.x / 2;
-            ETouch.Touch currentTouch = MovedFinger.currentTouch;
-
-            if (Vector2.Distance(currentTouch.screenPosition, joystick.rectTransform.anchoredPosition) > maxMovement)
-            {
-                knobPosition = (currentTouch.screenPosition - joystick.rectTransform.anchoredPosition).normalized * maxMovement;
-            }
-            else
-            {
-                knobPosition = currentTouch.screenPosition - joystick.rectTransform.anchoredPosition;
-            }
-
-            joystick.knob.anchoredPosition = knobPosition;
-            movementAmount = knobPosition / maxMovement;
-        }
-    }
-
-    private void HandleLoseFinger(Finger LostFinger)
-    {
-        movementFinger = null;
-        joystick.knob.anchoredPosition = Vector2.zero;
-        joystick.gameObject.SetActive(false);
-        movementAmount = Vector2.zero;
-    }
-
-    private void Touch_onFingerDown(Finger TouchedFinger)
-    {
-        if (movementFinger == null && TouchedFinger.screenPosition.x <= Screen.width / 2f)
-        {
-            movementFinger = TouchedFinger;
-            movementAmount = Vector2.zero;
-            if (LevelManager.instance.isPaused == false)
-            {
-                joystick.gameObject.SetActive(true);
-            }
-
-            joystick.rectTransform.sizeDelta = joystickSize;
-            joystick.rectTransform.anchoredPosition = ClampStartPosition(TouchedFinger.screenPosition);
-        }
-    }
-
-    private Vector2 ClampStartPosition(Vector2 startPosition)
-    {
-        if (startPosition.x < joystickSize.x / 2)
-        {
-            startPosition.x = joystickSize.x / 2;
-        }
-
-        if (startPosition.y < joystickSize.y / 2)
-        {
-            startPosition.y = joystickSize.y / 2;
-        }
-        else if (startPosition.y > Screen.height - joystickSize.y / 2)
-        {
-            startPosition.y = Screen.height - joystickSize.y / 2;
-        }
-
-        return startPosition;
-
-    }
-    */
     // Start is called before the first frame update
     void Start()
     {
@@ -207,6 +125,7 @@ public class PlayerController : MonoBehaviour
             {
                 sr.flipX = false;
             }
+
             if (objectHolding != null)
             {
                 animator.SetBool("carry and walk", true);

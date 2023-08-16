@@ -82,15 +82,13 @@ public class PickUp : MonoBehaviour
     {
         if (InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup"))
         {
-            InteractButton.instance.buttonPressed = false;
+            
             Debug.Log("test");
             if (holding == false)
             {
                 
                 
                 itemColliders = Physics2D.OverlapCircleAll(transform.position, pickupRadius, pickupLayer);
-                //Debug.Log(itemColliders[0]);
-                Debug.Log("why not working");
                 if (itemColliders.Length >= 1)
                 {
                     // We create two temporary variables that exist only in the scope of this if statement...
@@ -122,7 +120,10 @@ public class PickUp : MonoBehaviour
                     PlayerController.instance.animator.SetTrigger("carry");
                     PlayerController.instance.animator.SetBool("carry and walk", true);
                     Debug.Log("hiiiiii");
+
+                    InteractButton.instance.buttonPressed = false;
                 }
+                
             }
             else if (holding == true && WorkStation.isClose == false && TrashPile.instance.isClose == false && RecyclingBin.isClose == false && WashingBasin.isClose == false)
             {
@@ -134,10 +135,10 @@ public class PickUp : MonoBehaviour
                 PlayerController.instance.animator.SetBool("carry and walk", false);
 
 
-
+                InteractButton.instance.buttonPressed = false;
 
             }
-
+            
         }
     }
 

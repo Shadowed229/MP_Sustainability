@@ -387,6 +387,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4083363253810361254}
   - component: {fileID: 4580986611130852657}
+  - component: {fileID: 9036084403306840123}
   m_Layer: 0
   m_Name: WrapGlass
   m_TagString: Untagged
@@ -404,7 +405,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -11.96, y: 12.13, z: 0.026489004}
-  m_LocalScale: {x: 2.9, y: 2.9, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2619278367136573410}
@@ -462,3 +463,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &9036084403306840123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7458021370053764081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef6bdf0da2c71b47b518d0b5d40882c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progress: {fileID: 8897247346603643617}
+  Glass:
+  - {fileID: 6441520797120551177, guid: d0db44df3a6328b4db0e2ca00e149806, type: 3}
+  - {fileID: 6441520797120551177, guid: 3c6e0170c7810ca468105d6b972a0b1f, type: 3}
+  Box: {fileID: 6441520797120551177, guid: b32397bacb69ae2489c25d523a64dc32, type: 3}
+  animator: {fileID: 0}

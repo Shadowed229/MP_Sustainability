@@ -80,6 +80,7 @@ public class Tutorial : MonoBehaviour
             if (waitTimeIndex <= 0f)
             {
                 popUpIndex++;
+                waitTimeIndex = waitTime;
             }
             else if(PlayerController.instance.objectHolding != null)
             {
@@ -91,6 +92,7 @@ public class Tutorial : MonoBehaviour
             if (waitTimeIndex <= 0f)
             {
                 popUpIndex++;
+                waitTimeIndex = waitTime;
             }
             else
             {
