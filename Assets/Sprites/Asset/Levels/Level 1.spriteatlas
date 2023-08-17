@@ -47,26 +47,19 @@ SpriteAtlas:
     packables:
     - {fileID: 2800000, guid: 5dddc72ba18864f4580060281b769385, type: 3}
     - {fileID: 2800000, guid: 1e8cf17572081074cb389134ee6f172c, type: 3}
-    - {fileID: 2800000, guid: babfd5f5b24675f4989bc604f8b439f1, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
     packedSpriteRenderDataKeys:
-    - 8ae713a4b5dfb3a4d9a2097590da6035: -2108209232
-    - 8ae713a4b5dfb3a4d9a2097590da6035: 736845163
-    - 8ae713a4b5dfb3a4d9a2097590da6035: -84532644
-    - 8ae713a4b5dfb3a4d9a2097590da6035: 1820700028
+    - 1e8cf17572081074cb389134ee6f172c: 21300000
+    - 5dddc72ba18864f4580060281b769385: 21300000
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: -2108209232, guid: 8ae713a4b5dfb3a4d9a2097590da6035, type: 3}
-  - {fileID: 736845163, guid: 8ae713a4b5dfb3a4d9a2097590da6035, type: 3}
-  - {fileID: -84532644, guid: 8ae713a4b5dfb3a4d9a2097590da6035, type: 3}
-  - {fileID: 1820700028, guid: 8ae713a4b5dfb3a4d9a2097590da6035, type: 3}
+  - {fileID: 21300000, guid: 1e8cf17572081074cb389134ee6f172c, type: 3}
+  - {fileID: 21300000, guid: 5dddc72ba18864f4580060281b769385, type: 3}
   m_PackedSpriteNamesToIndex:
-  - walls
-  - floor tile level 1 (2)
-  - floor tile lvl 1
-  - floor tile level 1 (3)
+  - wall
+  - wall bottom
   m_RenderDataMap: {}
   m_Tag: Level 1
   m_IsVariant: 0
