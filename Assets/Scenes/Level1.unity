@@ -1344,27 +1344,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 319080595716579186, guid: 2c617220d5d663948aaabf068351127e, type: 3}
       propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 757642424560751481, guid: 2c617220d5d663948aaabf068351127e, type: 3}
-      propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 770470298650209595, guid: 2c617220d5d663948aaabf068351127e, type: 3}
-      propertyPath: m_Text
-      value: Approach the "Workstation"
-      objectReference: {fileID: 0}
-    - target: {fileID: 901102266090991012, guid: 2c617220d5d663948aaabf068351127e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2983270042766572386, guid: 2c617220d5d663948aaabf068351127e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 488
-      objectReference: {fileID: 0}
-    - target: {fileID: 2983270042766572386, guid: 2c617220d5d663948aaabf068351127e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 227
       objectReference: {fileID: 0}
     - target: {fileID: 3021754421450594249, guid: 2c617220d5d663948aaabf068351127e, type: 3}
       propertyPath: m_Pivot.x
@@ -1449,71 +1429,6 @@ PrefabInstance:
     - target: {fileID: 3149703534030421790, guid: 2c617220d5d663948aaabf068351127e, type: 3}
       propertyPath: m_Name
       value: Level 1 Tutorial
-      objectReference: {fileID: 0}
-    - target: {fileID: 3319480548797549710, guid: 2c617220d5d663948aaabf068351127e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3321958252185608273, guid: 2c617220d5d663948aaabf068351127e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3476824328673361290, guid: 2c617220d5d663948aaabf068351127e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3831096036738876792, guid: 2c617220d5d663948aaabf068351127e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 488
-      objectReference: {fileID: 0}
-    - target: {fileID: 3831096036738876792, guid: 2c617220d5d663948aaabf068351127e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 227
-      objectReference: {fileID: 0}
-    - target: {fileID: 4004981438798418005, guid: 2c617220d5d663948aaabf068351127e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 488
-      objectReference: {fileID: 0}
-    - target: {fileID: 4004981438798418005, guid: 2c617220d5d663948aaabf068351127e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 227
-      objectReference: {fileID: 0}
-    - target: {fileID: 4886391647721811217, guid: 2c617220d5d663948aaabf068351127e, type: 3}
-      propertyPath: m_Text
-      value: Now, use the interact button to carry out different actions and clear
-        the stage!
-      objectReference: {fileID: 0}
-    - target: {fileID: 4886391647721811217, guid: 2c617220d5d663948aaabf068351127e, type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 5002598327807384297, guid: 2c617220d5d663948aaabf068351127e, type: 3}
-      propertyPath: m_Text
-      value: Approach the trashpile
-      objectReference: {fileID: 0}
-    - target: {fileID: 5564591042718742242, guid: 2c617220d5d663948aaabf068351127e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6585481826760345101, guid: 2c617220d5d663948aaabf068351127e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 488
-      objectReference: {fileID: 0}
-    - target: {fileID: 6585481826760345101, guid: 2c617220d5d663948aaabf068351127e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 227
-      objectReference: {fileID: 0}
-    - target: {fileID: 8120937227742988638, guid: 2c617220d5d663948aaabf068351127e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8900911956524179977, guid: 2c617220d5d663948aaabf068351127e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 488
-      objectReference: {fileID: 0}
-    - target: {fileID: 8900911956524179977, guid: 2c617220d5d663948aaabf068351127e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 227
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
