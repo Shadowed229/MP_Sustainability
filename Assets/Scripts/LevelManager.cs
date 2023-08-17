@@ -8,6 +8,7 @@ public class LevelManager : MonoBehaviour
     public bool isPaused;
     public bool isGameOver;
     public float score;
+    public int rubbishspawn;
     
     
     private void Awake()
@@ -17,15 +18,16 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rubbishspawn = Random.Range(5, 6);
         score = 0;
-        UIController.instance.progressbar.maxValue = 3;
+        UIController.instance.progressbar.maxValue = rubbishspawn;
     }
 
     // Update is called once per frame
     void Update()
     {
         UIController.instance.progressbar.value = score;
-        if (score >= 3)
+        if (score >= rubbishspawn)
         {
             Debug.Log("YOU WIN!");
             isGameOver = true;
