@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 6888850896471674546}
   - component: {fileID: -1717583807355428667}
   - component: {fileID: 4702622019669971182}
-  - component: {fileID: -4434156198461939960}
+  - component: {fileID: 915356418582594984}
   m_Layer: 0
   m_Name: WashingBasin
   m_TagString: Untagged
@@ -104,7 +104,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.52, y: 16.9, z: -0.21}
-  m_LocalScale: {x: 2.9, y: 2.9, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7748600324733665230}
@@ -129,9 +129,11 @@ MonoBehaviour:
   - {fileID: 2274993628138817788, guid: 773e26cfabc0d104ab3b7e63081c21d5, type: 3}
   contaminatedMetal:
   - {fileID: 3979095348433169421, guid: 70f67d7c785e2b04d90713faa7406cfb, type: 3}
+  - {fileID: 6441520797120551177, guid: 3fd6a28709fe45847a8bfb6967325f11, type: 3}
   cleanMetal:
   - {fileID: 3979095348433169421, guid: 4e0350f622922554fa7e224d3dac1fec, type: 3}
-  animator: {fileID: -4434156198461939960}
+  - {fileID: 6441520797120551177, guid: 082842e65b0f0844ea5f24f57025138a, type: 3}
+  animator: {fileID: 915356418582594984}
 --- !u!212 &4702622019669971182
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -184,7 +186,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &-4434156198461939960
+--- !u!95 &915356418582594984
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -267,7 +269,7 @@ RectTransform:
   m_GameObject: {fileID: 5869236995496366182}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.12511, y: 0.38188085, z: 1}
+  m_LocalScale: {x: 0.02716891, y: 0.19052275, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7199347684123983725}
@@ -276,7 +278,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: 28}
+  m_AnchoredPosition: {x: -1.6, y: -11.8}
   m_SizeDelta: {x: 760, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5487588398896585233
@@ -366,7 +368,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.05, y: 0}
   m_SizeDelta: {x: 800, y: 319.78174}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5573650202368605415
@@ -389,7 +391,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -607337751
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &3577554508716722347
