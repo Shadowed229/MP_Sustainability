@@ -123,6 +123,10 @@ public class PickUp : MonoBehaviour
 
                     InteractButton.instance.buttonPressed = false;
                 }
+                else
+                {
+                    InteractButton.instance.buttonPressed = false;
+                }
                 
             }
             else if (holding == true && WorkStation.isClose == false && TrashPile.instance.isClose == false && RecyclingBin.isClose == false && WashingBasin.isClose == false && WrappingStation.isClose == false && WrapGlass.isClose == false)
