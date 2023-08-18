@@ -137,6 +137,7 @@ public class PickUp : MonoBehaviour
                 holding = false;
                 PlayerController.instance.animator.SetBool("carry and walk", false);
                 PlayerController.instance.animator.SetTrigger("drop");
+                PlayerController.instance.animator.SetBool("walk", true);
 
 
                 InteractButton.instance.buttonPressed = false;
