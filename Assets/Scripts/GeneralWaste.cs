@@ -46,7 +46,7 @@ public class GeneralWaste : MonoBehaviour
     {
         if (PlayerController.instance.objectHolding.tag == "GeneralWaste")
         {
-            animator.SetBool("generalOpen", true);
+            
             
             return true;
            
@@ -69,6 +69,7 @@ public class GeneralWaste : MonoBehaviour
             points.text = "+ 10 pts";
             PickUp.instance.holding = false;
             points.gameObject.SetActive(true);
+            animator.SetBool("generalOpen", true);
             points.transform.Translate(Vector3.up * Time.deltaTime);
             StartCoroutine(UpdateTextPos());
 

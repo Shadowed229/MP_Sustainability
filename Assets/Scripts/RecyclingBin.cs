@@ -48,22 +48,22 @@ public class RecyclingBin : MonoBehaviour
         
         if (PlayerController.instance.objectHolding.tag == "Box_Glass")
         {
-            animator.SetBool("Recycle", true);
+            
             return true;
         }
         else if (PlayerController.instance.objectHolding.tag == "Plastic")
         {
-            animator.SetBool("Recycle", true);
+           
             return true;
         }
         else if (PlayerController.instance.objectHolding.tag == "Metal")
         {
-            animator.SetBool("Recycle", true);
+           
             return true;
         }
         else if (PlayerController.instance.objectHolding.tag == "Paper")
         {
-            animator.SetBool("Recycle", true);
+            
             return true;
         }
         else
@@ -86,7 +86,7 @@ public class RecyclingBin : MonoBehaviour
             points.transform.Translate(Vector3.up * Time.deltaTime);
             StartCoroutine(UpdateTextPos());
             PlayerController.instance.animator.SetTrigger("drop");
-            animator.SetBool("Recycle", false);
+            animator.SetBool("Recycle", true);
 
 
 
@@ -103,8 +103,10 @@ public class RecyclingBin : MonoBehaviour
         points.gameObject.SetActive(false);
         points.gameObject.transform.position = textTrans.position;
         yield return true;
-    }
-    
+        animator.SetBool("Recycle", false);
 
-    
+    }
+
+
+
 }
