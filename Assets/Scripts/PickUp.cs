@@ -118,7 +118,7 @@ public class PickUp : MonoBehaviour
                     PlayerController.instance.objectHolding.transform.SetParent(PlayerController.instance.itemHolder.transform);
                     holding = true;
                     PlayerController.instance.animator.SetTrigger("carry");
-                    PlayerController.instance.animator.SetBool("carry and walk", true);
+                    //PlayerController.instance.animator.SetBool("carry and walk", true);
                     Debug.Log("hiiiiii");
 
                     InteractButton.instance.buttonPressed = false;
@@ -135,8 +135,8 @@ public class PickUp : MonoBehaviour
                 PlayerController.instance.objectHolding.transform.Translate(Vector3.down * 2);
                 PlayerController.instance.objectHolding.transform.SetParent(null);
                 holding = false;
-                PlayerController.instance.animator.SetTrigger("drop");
                 PlayerController.instance.animator.SetBool("carry and walk", false);
+                PlayerController.instance.animator.SetTrigger("drop");
 
 
                 InteractButton.instance.buttonPressed = false;
