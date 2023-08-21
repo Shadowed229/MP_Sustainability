@@ -22,12 +22,13 @@ public class UIController : MonoBehaviour
 
     // Joystick
     [SerializeField]
-    private Vector2 joystickSize = new Vector2(100, 100);
+    private Vector2 joystickSize = new Vector2(200, 200);
     [SerializeField]
     private FloatingJoystick joystick;
     private Finger movementFinger;
     [HideInInspector]
     public Vector2 movementAmount;
+    private Vector2 originalJoystickPos = new Vector2(Screen.width / 10f, Screen.height / 10f);
 
 
     // Start is called before the first frame update
@@ -78,7 +79,7 @@ public class UIController : MonoBehaviour
     {
         movementFinger = null;
         joystick.knob.anchoredPosition = Vector2.zero;
-        joystick.gameObject.SetActive(false);
+        joystick.rectTransform.anchoredPosition = ClampStartPosition(originalJoystickPos);
         movementAmount = Vector2.zero;
     }
 

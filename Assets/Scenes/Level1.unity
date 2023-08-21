@@ -9091,7 +9091,7 @@ MonoBehaviour:
   progressbar: {fileID: 114590590}
   timerText: {fileID: 0}
   dashButton: {fileID: 1532440639}
-  joystickSize: {x: 100, y: 100}
+  joystickSize: {x: 200, y: 200}
   joystick: {fileID: 1756008956}
   movementAmount: {x: 0, y: 0}
 --- !u!114 &2132011432
