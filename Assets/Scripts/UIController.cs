@@ -95,7 +95,7 @@ public class UIController : MonoBehaviour
             }
 
             joystick.rectTransform.sizeDelta = joystickSize;
-            joystick.rectTransform.anchoredPosition = ClampStartPosition(TouchedFinger.screenPosition);
+            joystick.rectTransform.anchoredPosition = ClampStartPosition(Camera.main.WorldToScreenPoint(TouchedFinger.screenPosition));
         }
     }
 
