@@ -18,20 +18,32 @@ public class Tutorial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(popUpIndex);
-        for(int i = 0; i<popUps.Length; i++)
-        {
-            if (i == popUpIndex)
+        
+            Debug.Log(popUpIndex);
+            for (int i = 0; i < popUps.Length; i++)
             {
-                popUps[i].SetActive(true);
-            }
-            else
-            {
-                popUps[i].SetActive(false);
-            }
-        }
+                if (LevelManager.instance.isPaused != true)
+                {
+                    if (i == popUpIndex)
+                    {
+                        popUps[i].SetActive(true);
+                    }
+                    else
+                    {
+                        popUps[i].SetActive(false);
+                    }
+                }
+                else
+                {
+                    popUps[i].SetActive(false);
+                }
 
-        Level1Tutorial();
+            }
+
+            Level1Tutorial();
+        
+       
+        
         
     }
 
