@@ -63,8 +63,8 @@ public class RandomTrash : MonoBehaviour
                 GameObject spawnable4 = allTrash[whichrubbish]; // spawns random glass item
                 Instantiate(spawnable4, spawn1);
 
-                whichrubbish = 8;
-                GameObject spawnable5 = allTrash[whichrubbish]; // spawns 1 trash bag
+                whichrubbish = Random.Range(0, 8);
+                GameObject spawnable5 = allTrash[whichrubbish]; // random rubbish
                 Instantiate(spawnable5, spawn3);
 
                 Debug.Log("Spawning 5 Rubbish");
@@ -87,11 +87,68 @@ public class RandomTrash : MonoBehaviour
                 GameObject spawnable4 = allTrash[whichrubbish]; // spawns random glass item
                 Instantiate(spawnable4, spawn1);
 
-                whichrubbish = 8;
-                GameObject spawnable5 = allTrash[whichrubbish]; // spawns 1 trash bag
+                whichrubbish = Random.Range(0, 7);
+                GameObject spawnable5 = allTrash[whichrubbish]; // random rubbish
                 Instantiate(spawnable5, spawn3);
 
-                whichrubbish = Random.Range(0, 8);
+                whichrubbish = Random.Range(0, 7);
+                GameObject spawnable6 = allTrash[whichrubbish]; // random rubbish
+                Instantiate(spawnable6, spawn7);
+
+                Debug.Log("Spawning 6 Rubbish");
+            }
+        }
+        if (sceneName == "Level2")
+        {
+            int whichrubbish = Random.Range(0, 7);
+            //rubbishspawn = Random.Range(5, 6);
+            if (LevelManager.instance.rubbishspawn == 5) //5 rubbish spawn
+            {
+                whichrubbish = Random.Range(0, 1);
+                GameObject spawnable = allTrash[whichrubbish]; //either spawns dirty can or dirty metal can
+                Instantiate(spawnable, spawn5);
+
+                whichrubbish = 2;
+                GameObject spawnable2 = allTrash[whichrubbish]; // spawns dirty plastic bottle
+                Instantiate(spawnable2, spawn2);
+
+                whichrubbish = Random.Range(5, 7);
+                GameObject spawnable3 = allTrash[whichrubbish]; // Either chips, toothbrush or plastic bag
+                Instantiate(spawnable3, spawn8);
+
+                whichrubbish = Random.Range(3, 4);
+                GameObject spawnable4 = allTrash[whichrubbish]; // spawns random glass item
+                Instantiate(spawnable4, spawn1);
+
+                whichrubbish = Random.Range(8, 9);
+                GameObject spawnable5 = allTrash[whichrubbish]; // spawns random compost item
+                Instantiate(spawnable5, spawn3);
+
+                Debug.Log("Spawning 5 Rubbish");
+            }
+            if (LevelManager.instance.rubbishspawn == 6) //6 rubbish spawn
+            {
+                whichrubbish = Random.Range(0, 1);
+                GameObject spawnable = allTrash[whichrubbish]; //either spawns dirty can or dirty metal can
+                Instantiate(spawnable, spawn5);
+
+                whichrubbish = 2;
+                GameObject spawnable2 = allTrash[whichrubbish]; // spawns dirty plastic bottle
+                Instantiate(spawnable2, spawn2);
+
+                whichrubbish = Random.Range(5, 7);
+                GameObject spawnable3 = allTrash[whichrubbish]; // Either chips, toothbrush or plastic bag
+                Instantiate(spawnable3, spawn8);
+
+                whichrubbish = Random.Range(3, 4);
+                GameObject spawnable4 = allTrash[whichrubbish]; // spawns random glass item
+                Instantiate(spawnable4, spawn1);
+
+                whichrubbish = Random.Range(8, 9);
+                GameObject spawnable5 = allTrash[whichrubbish]; // spawns random compost item
+                Instantiate(spawnable5, spawn3);
+
+                whichrubbish = Random.Range(0, 9);
                 GameObject spawnable6 = allTrash[whichrubbish]; // random rubbish
                 Instantiate(spawnable6, spawn7);
 
