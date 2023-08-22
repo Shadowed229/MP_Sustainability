@@ -4204,6 +4204,10 @@ PrefabInstance:
       value: -0.12
       objectReference: {fileID: 0}
     - target: {fileID: 4550088023322896372, guid: 1873bd422b277a742bf138b1deaf6f85, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 317674778}
+    - target: {fileID: 4550088023322896372, guid: 1873bd422b277a742bf138b1deaf6f85, type: 3}
       propertyPath: joystick
       value: 
       objectReference: {fileID: 1192049189}
@@ -4215,6 +4219,10 @@ PrefabInstance:
       propertyPath: itemHolder
       value: 
       objectReference: {fileID: 317674776}
+    - target: {fileID: 4550088023322896374, guid: 1873bd422b277a742bf138b1deaf6f85, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 317674778}
     - target: {fileID: 4550088023322896375, guid: 1873bd422b277a742bf138b1deaf6f85, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -11298,7 +11306,7 @@ MonoBehaviour:
   progressbar: {fileID: 548173045}
   timerText: {fileID: 0}
   dashButton: {fileID: 799182898}
-  joystickSize: {x: 100, y: 100}
+  joystickSize: {x: 200, y: 200}
   joystick: {fileID: 1192049189}
   movementAmount: {x: 0, y: 0}
 --- !u!114 &1071488393
@@ -11667,7 +11675,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4392687490673047446, guid: 1a59f48ff9496d44586912f9a0d95399, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4392687490673047447, guid: 1a59f48ff9496d44586912f9a0d95399, type: 3}
       propertyPath: m_Pivot.x
@@ -11747,11 +11755,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4392687490673047447, guid: 1a59f48ff9496d44586912f9a0d95399, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 26.999512
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4392687490673047447, guid: 1a59f48ff9496d44586912f9a0d95399, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 23
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4392687490673047447, guid: 1a59f48ff9496d44586912f9a0d95399, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -11956,7 +11964,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6888850896471674546, guid: 61ee041a36c12034bbf76ad7d8f93af7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.14
+      value: 0.62
       objectReference: {fileID: 0}
     - target: {fileID: 6888850896471674546, guid: 61ee041a36c12034bbf76ad7d8f93af7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12265,11 +12273,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4083363253810361254, guid: e2573bcf40af84042aea5d9ff2603612, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.14
+      value: -7.64
       objectReference: {fileID: 0}
     - target: {fileID: 4083363253810361254, guid: e2573bcf40af84042aea5d9ff2603612, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.75
+      value: 3.27
       objectReference: {fileID: 0}
     - target: {fileID: 4083363253810361254, guid: e2573bcf40af84042aea5d9ff2603612, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12984,11 +12992,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1226780393069360417, guid: 23890a1c41b613742bbc8932a5d65122, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.84000015
+      value: 7.24
       objectReference: {fileID: 0}
     - target: {fileID: 1226780393069360417, guid: 23890a1c41b613742bbc8932a5d65122, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.7305293
+      value: -0.62
       objectReference: {fileID: 0}
     - target: {fileID: 1226780393069360417, guid: 23890a1c41b613742bbc8932a5d65122, type: 3}
       propertyPath: m_LocalPosition.z
