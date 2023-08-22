@@ -83,7 +83,6 @@ public class PickUp : MonoBehaviour
         if (InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup"))
         {
             
-            Debug.Log("test");
             if (holding == false)
             {
                 
@@ -129,7 +128,7 @@ public class PickUp : MonoBehaviour
                 }
                 
             }
-            else if (holding == true && WorkStation.isClose == false && TrashPile.instance.isClose == false && RecyclingBin.isClose == false && WashingBasin.isClose == false && WrappingStation.isClose == false && WrapGlass.isClose == false && GeneralWaste.isClose == false)
+            else if (holding == true && WorkStation.isClose == false && RecyclingBin.isClose == false && WashingBasin.isClose == false && WrappingStation.isClose == false && WrapGlass.isClose == false && GeneralWaste.isClose == false && CompostBin.isClose == false)
             {
                 Debug.Log("You dropped up an item!");
                 PlayerController.instance.objectHolding.transform.Translate(Vector3.down * 2);
