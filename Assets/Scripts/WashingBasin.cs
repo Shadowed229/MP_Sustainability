@@ -13,6 +13,8 @@ public class WashingBasin : MonoBehaviour
     public GameObject[] cleanPlastic;
     public GameObject[] contaminatedMetal;
     public GameObject[] cleanMetal;
+    public Transform Wash;
+    public GameObject washCurrent;
 
     public static bool isClose;
     public Animator animator;
@@ -61,6 +63,8 @@ public class WashingBasin : MonoBehaviour
             //PlayerController.instance.objectHolding.SetActive(false);
             StartCoroutine(UpdateProgressBar());
             PlayerController.instance.animator.SetBool("busy", true);
+            washCurrent = Instantiate(PlayerController.instance.objectHolding, Wash);
+            Destroy(PlayerController.instance.objectHolding);
             animator.SetBool("Basinon", true);
         }
         
@@ -91,15 +95,15 @@ public class WashingBasin : MonoBehaviour
     {
         progress.gameObject.SetActive(false);
         PlayerController.instance.isWorking = false;
-        if(PlayerController.instance.objectHolding.tag == "ContaminatedPlastic")
+        if(washCurrent.tag == "ContaminatedPlastic")
         {
             
             for (int i = 0; i < contaminatedPlastic.Length; i++)
             {
-                Debug.Log(PlayerController.instance.objectHolding.name + "(Clone)");
-                if (PlayerController.instance.objectHolding.name == contaminatedPlastic[i].name + "(Clone)")
+                Debug.Log(washCurrent.name + "(Clone)");
+                if (washCurrent.name == contaminatedPlastic[i].name + "(Clone)" + "(Clone)")
                 {
-                    Destroy(PlayerController.instance.objectHolding);
+                    Destroy(washCurrent);
                     PlayerController.instance.objectHolding = Instantiate(cleanPlastic[i], PlayerController.instance.itemHolder);
                     Debug.Log("cleaned plastic");
                     
@@ -109,14 +113,14 @@ public class WashingBasin : MonoBehaviour
 }
             }
         }
-        else if(PlayerController.instance.objectHolding.tag == "ContaminatedMetal")
+        else if(washCurrent.tag == "ContaminatedMetal")
         {
             for (int i = 0; i < contaminatedMetal.Length; i++)
             {
-                Debug.Log(PlayerController.instance.objectHolding.name + "(Clone)");
-                if (PlayerController.instance.objectHolding.name == contaminatedMetal[i].name + "(Clone)")
+                //Debug.Log(PlayerController.instance.objectHolding.name + "(Clone)");
+                if (washCurrent.name == contaminatedMetal[i].name + "(Clone)" + "(Clone)")
                 {
-                    Destroy(PlayerController.instance.objectHolding);
+                    Destroy(washCurrent);
                     PlayerController.instance.objectHolding = Instantiate(cleanMetal[i], PlayerController.instance.itemHolder);
                     break;
                 }
