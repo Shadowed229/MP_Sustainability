@@ -29,6 +29,7 @@ public class LevelManager : MonoBehaviour
         UIController.instance.progressbar.value = score;
         if (score >= rubbishspawn)
         {
+            GameObject.FindWithTag("WinMenu").SetActive(true);
             Debug.Log("YOU WIN!");
             isGameOver = true;
         }
