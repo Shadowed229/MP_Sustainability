@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Tutorial : MonoBehaviour
 {
@@ -8,11 +9,17 @@ public class Tutorial : MonoBehaviour
     private int popUpIndex;
     private float waitTime = 5f;
     public float waitTimeIndex;
+    public Text msgTxt;
+
+    [SerializeField]
+    private TextWriter textWriter;
+
     // Start is called before the first frame update
     void Start()
     {
         popUpIndex = 0;
         waitTimeIndex = waitTime;
+        
     }
 
     // Update is called once per frame
@@ -47,10 +54,15 @@ public class Tutorial : MonoBehaviour
         
     }
 
+
     void Level1Tutorial()
     {
         if (popUpIndex == 0)
         {
+            if(msgTxt.text != null)
+            {
+                textWriter.AddWriter(msgTxt, "trying new function", 0.1f);
+            }
             if (PlayerController.instance.theRB.velocity != Vector2.zero)
             {
                 popUpIndex++;
