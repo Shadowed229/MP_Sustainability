@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6258341720074530977}
   - component: {fileID: 3354176015008621576}
+  - component: {fileID: 763003073109781159}
   m_Layer: 0
   m_Name: TutorialManager
   m_TagString: Untagged
@@ -44,4 +45,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 776c5d98bfc665142ba209a2fc19e19b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popUps: []
+  popUps:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  characterMonologue: {fileID: 0}
+  msgTxt: {fileID: 0}
+  touch: {fileID: 0}
+  textWriter: {fileID: 763003073109781159}
+--- !u!114 &763003073109781159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3526242533934736900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e9ef01825b62140a0747bb937350a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiText: {fileID: 0}
+  isGeneratingText: 0

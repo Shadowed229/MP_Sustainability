@@ -6,14 +6,13 @@ using UnityEngine.UI;
 public class Tutorial : MonoBehaviour
 {
     public GameObject[] popUps;
+    public GameObject characterMonologue;
     private int popUpIndex;
     private float waitTime = 5f;
-    public float waitTimeIndex;
+    private float waitTimeIndex;
     public Text msgTxt;
-
-    [SerializeField]
-    private TextWriter textWriter;
-
+    public Text touch;
+    public TextWriter textWriter;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,52 +24,85 @@ public class Tutorial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-            Debug.Log(popUpIndex);
-            for (int i = 0; i < popUps.Length; i++)
+
+        for (int i = 0; i < popUps.Length; i++)
+        {
+            if (LevelManager.instance.isPaused != true)
             {
-                if (LevelManager.instance.isPaused != true)
+                if (i == popUpIndex)
                 {
-                    if (i == popUpIndex)
-                    {
-                        popUps[i].SetActive(true);
-                    }
-                    else
-                    {
-                        popUps[i].SetActive(false);
-                    }
+                    popUps[i].SetActive(true);
                 }
                 else
                 {
                     popUps[i].SetActive(false);
                 }
-
+            }
+            else
+            {
+                popUps[i].SetActive(false);
             }
 
-            Level1Tutorial();
-        
-       
-        
+        }
+
+        Level1Tutorial();
         
     }
-
 
     void Level1Tutorial()
     {
         if (popUpIndex == 0)
         {
-            if(msgTxt.text != null)
+
+            if (textWriter.isGeneratingText == false)
             {
-                textWriter.AddWriter(msgTxt, "trying new function", 0.1f);
+                characterMonologue.SetActive(true);
+                textWriter.AddWriter(msgTxt, "Hello! Welcome to Eco Warrior! In this levl, we will learn the basics of this game!", 0.02f, true);             
             }
-            if (PlayerController.instance.theRB.velocity != Vector2.zero)
+
+            if (textWriter.uiText == null && waitTimeIndex <= 0)
             {
+                touch.gameObject.SetActive(true);
+                waitTimeIndex = waitTime;
+            }
+            else
+            {
+                waitTimeIndex -= Time.deltaTime;
+            }
+
+            if (textWriter.uiText == null && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+            {        
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touch.gameObject.SetActive(false);
                 popUpIndex++;
             }
+
+#if UNITY_EDITOR
+            if (textWriter.uiText == null && waitTimeIndex <= 0)
+            {
+                touch.gameObject.SetActive(true);
+                waitTimeIndex = waitTime;
+
+            }
+            else
+            {
+                waitTimeIndex -= Time.deltaTime;
+            }
+
+            if (textWriter.uiText == null && Input.GetMouseButtonDown(0))
+            {
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touch.gameObject.SetActive(false);
+                popUpIndex++;
+            }
+# endif
+
         }
         else if (popUpIndex == 1)
         {
-            if (TrashPile.instance.isClose == true)
+            if (PlayerController.instance.theRB.velocity != Vector2.zero)
             {
                 popUpIndex++;
             }
@@ -79,17 +111,32 @@ public class Tutorial : MonoBehaviour
         {
             if (PlayerController.instance.objectHolding != null)
             {
-                if (PlayerController.instance.objectHolding.name == "TrashBag" + "(Clone)")
+                if (PlayerController.instance.objectHolding.tag == "GeneralWaste")
                 {
-                    popUpIndex++;
+                    popUpIndex = 3;
+                }
+                if (PlayerController.instance.objectHolding.tag == "Glass")
+                {
+                    popUpIndex = 4;
+                }
+                if (PlayerController.instance.objectHolding.tag == "ContaminatedPlastic" || PlayerController.instance.objectHolding.tag == "ContaminatedMetal")
+                {
+                    popUpIndex = 5;
                 }
             }
         }
         else if (popUpIndex == 3)
         {
+            if (textWriter.isGeneratingText == false)
+            {
+                characterMonologue.SetActive(true);
+                textWriter.AddWriter(msgTxt, "What you've picked up is General Waste. General waste is any rubbish businesses and households throw away that you can't usually recycle", 0.02f, true);
+
+            }
+
             if (WorkStation.isClose == true)
             {
-                popUpIndex++;
+                popUpIndex = popUps.Length + 1;
             }
         }
         else if (popUpIndex == 4)
