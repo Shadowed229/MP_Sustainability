@@ -9,7 +9,7 @@ public class LevelManager : MonoBehaviour
     public bool isGameOver;
     public float score;
     public int rubbishspawn;
-    
+    public GameObject winMenu;
     
     private void Awake()
     {
@@ -29,7 +29,7 @@ public class LevelManager : MonoBehaviour
         UIController.instance.progressbar.value = score;
         if (score >= rubbishspawn)
         {
-            GameObject.FindWithTag("WinMenu").SetActive(true);
+            winMenu.SetActive(true);
             Debug.Log("YOU WIN!");
             isGameOver = true;
         }

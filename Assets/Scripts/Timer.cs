@@ -8,6 +8,7 @@ public class Timer : MonoBehaviour
 {
     public float timeValue = 90;
     public Text timeText;
+    public GameObject loseMenu;
 
     // Update is called once per frame
     void Update()
@@ -18,6 +19,7 @@ public class Timer : MonoBehaviour
         }
         else
         {
+            loseMenu.SetActive(true);
             Debug.Log("GAME OVER!!!");
             LevelManager.instance.isGameOver = true;
             
