@@ -13,17 +13,21 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(timeValue > 0)
+        if(Tutorial.tutorialing == false)
         {
-            timeValue -= Time.deltaTime;
+            if (timeValue > 0)
+            {
+                timeValue -= Time.deltaTime;
+            }
+            else
+            {
+                loseMenu.SetActive(true);
+                Debug.Log("GAME OVER!!!");
+                LevelManager.instance.isGameOver = true;
+
+            }
         }
-        else
-        {
-            loseMenu.SetActive(true);
-            Debug.Log("GAME OVER!!!");
-            LevelManager.instance.isGameOver = true;
-            
-        }
+       
         DisplayTime(timeValue);
     }
 

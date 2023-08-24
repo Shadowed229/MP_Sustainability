@@ -17,6 +17,8 @@ public class Tutorial : MonoBehaviour
     public bool generalWasteTutDone;
     public bool glassTutDone;
     public bool washTutDone;
+
+    public static bool tutorialing;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +59,7 @@ public class Tutorial : MonoBehaviour
     {
         if (popUpIndex == 0) //intro to the game
         {
+            tutorialing = true;
 
             if (textWriter.isGeneratingText == false)
             {
@@ -79,6 +82,7 @@ public class Tutorial : MonoBehaviour
                 textWriter.isGeneratingText = false;
                 characterMonologue.SetActive(false);
                 touchToProceed.SetActive(false);
+                tutorialing = false;
                 popUpIndex++;
             }
 
@@ -99,6 +103,7 @@ public class Tutorial : MonoBehaviour
                 textWriter.isGeneratingText = false;
                 characterMonologue.SetActive(false);
                 touchToProceed.SetActive(false);
+                tutorialing = false;
                 popUpIndex++;
             }
 # endif
@@ -131,6 +136,7 @@ public class Tutorial : MonoBehaviour
         }
         else if (popUpIndex == 3 ) //general waste tutorial -----------------------------------------------------------------
         {
+            tutorialing = true;
             generalWasteTutDone = true;
 
             if (textWriter.isGeneratingText == false)
@@ -155,6 +161,7 @@ public class Tutorial : MonoBehaviour
                 textWriter.isGeneratingText = false;
                 characterMonologue.SetActive(false);
                 touchToProceed.SetActive(false);
+                tutorialing = false;
                 popUpIndex = popUps.Length + 1;
             }
 
@@ -175,12 +182,14 @@ public class Tutorial : MonoBehaviour
                 textWriter.isGeneratingText = false;
                 characterMonologue.SetActive(false);
                 touchToProceed.SetActive(false);
+                tutorialing = false;
                 popUpIndex = popUps.Length + 1;
             }
 # endif
         }
         else if (popUpIndex == 4 ) // Glass tutorial -------------------------------------------------------------
         {
+            tutorialing = true;
             glassTutDone = true;
 
             if (textWriter.isGeneratingText == false)
@@ -205,6 +214,7 @@ public class Tutorial : MonoBehaviour
                 textWriter.isGeneratingText = false;
                 characterMonologue.SetActive(false);
                 touchToProceed.SetActive(false);
+                tutorialing = false;
                 popUpIndex = popUps.Length + 1;
             }
 
@@ -225,12 +235,14 @@ public class Tutorial : MonoBehaviour
                 textWriter.isGeneratingText = false;
                 characterMonologue.SetActive(false);
                 touchToProceed.SetActive(false);
+                tutorialing = false;
                 popUpIndex = popUps.Length + 1;
             }
 # endif
         }
         else if (popUpIndex == 5) // Plastic and Can tutorial --------------------------------------------------
         {
+            tutorialing = true;
             washTutDone = true;
 
             if (textWriter.isGeneratingText == false)
@@ -255,6 +267,7 @@ public class Tutorial : MonoBehaviour
                 textWriter.isGeneratingText = false;
                 characterMonologue.SetActive(false);
                 touchToProceed.SetActive(false);
+                tutorialing = false;
                 popUpIndex = popUps.Length + 1;
             }
 
@@ -275,6 +288,7 @@ public class Tutorial : MonoBehaviour
                 textWriter.isGeneratingText = false;
                 characterMonologue.SetActive(false);
                 touchToProceed.SetActive(false);
+                tutorialing = false;
                 popUpIndex = popUps.Length + 1;
             }
 # endif
