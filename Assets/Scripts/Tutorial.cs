@@ -16,7 +16,7 @@ public class Tutorial : MonoBehaviour
 
     public bool generalWasteTutDone;
     public bool glassTutDone;
-    public bool plasticTutDone;
+    public bool washTutDone;
     // Start is called before the first frame update
     void Start()
     {
@@ -136,7 +136,7 @@ public class Tutorial : MonoBehaviour
             if (textWriter.isGeneratingText == false)
             {
                 characterMonologue.SetActive(true);
-                textWriter.AddWriter(msgTxt, "What you've picked up is General Waste. General waste is any rubbish businesses and households throw away that you can't usually recycle", 0.02f, true);
+                textWriter.AddWriter(msgTxt, "Those general wastes can be thrown directly to the general waste bin", 0.02f, true);
 
             }
 
@@ -186,8 +186,7 @@ public class Tutorial : MonoBehaviour
             if (textWriter.isGeneratingText == false)
             {
                 characterMonologue.SetActive(true);
-                textWriter.AddWriter(msgTxt, "Glass waste can be recycled continuously and made into new glass products like bottles, jars, containers and ornaments. " +
-                    "The glass cullet can also be crushed into powder and used as material in making bricks, tiles, abrasives and replacement of sand.", 0.02f, true);
+                textWriter.AddWriter(msgTxt, "Glass materials need to be wrapped at Wrapping Station before throwing away in the recycling bin", 0.02f, true);
 
             }
 
@@ -230,15 +229,14 @@ public class Tutorial : MonoBehaviour
             }
 # endif
         }
-        else if (popUpIndex == 5 && plasticTutDone == false) // Plastic tutorial --------------------------------------------------
+        else if (popUpIndex == 5) // Plastic and Can tutorial --------------------------------------------------
         {
-            glassTutDone = true;
+            washTutDone = true;
 
             if (textWriter.isGeneratingText == false)
             {
                 characterMonologue.SetActive(true);
-                textWriter.AddWriter(msgTxt, "We often simply throw plastics away into the recycling bin, however, due to the material properties of plastics, not all can be recycled." +
-                    "Examples of products in which this type of plastic is used include electrical insulation, ropes, belts, and pipes.", 0.02f, true);
+                textWriter.AddWriter(msgTxt, "Plastic and Metal materials need to be washed at washing basin to cleanse it before throwing it inside the recycling bin", 0.02f, true);
 
             }
 
@@ -304,7 +302,7 @@ public class Tutorial : MonoBehaviour
             {
                 popUpIndex = 4;
             }
-            if ((PlayerController.instance.objectHolding.tag == "ContaminatedPlastic" || PlayerController.instance.objectHolding.tag == "ContaminatedMetal") && plasticTutDone == false)
+            if ((PlayerController.instance.objectHolding.tag == "ContaminatedPlastic" || PlayerController.instance.objectHolding.tag == "ContaminatedMetal") && washTutDone == false)
             {
                 popUpIndex = 5;
             }
