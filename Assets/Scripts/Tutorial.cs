@@ -61,7 +61,7 @@ public class Tutorial : MonoBehaviour
             if (textWriter.isGeneratingText == false)
             {
                 characterMonologue.SetActive(true);
-                textWriter.AddWriter(msgTxt, "Hello! Welcome to Eco Warrior! In this levl, we will learn the basics of this game!", 0.02f, true);
+                textWriter.AddWriter(msgTxt, "Hello! Welcome to Eco Warrior! In this level, we will learn the basics of this game!", 0.02f, true);
             }
 
             if (textWriter.uiText == null && waitTimeIndex <= 0)
