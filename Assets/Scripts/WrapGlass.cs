@@ -17,6 +17,7 @@ public class WrapGlass : MonoBehaviour
     public Animator animator;
     public Transform Wrap;
     public GameObject wrapCurrent;
+    public AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -63,7 +64,8 @@ public class WrapGlass : MonoBehaviour
             wrapCurrent = Instantiate(PlayerController.instance.objectHolding, Wrap);
             Destroy(PlayerController.instance.objectHolding);
             StartCoroutine(UpdateProgressBar());
-
+            PlayerController.instance.animator.SetBool("busy", true);
+            audioSource.Play();
         }
 
     }
@@ -115,6 +117,7 @@ public class WrapGlass : MonoBehaviour
         PlayerController.instance.animator.SetTrigger("carry");
         PickUp.instance.holding = true;
         progress.value = progress.minValue;
+        audioSource.Stop();
         PlayerController.instance.animator.SetBool("busy", false);
         yield break;
     }

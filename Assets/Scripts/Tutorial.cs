@@ -8,11 +8,15 @@ public class Tutorial : MonoBehaviour
     public GameObject[] popUps;
     public GameObject characterMonologue;
     private int popUpIndex;
-    private float waitTime = 5f;
+    private float waitTime = 30f;
     private float waitTimeIndex;
     public Text msgTxt;
-    public Text touch;
+    public GameObject touchToProceed;
     public TextWriter textWriter;
+
+    public bool generalWasteTutDone;
+    public bool glassTutDone;
+    public bool plasticTutDone;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,18 +55,18 @@ public class Tutorial : MonoBehaviour
 
     void Level1Tutorial()
     {
-        if (popUpIndex == 0)
+        if (popUpIndex == 0) //intro to the game
         {
 
             if (textWriter.isGeneratingText == false)
             {
                 characterMonologue.SetActive(true);
-                textWriter.AddWriter(msgTxt, "Hello! Welcome to Eco Warrior! In this levl, we will learn the basics of this game!", 0.02f, true);             
+                textWriter.AddWriter(msgTxt, "Hello! Welcome to Eco Warrior! In this levl, we will learn the basics of this game!", 0.02f, true);
             }
 
             if (textWriter.uiText == null && waitTimeIndex <= 0)
             {
-                touch.gameObject.SetActive(true);
+                touchToProceed.SetActive(true);
                 waitTimeIndex = waitTime;
             }
             else
@@ -71,17 +75,17 @@ public class Tutorial : MonoBehaviour
             }
 
             if (textWriter.uiText == null && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
-            {        
+            {
                 textWriter.isGeneratingText = false;
                 characterMonologue.SetActive(false);
-                touch.gameObject.SetActive(false);
+                touchToProceed.SetActive(false);
                 popUpIndex++;
             }
 
 #if UNITY_EDITOR
             if (textWriter.uiText == null && waitTimeIndex <= 0)
             {
-                touch.gameObject.SetActive(true);
+                touchToProceed.SetActive(true);
                 waitTimeIndex = waitTime;
 
             }
@@ -94,13 +98,13 @@ public class Tutorial : MonoBehaviour
             {
                 textWriter.isGeneratingText = false;
                 characterMonologue.SetActive(false);
-                touch.gameObject.SetActive(false);
+                touchToProceed.SetActive(false);
                 popUpIndex++;
             }
 # endif
 
         }
-        else if (popUpIndex == 1)
+        else if (popUpIndex == 1) // tutorial on movement ----------------------------------------------------------------
         {
             if (PlayerController.instance.theRB.velocity != Vector2.zero)
             {
@@ -125,8 +129,10 @@ public class Tutorial : MonoBehaviour
                 }
             }
         }
-        else if (popUpIndex == 3)
+        else if (popUpIndex == 3 ) //general waste tutorial -----------------------------------------------------------------
         {
+            generalWasteTutDone = true;
+
             if (textWriter.isGeneratingText == false)
             {
                 characterMonologue.SetActive(true);
@@ -134,29 +140,146 @@ public class Tutorial : MonoBehaviour
 
             }
 
-            if (WorkStation.isClose == true)
+            if (textWriter.uiText == null && waitTimeIndex <= 0)
             {
-                popUpIndex = popUps.Length + 1;
-            }
-        }
-        else if (popUpIndex == 4)
-        {
-            if (PlayerController.instance.isWorking == true)
-            {
-                popUpIndex++;
-            }
-        }
-        else if (popUpIndex == 5)
-        {
-            if (waitTimeIndex <= 0f)
-            {
-                popUpIndex++;
+                touchToProceed.SetActive(true);
                 waitTimeIndex = waitTime;
             }
-            else if(PlayerController.instance.objectHolding != null)
+            else
             {
                 waitTimeIndex -= Time.deltaTime;
             }
+
+            if (textWriter.uiText == null && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+            {
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touchToProceed.SetActive(false);
+                popUpIndex = popUps.Length + 1;
+            }
+
+#if UNITY_EDITOR
+            if (textWriter.uiText == null && waitTimeIndex <= 0)
+            {
+                touchToProceed.SetActive(true);
+                waitTimeIndex = waitTime;
+
+            }
+            else
+            {
+                waitTimeIndex -= Time.deltaTime;
+            }
+
+            if (textWriter.uiText == null && Input.GetMouseButtonDown(0))
+            {
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touchToProceed.SetActive(false);
+                popUpIndex = popUps.Length + 1;
+            }
+# endif
+        }
+        else if (popUpIndex == 4 ) // Glass tutorial -------------------------------------------------------------
+        {
+            glassTutDone = true;
+
+            if (textWriter.isGeneratingText == false)
+            {
+                characterMonologue.SetActive(true);
+                textWriter.AddWriter(msgTxt, "Glass waste can be recycled continuously and made into new glass products like bottles, jars, containers and ornaments. " +
+                    "The glass cullet can also be crushed into powder and used as material in making bricks, tiles, abrasives and replacement of sand.", 0.02f, true);
+
+            }
+
+            if (textWriter.uiText == null && waitTimeIndex <= 0)
+            {
+                touchToProceed.SetActive(true);
+                waitTimeIndex = waitTime;
+            }
+            else
+            {
+                waitTimeIndex -= Time.deltaTime;
+            }
+
+            if (textWriter.uiText == null && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+            {
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touchToProceed.SetActive(false);
+                popUpIndex = popUps.Length + 1;
+            }
+
+#if UNITY_EDITOR
+            if (textWriter.uiText == null && waitTimeIndex <= 0)
+            {
+                touchToProceed.SetActive(true);
+                waitTimeIndex = waitTime;
+
+            }
+            else
+            {
+                waitTimeIndex -= Time.deltaTime;
+            }
+
+            if (textWriter.uiText == null && Input.GetMouseButtonDown(0))
+            {
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touchToProceed.SetActive(false);
+                popUpIndex = popUps.Length + 1;
+            }
+# endif
+        }
+        else if (popUpIndex == 5 && plasticTutDone == false) // Plastic tutorial --------------------------------------------------
+        {
+            glassTutDone = true;
+
+            if (textWriter.isGeneratingText == false)
+            {
+                characterMonologue.SetActive(true);
+                textWriter.AddWriter(msgTxt, "We often simply throw plastics away into the recycling bin, however, due to the material properties of plastics, not all can be recycled." +
+                    "Examples of products in which this type of plastic is used include electrical insulation, ropes, belts, and pipes.", 0.02f, true);
+
+            }
+
+            if (textWriter.uiText == null && waitTimeIndex <= 0)
+            {
+                touchToProceed.SetActive(true);
+                waitTimeIndex = waitTime;
+            }
+            else
+            {
+                waitTimeIndex -= Time.deltaTime;
+            }
+
+            if (textWriter.uiText == null && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+            {
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touchToProceed.SetActive(false);
+                popUpIndex = popUps.Length + 1;
+            }
+
+#if UNITY_EDITOR
+            if (textWriter.uiText == null && waitTimeIndex <= 0)
+            {
+                touchToProceed.SetActive(true);
+                waitTimeIndex = waitTime;
+
+            }
+            else
+            {
+                waitTimeIndex -= Time.deltaTime;
+            }
+
+            if (textWriter.uiText == null && Input.GetMouseButtonDown(0))
+            {
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touchToProceed.SetActive(false);
+                popUpIndex = popUps.Length + 1;
+            }
+# endif
         }
         else if (popUpIndex == 6)
         {
@@ -170,5 +293,22 @@ public class Tutorial : MonoBehaviour
                 waitTimeIndex -= Time.deltaTime;
             }
         }
+
+        if(PickUp.instance.holding == true)
+        {
+            if (PlayerController.instance.objectHolding.tag == "GeneralWaste" && generalWasteTutDone == false)
+            {
+                popUpIndex = 3;
+            }
+            if (PlayerController.instance.objectHolding.tag == "Glass" && glassTutDone == false)
+            {
+                popUpIndex = 4;
+            }
+            if ((PlayerController.instance.objectHolding.tag == "ContaminatedPlastic" || PlayerController.instance.objectHolding.tag == "ContaminatedMetal") && plasticTutDone == false)
+            {
+                popUpIndex = 5;
+            }
+        }
+       
     }
 }
