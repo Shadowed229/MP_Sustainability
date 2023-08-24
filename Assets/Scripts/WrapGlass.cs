@@ -15,10 +15,12 @@ public class WrapGlass : MonoBehaviour
 
     public static bool isClose;
     public Animator animator;
+    public Transform Wrap;
+    public GameObject wrapCurrent;
     // Start is called before the first frame update
     void Start()
     {
-        animator.SetTrigger("Idle");
+        //animator.SetTrigger("Idle");
     }
 
     // Update is called once per frame
@@ -57,7 +59,9 @@ public class WrapGlass : MonoBehaviour
         {
             InteractButton.instance.buttonPressed = false;
             PickUp.instance.holding = false;
-            //PlayerController.instance.objectHolding.SetActive(false);
+            PlayerController.instance.animator.SetBool("busy", true);
+            wrapCurrent = Instantiate(PlayerController.instance.objectHolding, Wrap);
+            Destroy(PlayerController.instance.objectHolding);
             StartCoroutine(UpdateProgressBar());
 
         }
@@ -89,16 +93,16 @@ public class WrapGlass : MonoBehaviour
     {
         progress.gameObject.SetActive(false);
         PlayerController.instance.isWorking = false;
-        if (PlayerController.instance.objectHolding.tag == "Glass")
+        if (wrapCurrent.tag == "Glass")
         {
 
             for (int i = 0; i < Glass.Length; i++)
             {
-                Debug.Log(PlayerController.instance.objectHolding.name + "(Clone)");
-                if (PlayerController.instance.objectHolding.name == Glass[i].name + "(Clone)")
+                //Debug.Log(PlayerController.instance.objectHolding.name + "(Clone)");
+                if (wrapCurrent.name == Glass[i].name + "(Clone)" + "(Clone)")
                 {
                     Debug.Log("Wrapping");
-                    Destroy(PlayerController.instance.objectHolding);
+                    Destroy(wrapCurrent);
                     PlayerController.instance.objectHolding = Instantiate(Box, PlayerController.instance.itemHolder);
                     Debug.Log("cleaned plastic");
                     //PlayerController.instance.animator.SetBool("busy", false);
@@ -108,8 +112,10 @@ public class WrapGlass : MonoBehaviour
                 }
             }
         }
-
+        PlayerController.instance.animator.SetTrigger("carry");
+        PickUp.instance.holding = true;
         progress.value = progress.minValue;
+        PlayerController.instance.animator.SetBool("busy", false);
         yield break;
     }
 }
