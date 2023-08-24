@@ -11,6 +11,7 @@ public class WrappingStation : MonoBehaviour
     public Slider progress;
     public GameObject[] RegulatedItems;
     public GameObject Box;
+    public AudioSource audioSource;
 
 
     public static bool isClose;
@@ -59,6 +60,8 @@ public class WrappingStation : MonoBehaviour
             PickUp.instance.holding = false;
             //PlayerController.instance.objectHolding.SetActive(false);
             StartCoroutine(UpdateProgressBar());
+            PlayerController.instance.animator.SetBool("busy", true);
+            audioSource.Play();
 
         }
 
@@ -81,7 +84,7 @@ public class WrappingStation : MonoBehaviour
         if (score == 3f)
         {
             StartCoroutine(FinishWrapping());
-            //animator.SetTrigger("Basinoff");
+            
         }
 
     }
@@ -108,7 +111,8 @@ public class WrappingStation : MonoBehaviour
                 }
             }
         }
-
+        audioSource.Stop();
+        PlayerController.instance.animator.SetBool("busy", false);
         progress.value = progress.minValue;
         yield break;
     }

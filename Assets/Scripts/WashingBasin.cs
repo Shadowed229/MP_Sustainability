@@ -15,7 +15,7 @@ public class WashingBasin : MonoBehaviour
     public GameObject[] cleanMetal;
     public Transform Wash;
     public GameObject washCurrent;
-
+    public AudioSource audioSource;
     public static bool isClose;
     public Animator animator;
     // Start is called before the first frame update
@@ -66,6 +66,7 @@ public class WashingBasin : MonoBehaviour
             washCurrent = Instantiate(PlayerController.instance.objectHolding, Wash);
             Destroy(PlayerController.instance.objectHolding);
             animator.SetBool("Basinon", true);
+            audioSource.Play();
         }
         
     }
@@ -88,6 +89,8 @@ public class WashingBasin : MonoBehaviour
         {
             StartCoroutine(FinishWashing());
             animator.SetBool("Basinon", false);
+            audioSource.Stop();
+
         }
 
     }
