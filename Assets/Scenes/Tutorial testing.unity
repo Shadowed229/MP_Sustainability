@@ -1414,6 +1414,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1829095538}
     m_Modifications:
+    - target: {fileID: 319080595716579186, guid: 2c617220d5d663948aaabf068351127e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3021754421450594249, guid: 2c617220d5d663948aaabf068351127e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1498,6 +1502,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level 1 Tutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 3319480548797549710, guid: 2c617220d5d663948aaabf068351127e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476824328673361290, guid: 2c617220d5d663948aaabf068351127e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1531,6 +1543,11 @@ GameObject:
 --- !u!1 &1096625715 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3321958252185608273, guid: 2c617220d5d663948aaabf068351127e, type: 3}
+  m_PrefabInstance: {fileID: 1096625709}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1123475153 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7262423771416773367, guid: 2c617220d5d663948aaabf068351127e, type: 3}
   m_PrefabInstance: {fileID: 1096625709}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1244042540
@@ -6618,6 +6635,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 242790724}
     - target: {fileID: 3354176015008621576, guid: d27ec7c7bc64e7d47884ff6a7688d641, type: 3}
+      propertyPath: touchToProceed
+      value: 
+      objectReference: {fileID: 1123475153}
+    - target: {fileID: 3354176015008621576, guid: d27ec7c7bc64e7d47884ff6a7688d641, type: 3}
       propertyPath: characterMonologue
       value: 
       objectReference: {fileID: 1096625715}
@@ -9519,6 +9540,7 @@ MonoBehaviour:
   isGameOver: 0
   score: 0
   rubbishspawn: 0
+  winMenu: {fileID: 0}
 --- !u!4 &2132011433
 Transform:
   m_ObjectHideFlags: 0
