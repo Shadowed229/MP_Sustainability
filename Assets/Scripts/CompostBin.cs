@@ -9,6 +9,7 @@ public class CompostBin : MonoBehaviour
     public Text points;
     public Transform textTrans;
     public Animator animator;
+    public AudioSource audioSource;
     //public Slider progress;
     // Start is called before the first frame update
     void Start()
@@ -47,6 +48,7 @@ public class CompostBin : MonoBehaviour
         if (PlayerController.instance.objectHolding.tag == "Compostable")
         {
             animator.SetBool("CompostOpen", true);
+            audioSource.Play();
             return true;
         }
         else
@@ -82,6 +84,7 @@ public class CompostBin : MonoBehaviour
         points.gameObject.SetActive(false);
         animator.SetBool("CompostOpen", false);
         points.gameObject.transform.position = textTrans.position;
+        audioSource.Stop();
     }
     /*
     IEnumerator FinishWashing()

@@ -9,6 +9,7 @@ public class GeneralWaste : MonoBehaviour
     public Text points;
     public Transform textTrans;
     public Animator animator;
+    public AudioSource audioSource;
     //public Slider progress;
     // Start is called before the first frame update
     void Start()
@@ -69,7 +70,9 @@ public class GeneralWaste : MonoBehaviour
             points.text = "+ 10 pts";
             PickUp.instance.holding = false;
             points.gameObject.SetActive(true);
-            animator.SetBool("generalOpen", true);
+            PlayerController.instance.animator.SetTrigger("drop");
+            audioSource.Play();
+            animator.SetBool("General", true);
             points.transform.Translate(Vector3.up * Time.deltaTime);
             StartCoroutine(UpdateTextPos());
 
@@ -85,7 +88,8 @@ public class GeneralWaste : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         points.gameObject.SetActive(false);
         points.gameObject.transform.position = textTrans.position;
-        animator.SetBool("generalOpen", false);
+        animator.SetBool("General", false);
+        audioSource.Stop();
 
     }
     /*
