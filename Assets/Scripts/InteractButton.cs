@@ -17,5 +17,12 @@ public class InteractButton : MonoBehaviour, IPointerClickHandler
     void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
     {
         buttonPressed = true;
+        StartCoroutine(ResetButton());
+    }
+
+    IEnumerator ResetButton()
+    {
+        yield return new WaitForSeconds(0.1f);
+        buttonPressed = false;
     }
 }
