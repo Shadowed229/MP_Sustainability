@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem.EnhancedTouch;
+//using UnityEngine.InputSystem.EnhancedTouch;
 using ETouch = UnityEngine.InputSystem.EnhancedTouch;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -19,24 +19,31 @@ public class UIController : MonoBehaviour
     public Slider progressbar;
     public Text timerText;
     public GameObject dashButton;
-
+    public Camera mainCamera;
+    /*
     // Joystick
     [SerializeField]
     private Vector2 joystickSize = new Vector2(200, 200);
     [SerializeField]
     private FloatingJoystick joystick;
-    private Finger movementFinger;
+    //private Finger movementFinger;
     [HideInInspector]
     public Vector2 movementAmount;
     private Vector2 originalJoystickPos = new Vector2(Screen.width / 10f, Screen.height / 10f);
-
-
+    */
+    
+    // new joystick
+    private Vector2 startingPoint;
+    private int leftTouch = 99;
+    public Transform circle;
+    public Transform outerCircle;
     // Start is called before the first frame update
     private void Awake()
     {
         instance = this;
         //sr = gameObject.GetComponent<SpriteRenderer>();
     }
+    /*
     private void OnEnable()
     {
         EnhancedTouchSupport.Enable();
@@ -118,6 +125,7 @@ public class UIController : MonoBehaviour
         return startPosition;
 
     }
+    */
 
     void Start()
     {
@@ -126,8 +134,43 @@ public class UIController : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(LevelManager.instance.isPaused);
+        int i = 0;
+        while (i < Input.touchCount)
+        {
+            Touch t = Input.GetTouch(i);
+            Vector2 touchPos = getTouchPosition(t.position) * -1;
+            if(t.phase == TouchPhase.Began)
+            {
+                if(t.position.x > Screen.width / 2)
+                {
 
+                }
+                else
+                {
+                    leftTouch = t.fingerId;
+                    startingPoint = touchPos;
+                }
+            }
+            else if(t.phase == TouchPhase.Moved && leftTouch == t.fingerId)
+            {
+                Vector2 offset = touchPos - startingPoint;
+                Vector2 direction = Vector2.ClampMagnitude(offset, 1.0f);
+
+                PlayerController.instance.moveInput = direction;
+
+                circle.transform.position = new Vector2(outerCircle.transform.position.x + direction.x, outerCircle.transform.position.y + direction.y);
+            }
+            else if(t.phase == TouchPhase.Ended && leftTouch == t.fingerId)
+            {
+                leftTouch = 99;
+            }
+        }
+
+    }
+
+    Vector2 getTouchPosition(Vector2 touchPosition)
+    {
+        return GetComponent<Camera>().ScreenToWorldPoint(new Vector3(touchPosition.x, touchPosition.y, mainCamera.gameObject.transform.position.z));
     }
 
     public void DashBtn()
@@ -164,4 +207,6 @@ public class UIController : MonoBehaviour
     {
 
     }
+
+    
 }
