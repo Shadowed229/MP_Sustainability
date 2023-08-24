@@ -52,6 +52,7 @@ public class Tutorial : MonoBehaviour
         }
 
         Level1Tutorial();
+        Level2Tutorial();
         
     }
 
@@ -323,4 +324,134 @@ public class Tutorial : MonoBehaviour
         }
        
     }
+    void Level2Tutorial()
+    {
+        if (popUpIndex == 0) //intro to the game
+        {
+            tutorialing = true;
+
+            if (textWriter.isGeneratingText == false)
+            {
+                characterMonologue.SetActive(true);
+                textWriter.AddWriter(msgTxt, "Welcome! Good job on making it to Level 2 in this level you will experience a new compost bin.", 0.02f, true);
+            }
+
+            if (textWriter.uiText == null && waitTimeIndex <= 0)
+            {
+                touchToProceed.SetActive(true);
+                waitTimeIndex = waitTime;
+            }
+            else
+            {
+                waitTimeIndex -= Time.deltaTime;
+            }
+
+            if (textWriter.uiText == null && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+            {
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touchToProceed.SetActive(false);
+                tutorialing = false;
+                popUpIndex++;
+            }
+
+#if UNITY_EDITOR
+            if (textWriter.uiText == null && waitTimeIndex <= 0)
+            {
+                touchToProceed.SetActive(true);
+                waitTimeIndex = waitTime;
+
+            }
+            else
+            {
+                waitTimeIndex -= Time.deltaTime;
+            }
+
+            if (textWriter.uiText == null && Input.GetMouseButtonDown(0))
+            {
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touchToProceed.SetActive(false);
+                tutorialing = false;
+                popUpIndex++;
+            }
+# endif
+
+        }
+        else if (popUpIndex == 1) // tutorial on movement ----------------------------------------------------------------
+        {
+            if (PlayerController.instance.theRB.velocity != Vector2.zero)
+            {
+                popUpIndex++;
+            }
+        }
+        else if (popUpIndex == 2)
+        {
+            if (PlayerController.instance.objectHolding != null)
+            {
+                if (PlayerController.instance.objectHolding.tag == "Compostable")
+                {
+                    popUpIndex = 3;
+                }
+
+
+            }
+        }
+        else if (popUpIndex == 3) //general waste tutorial -----------------------------------------------------------------
+        {
+            tutorialing = true;
+            generalWasteTutDone = true;
+
+            if (textWriter.isGeneratingText == false)
+            {
+                characterMonologue.SetActive(true);
+                textWriter.AddWriter(msgTxt, "Compostable like food waste can be thrown to the brown compost bin", 0.02f, true);
+
+            }
+
+            if (textWriter.uiText == null && waitTimeIndex <= 0)
+            {
+                touchToProceed.SetActive(true);
+                waitTimeIndex = waitTime;
+            }
+            else
+            {
+                waitTimeIndex -= Time.deltaTime;
+            }
+
+            if (textWriter.uiText == null && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+            {
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touchToProceed.SetActive(false);
+                tutorialing = false;
+                popUpIndex = popUps.Length + 1;
+            }
+
+#if UNITY_EDITOR
+            if (textWriter.uiText == null && waitTimeIndex <= 0)
+            {
+                touchToProceed.SetActive(true);
+                waitTimeIndex = waitTime;
+
+            }
+            else
+            {
+                waitTimeIndex -= Time.deltaTime;
+            }
+
+            if (textWriter.uiText == null && Input.GetMouseButtonDown(0))
+            {
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touchToProceed.SetActive(false);
+                tutorialing = false;
+                popUpIndex = popUps.Length + 1;
+            }
+# endif
+        }
+
+
+    }
 }
+
