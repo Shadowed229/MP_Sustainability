@@ -405,7 +405,7 @@ public class Tutorial : MonoBehaviour
             if (textWriter.isGeneratingText == false)
             {
                 characterMonologue.SetActive(true);
-                textWriter.AddWriter(msgTxt, "Compostable like food waste can be thrown to the brown compost bin", 0.02f, true);
+                textWriter.AddWriter(msgTxt, "Compostables like food waste can be thrown to the brown compost bin", 0.02f, true);
 
             }
 
