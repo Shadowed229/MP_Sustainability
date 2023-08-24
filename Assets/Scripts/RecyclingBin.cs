@@ -9,11 +9,12 @@ public class RecyclingBin : MonoBehaviour
     public Text points;
     public Transform textTrans;
     public Animator animator;
+    public AudioSource audioSource;
     //public Slider progress;
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -27,8 +28,10 @@ public class RecyclingBin : MonoBehaviour
                 Debug.Log("much close");
                 Recycling();
             }
+            
         }   
     }
+
     void DistanceFromPlayer()
     {
         float distancebetweenPlayer = Vector3.Distance(transform.position, PlayerController.instance.transform.position);
@@ -86,7 +89,9 @@ public class RecyclingBin : MonoBehaviour
             points.transform.Translate(Vector3.up * Time.deltaTime);
             StartCoroutine(UpdateTextPos());
             PlayerController.instance.animator.SetTrigger("drop");
+            audioSource.Play();
             animator.SetBool("Recycle", true);
+
 
 
 
@@ -104,6 +109,7 @@ public class RecyclingBin : MonoBehaviour
         points.gameObject.transform.position = textTrans.position;
         yield return true;
         animator.SetBool("Recycle", false);
+        audioSource.Stop();
 
     }
 
