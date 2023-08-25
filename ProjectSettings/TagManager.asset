@@ -23,6 +23,7 @@ TagManager:
   - Box_Glass
   - Box_Ewaste
   - WinMenu
+  - ContaminatedGlass
   layers:
   - Default
   - TransparentFX

@@ -9,6 +9,8 @@ public class WashingBasin : MonoBehaviour
 {
     
     public Slider progress;
+    public GameObject[] contaminatedGlass;
+    public GameObject[] cleanGlass;
     public GameObject[] contaminatedPlastic;
     public GameObject[] cleanPlastic;
     public GameObject[] contaminatedMetal;
@@ -56,7 +58,7 @@ public class WashingBasin : MonoBehaviour
 
     void WashingWaste()
     {
-        if((InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup")) && (PlayerController.instance.objectHolding.tag == "ContaminatedPlastic" || PlayerController.instance.objectHolding.tag == "ContaminatedMetal"))
+        if((InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup")) && (PlayerController.instance.objectHolding.tag == "ContaminatedPlastic" || PlayerController.instance.objectHolding.tag == "ContaminatedMetal" || PlayerController.instance.objectHolding.tag == "ContaminatedGlass"))
         {
             InteractButton.instance.buttonPressed = false;
             //PickUp.instance.holding = false;
@@ -125,6 +127,19 @@ public class WashingBasin : MonoBehaviour
                 {
                     Destroy(washCurrent);
                     PlayerController.instance.objectHolding = Instantiate(cleanMetal[i], PlayerController.instance.itemHolder);
+                    break;
+                }
+            }
+        }
+        else if (washCurrent.tag == "ContaminatedGlass")
+        {
+            for (int i = 0; i < contaminatedGlass.Length; i++)
+            {
+                //Debug.Log(PlayerController.instance.objectHolding.name + "(Clone)");
+                if (washCurrent.name == contaminatedGlass[i].name + "(Clone)" + "(Clone)")
+                {
+                    Destroy(washCurrent);
+                    PlayerController.instance.objectHolding = Instantiate(cleanGlass[i], PlayerController.instance.itemHolder);
                     break;
                 }
             }
