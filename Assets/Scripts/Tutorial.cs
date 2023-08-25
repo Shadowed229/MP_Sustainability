@@ -52,7 +52,7 @@ public class Tutorial : MonoBehaviour
         }
 
         Level1Tutorial();
-        Level2Tutorial();
+       // Level2Tutorial();
         
     }
 
