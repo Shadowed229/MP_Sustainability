@@ -112,7 +112,7 @@ public class UIController : MonoBehaviour
             //joystick.rectTransform.anchoredPosition = ClampStartPosition(Camera.main.WorldToScreenPoint(TouchedFinger.screenPosition));
         }
     }
-
+    */
     private Vector2 ClampStartPosition(Vector2 startPosition)
     {
         if (startPosition.x < joystickSize.x / 2)
@@ -132,7 +132,7 @@ public class UIController : MonoBehaviour
         return startPosition;
 
     }
-    */
+   
 
     void Start()
     {
@@ -144,10 +144,14 @@ public class UIController : MonoBehaviour
         int i = 0;
         while (i < Input.touchCount)
         {
+            
             Touch t = Input.GetTouch(i);
             Vector2 touchPos = CameraController.instance.getTouchPosition(t.position);
             if (t.phase == TouchPhase.Began)
             {
+                direction = Vector2.zero;
+                joystick.rectTransform.anchoredPosition = ClampStartPosition(touchPos);
+
                 if (t.position.x > Screen.width / 2)
                 {
                     Debug.Log("right touch");
@@ -167,6 +171,8 @@ public class UIController : MonoBehaviour
                 float maxMovement = joystickSize.x / 2;
                 //ETouch.Touch currentTouch = MovedFinger.currentTouch;
 
+                Vector2 joyStickPos = Camera.main.ScreenToWorldPoint(joystick.rectTransform.anchoredPosition);
+
                 if (Vector2.Distance(touchPos, joystick.rectTransform.anchoredPosition) > maxMovement)
                 {
                     knobPosition = (touchPos - joystick.rectTransform.anchoredPosition).normalized * maxMovement;
@@ -178,6 +184,9 @@ public class UIController : MonoBehaviour
 
                 joystick.knob.anchoredPosition = knobPosition;
                 direction = knobPosition / maxMovement;
+
+                Debug.Log(knobPosition);
+
 
                 //circle.transform.position = new Vector2(outerCircle.position.x + direction.x, outerCircle.position.y + direction.y);
             }
