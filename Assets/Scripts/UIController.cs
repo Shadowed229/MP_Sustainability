@@ -144,14 +144,14 @@ public class UIController : MonoBehaviour
         int i = 0;
         while (i < Input.touchCount)
         {
-            
+            float maxMovement = joystickSize.x / 2;
             Touch t = Input.GetTouch(i);
             Vector2 touchPos = CameraController.instance.getTouchPosition(t.position);
-            
+
             if (t.phase == TouchPhase.Began)
             {
                 direction = Vector2.zero;
-                joystick.rectTransform.position = new Vector3(t.position.x, t.position.y, 0f);
+                joystick.rectTransform.position = new Vector3(t.position.x - maxMovement, t.position.y - maxMovement, 0f);
                 Debug.Log(t.position);
 
                 if (t.position.x > Screen.width / 2)
@@ -167,15 +167,15 @@ public class UIController : MonoBehaviour
             else if (t.phase == TouchPhase.Moved && leftTouch == t.fingerId)
             {
                 Vector2 knobPosition;
-                float maxMovement = joystickSize.x / 2;
+                
 
                 if (Vector2.Distance(t.position, joystick.rectTransform.position) > maxMovement)
                 {
-                    knobPosition = new Vector2(t.position.x - joystick.rectTransform.position.x, t.position.y - joystick.rectTransform.position.y).normalized * maxMovement;
+                    knobPosition = new Vector2(t.position.x - maxMovement - joystick.rectTransform.position.x, t.position.y - maxMovement - joystick.rectTransform.position.y).normalized * maxMovement;
                 }
                 else
                 {
-                    knobPosition = new Vector2(t.position.x - joystick.rectTransform.position.x, t.position.y - joystick.rectTransform.position.y);
+                    knobPosition = new Vector2(t.position.x - maxMovement - joystick.rectTransform.position.x, t.position.y - maxMovement - joystick.rectTransform.position.y);
                 }
 
                 joystick.knob.anchoredPosition = knobPosition;
