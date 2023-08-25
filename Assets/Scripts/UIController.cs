@@ -147,10 +147,12 @@ public class UIController : MonoBehaviour
             
             Touch t = Input.GetTouch(i);
             Vector2 touchPos = CameraController.instance.getTouchPosition(t.position);
+            
             if (t.phase == TouchPhase.Began)
             {
                 direction = Vector2.zero;
-                joystick.rectTransform.anchoredPosition = ClampStartPosition(touchPos);
+                joystick.rectTransform.position = new Vector3(t.position.x, t.position.y, 0f);
+                Debug.Log(t.position);
 
                 if (t.position.x > Screen.width / 2)
                 {
@@ -164,31 +166,22 @@ public class UIController : MonoBehaviour
             }
             else if (t.phase == TouchPhase.Moved && leftTouch == t.fingerId)
             {
-                //Vector2 offset = touchPos - startingPoint;
-                //direction = Vector2.ClampMagnitude(offset, 1.0f);
-
                 Vector2 knobPosition;
                 float maxMovement = joystickSize.x / 2;
-                //ETouch.Touch currentTouch = MovedFinger.currentTouch;
 
-                Vector2 joyStickPos = Camera.main.ScreenToWorldPoint(joystick.rectTransform.anchoredPosition);
-
-                if (Vector2.Distance(touchPos, joystick.rectTransform.anchoredPosition) > maxMovement)
+                if (Vector2.Distance(t.position, joystick.rectTransform.position) > maxMovement)
                 {
-                    knobPosition = (touchPos - joystick.rectTransform.anchoredPosition).normalized * maxMovement;
+                    knobPosition = new Vector2(t.position.x - joystick.rectTransform.position.x, t.position.y - joystick.rectTransform.position.y).normalized * maxMovement;
                 }
                 else
                 {
-                    knobPosition = touchPos - joystick.rectTransform.anchoredPosition;
+                    knobPosition = new Vector2(t.position.x - joystick.rectTransform.position.x, t.position.y - joystick.rectTransform.position.y);
                 }
 
                 joystick.knob.anchoredPosition = knobPosition;
                 direction = knobPosition / maxMovement;
 
-                Debug.Log(knobPosition);
-
-
-                //circle.transform.position = new Vector2(outerCircle.position.x + direction.x, outerCircle.position.y + direction.y);
+                
             }
             else if (t.phase == TouchPhase.Ended && leftTouch == t.fingerId)
             {
