@@ -35,9 +35,14 @@ public class UIController : MonoBehaviour
     // new joystick
     private Vector2 startingPoint;
     private int leftTouch = 99;
-    public Transform circle;
-    public Transform outerCircle;
+    //public Transform circle;
+    //public Transform outerCircle;
     public Vector2 direction;
+
+    [SerializeField]
+    private FloatingJoystick joystick;
+    [SerializeField]
+    private Vector2 joystickSize = new Vector2(200, 200);
 
     // Start is called before the first frame update
     private void Awake()
@@ -155,13 +160,31 @@ public class UIController : MonoBehaviour
             }
             else if (t.phase == TouchPhase.Moved && leftTouch == t.fingerId)
             {
-                Vector2 offset = touchPos - startingPoint;
-                direction = Vector2.ClampMagnitude(offset, 1.0f);
+                //Vector2 offset = touchPos - startingPoint;
+                //direction = Vector2.ClampMagnitude(offset, 1.0f);
 
-                circle.transform.position = new Vector2(direction.x, direction.y);
+                Vector2 knobPosition;
+                float maxMovement = joystickSize.x / 2;
+                //ETouch.Touch currentTouch = MovedFinger.currentTouch;
+
+                if (Vector2.Distance(touchPos, joystick.rectTransform.anchoredPosition) > maxMovement)
+                {
+                    knobPosition = (touchPos - joystick.rectTransform.anchoredPosition).normalized * maxMovement;
+                }
+                else
+                {
+                    knobPosition = touchPos - joystick.rectTransform.anchoredPosition;
+                }
+
+                joystick.knob.anchoredPosition = knobPosition;
+                direction = knobPosition / maxMovement;
+
+                //circle.transform.position = new Vector2(outerCircle.position.x + direction.x, outerCircle.position.y + direction.y);
             }
             else if (t.phase == TouchPhase.Ended && leftTouch == t.fingerId)
             {
+                joystick.knob.anchoredPosition = Vector2.zero;
+
                 direction = Vector2.zero;
                 leftTouch = 99;
             }
