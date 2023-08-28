@@ -151,15 +151,15 @@ public class UIController : MonoBehaviour
             if (t.phase == TouchPhase.Began)
             {
                 direction = Vector2.zero;
-                joystick.rectTransform.position = new Vector3(t.position.x - maxMovement, t.position.y - maxMovement, 0f);
-                Debug.Log(t.position);
-
+                
                 if (t.position.x > Screen.width / 2)
                 {
+                    
                     Debug.Log("right touch");
                 }
                 else
                 {
+                    joystick.rectTransform.position = new Vector3(t.position.x - maxMovement, t.position.y - maxMovement, 0f);
                     leftTouch = t.fingerId;
                     startingPoint = touchPos;
                 }
