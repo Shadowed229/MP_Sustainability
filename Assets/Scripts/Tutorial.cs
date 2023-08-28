@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Tutorial : MonoBehaviour
@@ -17,9 +18,15 @@ public class Tutorial : MonoBehaviour
     public bool generalWasteTutDone;
     public bool glassTutDone;
     public bool washTutDone;
-
+    public string sceneName;
+    public Scene currentScene;
     public static bool tutorialing;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        currentScene = SceneManager.GetActiveScene();
+        sceneName = currentScene.name;
+    }
     void Start()
     {
         popUpIndex = 0;
@@ -50,9 +57,15 @@ public class Tutorial : MonoBehaviour
             }
 
         }
-
-        Level1Tutorial();
-       // Level2Tutorial();
+        sceneName = currentScene.name;
+        if (sceneName == "Level1")
+        {
+            Level1Tutorial();
+        }
+        if (sceneName == "Level2")
+        {
+            Level2Tutorial();
+        }
         
     }
 
@@ -196,7 +209,7 @@ public class Tutorial : MonoBehaviour
             if (textWriter.isGeneratingText == false)
             {
                 characterMonologue.SetActive(true);
-                textWriter.AddWriter(msgTxt, "Glass materials need to be wrapped at Wrapping Station before throwing away in the recycling bin", 0.02f, true);
+                textWriter.AddWriter(msgTxt, "Glass materials need to be washed at washing basin to cleanse it before throwing it inside the recycling bin", 0.02f, true);
 
             }
 

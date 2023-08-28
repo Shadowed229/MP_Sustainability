@@ -388,6 +388,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIStats
       objectReference: {fileID: 0}
+    - target: {fileID: 8560326662684732829, guid: b824c6f5390ab5d4d8853ec8f9d1d0d4, type: 3}
+      propertyPath: m_Text
+      value: 'Time:
+
+'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1536,6 +1542,10 @@ PrefabInstance:
     - target: {fileID: 3149703534030421790, guid: 2c617220d5d663948aaabf068351127e, type: 3}
       propertyPath: m_Name
       value: Level 1 Tutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 3319480548797549710, guid: 2c617220d5d663948aaabf068351127e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3321958252185608273, guid: 2c617220d5d663948aaabf068351127e, type: 3}
       propertyPath: m_IsActive

@@ -8747,11 +8747,6 @@ PrefabInstance:
       addedObject: {fileID: 1474773420}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d3987c5ca4cf824da3f7de7cc8b090e, type: 3}
---- !u!1 &799182898 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7199034718900306835, guid: 2d3987c5ca4cf824da3f7de7cc8b090e, type: 3}
-  m_PrefabInstance: {fileID: 799182897}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &799182899 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7199034718900306834, guid: 2d3987c5ca4cf824da3f7de7cc8b090e, type: 3}
@@ -10943,10 +10938,10 @@ MonoBehaviour:
   optionScreen: {fileID: 0}
   progressbar: {fileID: 0}
   timerText: {fileID: 0}
-  dashButton: {fileID: 799182898}
-  circle: {fileID: 0}
-  outerCircle: {fileID: 0}
+  dashButton: {fileID: 0}
   direction: {x: 0, y: 0}
+  joystick: {fileID: 2005530489}
+  joystickSize: {x: 200, y: 200}
 --- !u!114 &1071488393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12599,6 +12594,17 @@ Transform:
   - {fileID: 982682909}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2005530489 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4392687490673047442, guid: 1a59f48ff9496d44586912f9a0d95399, type: 3}
+  m_PrefabInstance: {fileID: 1192049187}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc100bde623cbd4c8cdca63837807e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2083061624
 PrefabInstance:
   m_ObjectHideFlags: 0
