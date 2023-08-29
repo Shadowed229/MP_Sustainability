@@ -49,7 +49,7 @@ public class RecyclingBin : MonoBehaviour
     bool isRecyclable()
     {
         
-        if (PlayerController.instance.objectHolding.tag == "Box_Glass")
+        if (PlayerController.instance.objectHolding.tag == "Glass")
         {
             
             return true;
