@@ -962,6 +962,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &952646024 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3447148703064376128, guid: 2c617220d5d663948aaabf068351127e, type: 3}
+  m_PrefabInstance: {fileID: 1096625709}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1096625709
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -970,14 +975,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1829095538}
     m_Modifications:
-    - target: {fileID: 901102266090991012, guid: 2c617220d5d663948aaabf068351127e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2922187656412855268, guid: 2c617220d5d663948aaabf068351127e, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -1098964777, guid: 33199261b9b72d74eaaf6d34f2b3ecb0, type: 3}
     - target: {fileID: 3021754421450594249, guid: 2c617220d5d663948aaabf068351127e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1062,19 +1059,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level 1 Tutorial
       objectReference: {fileID: 0}
-    - target: {fileID: 3319480548797549710, guid: 2c617220d5d663948aaabf068351127e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3321958252185608273, guid: 2c617220d5d663948aaabf068351127e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3476824328673361290, guid: 2c617220d5d663948aaabf068351127e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5564591042718742242, guid: 2c617220d5d663948aaabf068351127e, type: 3}
+    - target: {fileID: 3447148703064376128, guid: 2c617220d5d663948aaabf068351127e, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -28700,7 +28685,7 @@ PrefabInstance:
       objectReference: {fileID: 1207953988}
     - target: {fileID: 3354176015008621576, guid: d27ec7c7bc64e7d47884ff6a7688d641, type: 3}
       propertyPath: popUps.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3354176015008621576, guid: d27ec7c7bc64e7d47884ff6a7688d641, type: 3}
       propertyPath: characterMonologue
@@ -28733,7 +28718,7 @@ PrefabInstance:
     - target: {fileID: 3354176015008621576, guid: d27ec7c7bc64e7d47884ff6a7688d641, type: 3}
       propertyPath: popUps.Array.data[6]
       value: 
-      objectReference: {fileID: 1096625711}
+      objectReference: {fileID: 952646024}
     - target: {fileID: 3526242533934736900, guid: d27ec7c7bc64e7d47884ff6a7688d641, type: 3}
       propertyPath: m_Name
       value: TutorialManager

@@ -69,7 +69,7 @@ public class Tutorial : MonoBehaviour
         
     }
 
-    void Level1Tutorial()
+    private void Level1Tutorial()
     {
         if (popUpIndex == 0) //intro to the game
         {
@@ -307,21 +307,61 @@ public class Tutorial : MonoBehaviour
             }
 # endif
         }
-        else if (popUpIndex == 6)
+        else if (popUpIndex == 6) // Paper --------------------------------------------------
         {
-            if (waitTimeIndex <= 0f)
+            tutorialing = true;
+            washTutDone = true;
+
+            if (textWriter.isGeneratingText == false)
             {
-                popUpIndex++;
+                characterMonologue.SetActive(true);
+                textWriter.AddWriter(msgTxt, "Paper waste items can be recyvled without any process. However some papers such as napkins and paper towels cant be recycled", 0.02f, true);
+
+            }
+
+            if (textWriter.uiText == null && waitTimeIndex <= 0)
+            {
+                touchToProceed.SetActive(true);
                 waitTimeIndex = waitTime;
             }
             else
             {
                 waitTimeIndex -= Time.deltaTime;
             }
-        }
 
-        if(PickUp.instance.holding == true)
-        {
+            if (textWriter.uiText == null && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+            {
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touchToProceed.SetActive(false);
+                tutorialing = false;
+                popUpIndex = popUps.Length + 1;
+            }
+
+#if UNITY_EDITOR
+            if (textWriter.uiText == null && waitTimeIndex <= 0)
+            {
+                touchToProceed.SetActive(true);
+                waitTimeIndex = waitTime;
+
+            }
+            else
+            {
+                waitTimeIndex -= Time.deltaTime;
+            }
+
+            if (textWriter.uiText == null && Input.GetMouseButtonDown(0))
+            {
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touchToProceed.SetActive(false);
+                tutorialing = false;
+                popUpIndex = popUps.Length + 1;
+            }
+#endif
+
+            if (PickUp.instance.holding == true)
+        
             if (PlayerController.instance.objectHolding.tag == "GeneralWaste" && generalWasteTutDone == false)
             {
                 popUpIndex = 3;
@@ -337,7 +377,8 @@ public class Tutorial : MonoBehaviour
         }
        
     }
-    void Level2Tutorial()
+
+    private void Level2Tutorial()
     {
         if (popUpIndex == 0) //intro to the game
         {
