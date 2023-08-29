@@ -209,7 +209,7 @@ public class Tutorial : MonoBehaviour
             if (textWriter.isGeneratingText == false)
             {
                 characterMonologue.SetActive(true);
-                textWriter.AddWriter(msgTxt, "Glass materials need to be washed at washing basin to cleanse it before throwing it inside the recycling bin", 0.02f, true);
+                textWriter.AddWriter(msgTxt, "Glass materials need to be rinsed at washing basin to clean it before throwing it inside the recycling bin", 0.02f, true);
 
             }
 
@@ -262,7 +262,7 @@ public class Tutorial : MonoBehaviour
             if (textWriter.isGeneratingText == false)
             {
                 characterMonologue.SetActive(true);
-                textWriter.AddWriter(msgTxt, "Plastic and Metal materials need to be washed at washing basin to cleanse it before throwing it inside the recycling bin", 0.02f, true);
+                textWriter.AddWriter(msgTxt, "Plastic and Metal materials need to be rinsed at washing basin to clean it before throwing it inside the recycling bin", 0.02f, true);
 
             }
 
