@@ -31301,9 +31301,37 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 316562946}
     - target: {fileID: 1195759954234998594, guid: 3bd2da67fad116e4694bc6b936879728, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1195759954234998594, guid: 3bd2da67fad116e4694bc6b936879728, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1195759954234998594, guid: 3bd2da67fad116e4694bc6b936879728, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 586686760}
+    - target: {fileID: 1195759954234998594, guid: 3bd2da67fad116e4694bc6b936879728, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2132011431}
+    - target: {fileID: 1195759954234998594, guid: 3bd2da67fad116e4694bc6b936879728, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1195759954234998594, guid: 3bd2da67fad116e4694bc6b936879728, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PauseBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 1195759954234998594, guid: 3bd2da67fad116e4694bc6b936879728, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UIController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1195759954234998594, guid: 3bd2da67fad116e4694bc6b936879728, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1798764659709540851, guid: 3bd2da67fad116e4694bc6b936879728, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
