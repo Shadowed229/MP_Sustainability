@@ -7877,9 +7877,9 @@ MonoBehaviour:
   progressbar: {fileID: 0}
   timerText: {fileID: 0}
   dashButton: {fileID: 900376983}
-  circle: {fileID: 0}
-  outerCircle: {fileID: 0}
   direction: {x: 0, y: 0}
+  joystick: {fileID: 0}
+  joystickSize: {x: 200, y: 200}
 --- !u!114 &1749549986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8190,6 +8190,10 @@ PrefabInstance:
     - target: {fileID: 5003203641129303489, guid: b824c6f5390ab5d4d8853ec8f9d1d0d4, type: 3}
       propertyPath: m_Name
       value: UIStats
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560326662684732829, guid: b824c6f5390ab5d4d8853ec8f9d1d0d4, type: 3}
+      propertyPath: m_Text
+      value: 'Time:'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
