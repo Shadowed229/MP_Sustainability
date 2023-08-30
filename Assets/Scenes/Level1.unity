@@ -997,6 +997,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3352822884963689114, guid: 2c617220d5d663948aaabf068351127e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3447148703064376128, guid: 2c617220d5d663948aaabf068351127e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285995758315996392, guid: 2c617220d5d663948aaabf068351127e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 403576145, guid: 7494b5eaa38008f42b281a078527ecf7, type: 3}
+    - target: {fileID: 5491514231304371078, guid: 2c617220d5d663948aaabf068351127e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6829309342632034044, guid: 2c617220d5d663948aaabf068351127e, type: 3}
+      propertyPath: m_Text
+      value: Paper Waste
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

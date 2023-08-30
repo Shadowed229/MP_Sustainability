@@ -18,6 +18,7 @@ public class Tutorial : MonoBehaviour
     public bool generalWasteTutDone;
     public bool glassTutDone;
     public bool washTutDone;
+    public bool paperTutDone;
     public bool compostTutDone;
     public string sceneName;
     public Scene currentScene;
@@ -135,19 +136,19 @@ public class Tutorial : MonoBehaviour
         {
             if (PlayerController.instance.objectHolding != null)
             {
-                if (PlayerController.instance.objectHolding.tag == "GeneralWaste")
+                if (PlayerController.instance.objectHolding.CompareTag("GeneralWaste") && generalWasteTutDone == false)
                 {
                     popUpIndex = 3;
                 }
-                if (PlayerController.instance.objectHolding.tag == "Glass")
+                if (PlayerController.instance.objectHolding.CompareTag("ContaminatedGlass") && glassTutDone == false)
                 {
                     popUpIndex = 4;
                 }
-                if (PlayerController.instance.objectHolding.tag == "ContaminatedPlastic" || PlayerController.instance.objectHolding.tag == "ContaminatedMetal")
+                if ((PlayerController.instance.objectHolding.CompareTag("ContaminatedPlastic") || PlayerController.instance.objectHolding.CompareTag("ContaminatedMetal")) && washTutDone == false)
                 {
                     popUpIndex = 5;
                 }
-                if (PlayerController.instance.objectHolding.tag == "Paper")
+                if (PlayerController.instance.objectHolding.CompareTag("Paper") && paperTutDone == false)
                 {
                     popUpIndex = 6;
                 }
@@ -315,7 +316,7 @@ public class Tutorial : MonoBehaviour
         else if (popUpIndex == 6) // Paper --------------------------------------------------
         {
             tutorialing = true;
-            washTutDone = true;
+            paperTutDone = true;
 
             if (textWriter.isGeneratingText == false)
             {
@@ -362,28 +363,28 @@ public class Tutorial : MonoBehaviour
                 touchToProceed.SetActive(false);
                 tutorialing = false;
                 popUpIndex = popUps.Length + 1;
+
             }
 #endif
-
-            if (PickUp.instance.holding == true)
-            {
-                if (PlayerController.instance.objectHolding.CompareTag("GeneralWaste") && generalWasteTutDone == false)
-                {
-                    popUpIndex = 3;
-                }
-                if (PlayerController.instance.objectHolding.CompareTag("Glass") && glassTutDone == false)
-                {
-                    popUpIndex = 4;
-                }
-                if ((PlayerController.instance.objectHolding.CompareTag("ContaminatedPlastic") || PlayerController.instance.objectHolding.CompareTag("ContaminatedMetal")) && washTutDone == false)
-                {
-                    popUpIndex = 5;
-                }
-            }
-
-
         }
-       
+
+        if (PlayerController.instance.objectHolding.CompareTag("GeneralWaste") && generalWasteTutDone == false)
+        {
+            popUpIndex = 3;
+        }
+        if (PlayerController.instance.objectHolding.CompareTag("ContaminatedGlass") && glassTutDone == false)
+        {
+            popUpIndex = 4;
+        }
+        if ((PlayerController.instance.objectHolding.CompareTag("ContaminatedPlastic") || PlayerController.instance.objectHolding.CompareTag("ContaminatedMetal")) && washTutDone == false)
+        {
+            popUpIndex = 5;
+        }
+        if (PlayerController.instance.objectHolding.CompareTag("Paper") && paperTutDone == false)
+        {
+            popUpIndex = 6;
+        }
+
     }
 
     private void Level2Tutorial()
