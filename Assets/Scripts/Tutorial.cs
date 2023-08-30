@@ -147,6 +147,10 @@ public class Tutorial : MonoBehaviour
                 {
                     popUpIndex = 5;
                 }
+                if (PlayerController.instance.objectHolding.tag == "Paper")
+                {
+                    popUpIndex = 6;
+                }
             }
         }
         else if (popUpIndex == 3 ) //general waste tutorial -----------------------------------------------------------------
