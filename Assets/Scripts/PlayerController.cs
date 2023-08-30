@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
 
     void Movement()
     {
-        if (isWorking == true || LevelManager.instance.isGameOver == true)
+        if (Tutorial.tutorialing || isWorking == true || LevelManager.instance.isGameOver == true)
         {
             moveInput.x = 0;
             moveInput.y = 0;
