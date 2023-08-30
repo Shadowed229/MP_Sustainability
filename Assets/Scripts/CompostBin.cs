@@ -47,7 +47,7 @@ public class CompostBin : MonoBehaviour
     {
         if (PlayerController.instance.objectHolding.tag == "Compostable")
         {
-            animator.SetBool("CompostOpen", true);
+            //animator.SetBool("CompostOpen", true);
             audioSource.Play();
             return true;
         }
@@ -67,6 +67,7 @@ public class CompostBin : MonoBehaviour
             points.color = Color.green;
             points.text = "+ 10 pts";
             PickUp.instance.holding = false;
+            animator.SetBool("CompostOpen", true);
             points.gameObject.SetActive(true);
             points.transform.Translate(Vector3.up * Time.deltaTime);
             StartCoroutine(UpdateTextPos());

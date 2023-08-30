@@ -13,7 +13,7 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Tutorial.tutorialing == false)
+        if(Tutorial.tutorialing == false && LevelManager.instance.isGameOver == false)
         {
             if (timeValue > 0)
             {

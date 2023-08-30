@@ -18,6 +18,7 @@ public class Tutorial : MonoBehaviour
     public bool generalWasteTutDone;
     public bool glassTutDone;
     public bool washTutDone;
+    public bool compostTutDone;
     public string sceneName;
     public Scene currentScene;
     public static bool tutorialing;
@@ -361,19 +362,22 @@ public class Tutorial : MonoBehaviour
 #endif
 
             if (PickUp.instance.holding == true)
-        
-            if (PlayerController.instance.objectHolding.tag == "GeneralWaste" && generalWasteTutDone == false)
             {
-                popUpIndex = 3;
+                if (PlayerController.instance.objectHolding.CompareTag("GeneralWaste") && generalWasteTutDone == false)
+                {
+                    popUpIndex = 3;
+                }
+                if (PlayerController.instance.objectHolding.CompareTag("Glass") && glassTutDone == false)
+                {
+                    popUpIndex = 4;
+                }
+                if ((PlayerController.instance.objectHolding.CompareTag("ContaminatedPlastic") || PlayerController.instance.objectHolding.CompareTag("ContaminatedMetal")) && washTutDone == false)
+                {
+                    popUpIndex = 5;
+                }
             }
-            if (PlayerController.instance.objectHolding.tag == "Glass" && glassTutDone == false)
-            {
-                popUpIndex = 4;
-            }
-            if ((PlayerController.instance.objectHolding.tag == "ContaminatedPlastic" || PlayerController.instance.objectHolding.tag == "ContaminatedMetal") && washTutDone == false)
-            {
-                popUpIndex = 5;
-            }
+
+
         }
        
     }
@@ -387,7 +391,7 @@ public class Tutorial : MonoBehaviour
             if (textWriter.isGeneratingText == false)
             {
                 characterMonologue.SetActive(true);
-                textWriter.AddWriter(msgTxt, "Welcome! Good job on making it to Level 2 in this level you will experience a new compost bin.", 0.02f, true);
+                textWriter.AddWriter(msgTxt, "Welcome to Level 2, a new compost bin has been added!", 0.02f, true);
             }
 
             if (textWriter.uiText == null && waitTimeIndex <= 0)
@@ -406,7 +410,7 @@ public class Tutorial : MonoBehaviour
                 characterMonologue.SetActive(false);
                 touchToProceed.SetActive(false);
                 tutorialing = false;
-                popUpIndex++;
+                popUpIndex = popUps.Length + 1;
             }
 
 #if UNITY_EDITOR
@@ -427,39 +431,20 @@ public class Tutorial : MonoBehaviour
                 characterMonologue.SetActive(false);
                 touchToProceed.SetActive(false);
                 tutorialing = false;
-                popUpIndex++;
+                popUpIndex = popUps.Length + 1;
             }
 # endif
 
         }
-        else if (popUpIndex == 1) // tutorial on movement ----------------------------------------------------------------
-        {
-            if (PlayerController.instance.theRB.velocity != Vector2.zero)
-            {
-                popUpIndex++;
-            }
-        }
-        else if (popUpIndex == 2)
-        {
-            if (PlayerController.instance.objectHolding != null)
-            {
-                if (PlayerController.instance.objectHolding.tag == "Compostable")
-                {
-                    popUpIndex = 3;
-                }
-
-
-            }
-        }
-        else if (popUpIndex == 3) //general waste tutorial -----------------------------------------------------------------
+        else if (popUpIndex == 1) //general waste tutorial -----------------------------------------------------------------
         {
             tutorialing = true;
-            generalWasteTutDone = true;
+            compostTutDone = true;
 
             if (textWriter.isGeneratingText == false)
             {
                 characterMonologue.SetActive(true);
-                textWriter.AddWriter(msgTxt, "Compostables like food waste can be thrown to the brown compost bin", 0.02f, true);
+                textWriter.AddWriter(msgTxt, "Compostables like food waste can be thrown into the brown compost bin", 0.02f, true);
 
             }
 
@@ -480,6 +465,7 @@ public class Tutorial : MonoBehaviour
                 touchToProceed.SetActive(false);
                 tutorialing = false;
                 popUpIndex = popUps.Length + 1;
+                Debug.Log(popUpIndex);
             }
 
 #if UNITY_EDITOR
@@ -487,23 +473,30 @@ public class Tutorial : MonoBehaviour
             {
                 touchToProceed.SetActive(true);
                 waitTimeIndex = waitTime;
-
             }
             else
             {
                 waitTimeIndex -= Time.deltaTime;
             }
 
-            if (textWriter.uiText == null && Input.GetMouseButtonDown(0))
+            if (textWriter.uiText == null && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
             {
                 textWriter.isGeneratingText = false;
                 characterMonologue.SetActive(false);
                 touchToProceed.SetActive(false);
                 tutorialing = false;
                 popUpIndex = popUps.Length + 1;
+                Debug.Log(popUpIndex);
             }
 # endif
         }
+
+
+            if (PlayerController.instance.objectHolding.CompareTag("Compostable") && compostTutDone == false)
+            {
+                popUpIndex = 1;
+            }
+        
 
 
     }
