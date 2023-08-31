@@ -726,6 +726,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7466758114953332707, guid: 61ee041a36c12034bbf76ad7d8f93af7, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -804,6 +808,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9080697546062979243, guid: e365bfea41e4b794aa17dc5cfce0a512, type: 3}
   m_PrefabInstance: {fileID: 4981565051906891231}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1077302984 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6567640483964725218, guid: e365bfea41e4b794aa17dc5cfce0a512, type: 3}
+  m_PrefabInstance: {fileID: 4981565051906891231}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1096625711 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7031117904888421985, guid: e365bfea41e4b794aa17dc5cfce0a512, type: 3}
@@ -28517,7 +28532,7 @@ PrefabInstance:
     - target: {fileID: 4550088023322896372, guid: 1873bd422b277a742bf138b1deaf6f85, type: 3}
       propertyPath: DashImage
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1077302984}
     - target: {fileID: 4550088023322896375, guid: 1873bd422b277a742bf138b1deaf6f85, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -31086,6 +31101,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 586686760}
+    - target: {fileID: 6567640483964725219, guid: e365bfea41e4b794aa17dc5cfce0a512, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2132011431}
+    - target: {fileID: 6567640483964725219, guid: e365bfea41e4b794aa17dc5cfce0a512, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DashBtn
+      objectReference: {fileID: 0}
     - target: {fileID: 7031117904888421985, guid: e365bfea41e4b794aa17dc5cfce0a512, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -31098,6 +31121,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2132011431}
+    - target: {fileID: 7189570876014712664, guid: e365bfea41e4b794aa17dc5cfce0a512, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DashBtn
+      objectReference: {fileID: 0}
     - target: {fileID: 8503382968604828489, guid: e365bfea41e4b794aa17dc5cfce0a512, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

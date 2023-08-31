@@ -168,7 +168,7 @@ public class Tutorial : MonoBehaviour
             if (textWriter.isGeneratingText == false)
             {
                 characterMonologue.SetActive(true);
-                textWriter.AddWriter(msgTxt, "These general wastes can be thrown directly to the general waste bin", 0.02f, true);
+                textWriter.AddWriter(msgTxt, "These general wastes can be thrown directly into the general waste bin", 0.02f, true);
 
             }
 

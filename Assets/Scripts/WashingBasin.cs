@@ -80,18 +80,18 @@ public class WashingBasin : MonoBehaviour
         progress.gameObject.SetActive(true);
 
         float score = 0f;
-        while (score < 3f)
+        while (score < 2f)
         {
             yield return new WaitForSeconds(1f);
             score += 1;
             Debug.Log(score);
             progress.value = score;
         }
-        if (score == 3f)
+        if (score == 2f)
         {
             StartCoroutine(FinishWashing());
             animator.SetBool("Basinon", false);
-            audioSource.Stop();
+            
 
         }
 
@@ -144,7 +144,9 @@ public class WashingBasin : MonoBehaviour
                 }
             }
         }
+        audioSource.Stop();
         PlayerController.instance.animator.SetBool("busy", false);
+        PlayerController.instance.animator.SetBool("is carrying", true);
         progress.value = progress.minValue;
         yield break;
     }
