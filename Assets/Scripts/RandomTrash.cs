@@ -163,5 +163,70 @@ public class RandomTrash : MonoBehaviour
                 Debug.Log("Spawning 7 Rubbish");
             }
         }
+        if (sceneName == "Level3")
+        {
+            int whichrubbish = Random.Range(0, 7);
+            //rubbishspawn = Random.Range(5, 6);
+            if (LevelManager.instance.rubbishspawn == 6) //5 rubbish spawn
+            {
+                whichrubbish = Random.Range(0, 8);
+                GameObject spawnable = allTrash[whichrubbish]; // spawns random item 
+                Instantiate(spawnable, spawn5);
+
+                whichrubbish = Random.Range(0, 8);
+                GameObject spawnable2 = allTrash[whichrubbish]; // spawns random item 
+                Instantiate(spawnable2, spawn2);
+
+                whichrubbish = Random.Range(0, 8);
+                GameObject spawnable3 = allTrash[whichrubbish]; // spawns random item 
+                Instantiate(spawnable3, spawn8);
+
+                whichrubbish = Random.Range(0, 8);
+                GameObject spawnable4 = allTrash[whichrubbish]; // spawns random item 
+                Instantiate(spawnable4, spawn1);
+
+                whichrubbish = Random.Range(9, 10);
+                GameObject spawnable5 = allTrash[whichrubbish]; // spawns random NR item
+                Instantiate(spawnable5, spawn3);
+
+                whichrubbish = Random.Range(11,12);
+                GameObject spawnable6 = allTrash[whichrubbish]; // spawns random R item
+                Instantiate(spawnable6, spawn4);
+
+                Debug.Log("Spawning 6 Rubbish");
+            }
+            if (LevelManager.instance.rubbishspawn == 7) //6 rubbish spawn
+            {
+                whichrubbish = Random.Range(0, 8);
+                GameObject spawnable = allTrash[whichrubbish]; // spawns random item 
+                Instantiate(spawnable, spawn5);
+
+                whichrubbish = Random.Range(0, 8);
+                GameObject spawnable2 = allTrash[whichrubbish]; // spawns random item 
+                Instantiate(spawnable2, spawn2);
+
+                whichrubbish = Random.Range(0, 8);
+                GameObject spawnable3 = allTrash[whichrubbish]; // spawns random item 
+                Instantiate(spawnable3, spawn8);
+
+                whichrubbish = Random.Range(0, 8);
+                GameObject spawnable4 = allTrash[whichrubbish]; // spawns random item 
+                Instantiate(spawnable4, spawn1);
+
+                whichrubbish = Random.Range(9, 10);
+                GameObject spawnable5 = allTrash[whichrubbish]; // spawns random NR item
+                Instantiate(spawnable5, spawn3);
+
+                whichrubbish = Random.Range(11, 12);
+                GameObject spawnable6 = allTrash[whichrubbish]; // spawns random R item
+                Instantiate(spawnable6, spawn4);
+
+                whichrubbish = Random.Range(0, 8);
+                GameObject spawnable7 = allTrash[whichrubbish]; // random rubbish
+                Instantiate(spawnable7, spawn7);
+
+                Debug.Log("Spawning 7 Rubbish");
+            }
+        }
     }
 }

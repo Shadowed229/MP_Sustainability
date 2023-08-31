@@ -45,7 +45,7 @@ public class RBin : MonoBehaviour
 
     bool isRegulated()
     {
-        if (PlayerController.instance.objectHolding.tag == "Box_Ewaste")
+        if (PlayerController.instance.objectHolding.tag == "Regulated")
         {
             animator.SetBool("ROpen", true);
             audioSource.Play();

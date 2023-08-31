@@ -29,6 +29,10 @@ public class LevelManager : MonoBehaviour
         {
             rubbishspawn = Random.Range(6, 7);
         }
+        else if (sceneName == "Level3")
+        {
+            rubbishspawn = Random.Range(6, 7);
+        }
 
         score = 0;
         UIController.instance.progressbar.maxValue = rubbishspawn;

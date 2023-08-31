@@ -20,6 +20,8 @@ public class Tutorial : MonoBehaviour
     public bool washTutDone;
     public bool paperTutDone;
     public bool compostTutDone;
+    public bool nonReguTutDone;
+    public bool ReguTutDone;
     public string sceneName;
     public Scene currentScene;
     public static bool tutorialing;
@@ -33,7 +35,7 @@ public class Tutorial : MonoBehaviour
     {
         popUpIndex = 0;
         waitTimeIndex = waitTime;
-        
+
     }
 
     // Update is called once per frame
@@ -68,7 +70,11 @@ public class Tutorial : MonoBehaviour
         {
             Level2Tutorial();
         }
-        
+        if (sceneName == "Level3")
+        {
+            Level3Tutorial();
+        }
+
     }
 
     private void Level1Tutorial()
@@ -420,27 +426,27 @@ public class Tutorial : MonoBehaviour
 #endif
         }
 
-            if (PlayerController.instance.objectHolding != null)
+        if (PlayerController.instance.objectHolding != null)
+        {
+            if (PlayerController.instance.objectHolding.CompareTag("GeneralWaste") && generalWasteTutDone == false)
             {
-                if (PlayerController.instance.objectHolding.CompareTag("GeneralWaste") && generalWasteTutDone == false)
-                {
-                    popUpIndex = 3;
-                }
-                if (PlayerController.instance.objectHolding.CompareTag("ContaminatedGlass") && glassTutDone == false)
-                {
-                    popUpIndex = 4;
-                }
-                if ((PlayerController.instance.objectHolding.CompareTag("ContaminatedPlastic") || PlayerController.instance.objectHolding.CompareTag("ContaminatedMetal")) && washTutDone == false)
-                {
-                    popUpIndex = 5;
-                }
-                if (PlayerController.instance.objectHolding.CompareTag("Paper") && paperTutDone == false)
-                {
-                    popUpIndex = 6;
-                }
+                popUpIndex = 3;
             }
+            if (PlayerController.instance.objectHolding.CompareTag("ContaminatedGlass") && glassTutDone == false)
+            {
+                popUpIndex = 4;
+            }
+            if ((PlayerController.instance.objectHolding.CompareTag("ContaminatedPlastic") || PlayerController.instance.objectHolding.CompareTag("ContaminatedMetal")) && washTutDone == false)
+            {
+                popUpIndex = 5;
+            }
+            if (PlayerController.instance.objectHolding.CompareTag("Paper") && paperTutDone == false)
+            {
+                popUpIndex = 6;
+            }
+        }
     }
-    
+
 
     void Level2Tutorial()
     {
@@ -550,15 +556,189 @@ public class Tutorial : MonoBehaviour
             }
 # endif
         }
-
-
+        if(PlayerController.instance.objectHolding != null)
+        {
             if (PlayerController.instance.objectHolding.CompareTag("Compostable") && compostTutDone == false)
             {
                 popUpIndex = 1;
             }
-        
-
-
+        }
     }
+    void Level3Tutorial()
+    {
+        if (popUpIndex == 0) //intro to the game
+        {
+            tutorialing = true;
+
+            if (textWriter.isGeneratingText == false)
+            {
+                characterMonologue.SetActive(true);
+                textWriter.AddWriter(msgTxt, "Welcome to Level 3, there is 2 bins added, Non-Regulated Bin and Regulated Bin. This are both for E-Waste!", 0.02f, true);
+            }
+
+            if (textWriter.uiText == null && waitTimeIndex <= 0)
+            {
+                touchToProceed.SetActive(true);
+                waitTimeIndex = waitTime;
+            }
+            else
+            {
+                waitTimeIndex -= Time.deltaTime;
+            }
+
+            if (textWriter.uiText == null && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+            {
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touchToProceed.SetActive(false);
+                tutorialing = false;
+                popUpIndex = popUps.Length + 1;
+            }
+
+#if UNITY_EDITOR
+            if (textWriter.uiText == null && waitTimeIndex <= 0)
+            {
+                touchToProceed.SetActive(true);
+                waitTimeIndex = waitTime;
+
+            }
+            else
+            {
+                waitTimeIndex -= Time.deltaTime;
+            }
+
+            if (textWriter.uiText == null && Input.GetMouseButtonDown(0))
+            {
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touchToProceed.SetActive(false);
+                tutorialing = false;
+                popUpIndex = popUps.Length + 1;
+            }
+# endif
+
+        }
+        else if (popUpIndex == 1) //general waste tutorial -----------------------------------------------------------------
+        {
+            tutorialing = true;
+            nonReguTutDone = true;
+
+            if (textWriter.isGeneratingText == false)
+            {
+                characterMonologue.SetActive(true);
+                textWriter.AddWriter(msgTxt, "This are Non Regulated E-Waste, They are to be thrown into the Non-Regulated Bin!", 0.02f, true);
+
+            }
+
+            if (textWriter.uiText == null && waitTimeIndex <= 0)
+            {
+                touchToProceed.SetActive(true);
+                waitTimeIndex = waitTime;
+            }
+            else
+            {
+                waitTimeIndex -= Time.deltaTime;
+            }
+
+            if (textWriter.uiText == null && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+            {
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touchToProceed.SetActive(false);
+                tutorialing = false;
+                popUpIndex = popUps.Length + 1;
+                Debug.Log(popUpIndex);
+            }
+
+#if UNITY_EDITOR
+            if (textWriter.uiText == null && waitTimeIndex <= 0)
+            {
+                touchToProceed.SetActive(true);
+                waitTimeIndex = waitTime;
+            }
+            else
+            {
+                waitTimeIndex -= Time.deltaTime;
+            }
+
+            if (textWriter.uiText == null && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+            {
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touchToProceed.SetActive(false);
+                tutorialing = false;
+                popUpIndex = popUps.Length + 1;
+                Debug.Log(popUpIndex);
+            }
+#endif
+        }
+
+            else if (popUpIndex == 2) //general waste tutorial -----------------------------------------------------------------
+            {
+                tutorialing = true;
+                ReguTutDone = true;
+
+                if (textWriter.isGeneratingText == false)
+                {
+                    characterMonologue.SetActive(true);
+                    textWriter.AddWriter(msgTxt, "This are Regulated E-Waste, They are to be thrown into the Regulated Bin!", 0.02f, true);
+
+                }
+
+                if (textWriter.uiText == null && waitTimeIndex <= 0)
+                {
+                    touchToProceed.SetActive(true);
+                    waitTimeIndex = waitTime;
+                }
+                else
+                {
+                    waitTimeIndex -= Time.deltaTime;
+                }
+
+                if (textWriter.uiText == null && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+                {
+                    textWriter.isGeneratingText = false;
+                    characterMonologue.SetActive(false);
+                    touchToProceed.SetActive(false);
+                    tutorialing = false;
+                    popUpIndex = popUps.Length + 1;
+                    Debug.Log(popUpIndex);
+                }
+
+#if UNITY_EDITOR
+                if (textWriter.uiText == null && waitTimeIndex <= 0)
+                {
+                    touchToProceed.SetActive(true);
+                    waitTimeIndex = waitTime;
+                }
+                else
+                {
+                    waitTimeIndex -= Time.deltaTime;
+                }
+
+                if (textWriter.uiText == null && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+                {
+                    textWriter.isGeneratingText = false;
+                    characterMonologue.SetActive(false);
+                    touchToProceed.SetActive(false);
+                    tutorialing = false;
+                    popUpIndex = popUps.Length + 1;
+                    Debug.Log(popUpIndex);
+                }
+#endif
+            }
+        if (PlayerController.instance.objectHolding != null)
+        {
+            if (PlayerController.instance.objectHolding.CompareTag("NonRegulated") && nonReguTutDone == false)
+            {
+                popUpIndex = 1;
+            }
+            if (PlayerController.instance.objectHolding.CompareTag("Regulated") && ReguTutDone == false)
+            {
+                popUpIndex = 2;
+            }
+        }   
+    } 
 }
+
 
