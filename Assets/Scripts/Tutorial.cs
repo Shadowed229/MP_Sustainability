@@ -99,7 +99,7 @@ public class Tutorial : MonoBehaviour
                 characterMonologue.SetActive(false);
                 touchToProceed.SetActive(false);
                 tutorialing = false;
-                popUpIndex++;
+                popUpIndex = 8;
             }
 
 #if UNITY_EDITOR
@@ -120,7 +120,7 @@ public class Tutorial : MonoBehaviour
                 characterMonologue.SetActive(false);
                 touchToProceed.SetActive(false);
                 tutorialing = false;
-                popUpIndex++;
+                popUpIndex = 8;
             }
 # endif
 
@@ -154,7 +154,7 @@ public class Tutorial : MonoBehaviour
                 }
             }
         }
-        else if (popUpIndex == 3 ) //general waste tutorial -----------------------------------------------------------------
+        else if (popUpIndex == 3) //general waste tutorial -----------------------------------------------------------------
         {
             tutorialing = true;
             generalWasteTutDone = true;
@@ -207,7 +207,7 @@ public class Tutorial : MonoBehaviour
             }
 # endif
         }
-        else if (popUpIndex == 4 ) // Glass tutorial -------------------------------------------------------------
+        else if (popUpIndex == 4) // Glass tutorial -------------------------------------------------------------
         {
             tutorialing = true;
             glassTutDone = true;
@@ -368,28 +368,81 @@ public class Tutorial : MonoBehaviour
 #endif
         }
 
-        if (PlayerController.instance.objectHolding != null)
+        else if (popUpIndex == 8) //intro to the timer ------------------------------------------------
         {
-            if (PlayerController.instance.objectHolding.CompareTag("GeneralWaste") && generalWasteTutDone == false)
-            {
-                popUpIndex = 3;
-            }
-            if (PlayerController.instance.objectHolding.CompareTag("ContaminatedGlass") && glassTutDone == false)
-            {
-                popUpIndex = 4;
-            }
-            if ((PlayerController.instance.objectHolding.CompareTag("ContaminatedPlastic") || PlayerController.instance.objectHolding.CompareTag("ContaminatedMetal")) && washTutDone == false)
-            {
-                popUpIndex = 5;
-            }
-            if (PlayerController.instance.objectHolding.CompareTag("Paper") && paperTutDone == false)
-            {
-                popUpIndex = 6;
-            }
-        }
-    }
+            tutorialing = true;
 
-    private void Level2Tutorial()
+            if (textWriter.isGeneratingText == false)
+            {
+                characterMonologue.SetActive(true);
+                textWriter.AddWriter(msgTxt, "In every level, there will be a timer running at the center top screen, and you need to throw away all the rubbish within the given amount of time! Now, lets get started", 0.02f, true);
+            }
+
+            if (textWriter.uiText == null && waitTimeIndex <= 0)
+            {
+                touchToProceed.SetActive(true);
+                waitTimeIndex = waitTime;
+            }
+            else
+            {
+                waitTimeIndex -= Time.deltaTime;
+            }
+
+            if (textWriter.uiText == null && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+            {
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touchToProceed.SetActive(false);
+                tutorialing = false;
+                popUpIndex = 1;
+            }
+
+#if UNITY_EDITOR
+            if (textWriter.uiText == null && waitTimeIndex <= 0)
+            {
+                touchToProceed.SetActive(true);
+                waitTimeIndex = waitTime;
+
+            }
+            else
+            {
+                waitTimeIndex -= Time.deltaTime;
+            }
+
+            if (textWriter.uiText == null && Input.GetMouseButtonDown(0))
+            {
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touchToProceed.SetActive(false);
+                tutorialing = false;
+                popUpIndex = 1;
+            }
+#endif
+        }
+
+            if (PlayerController.instance.objectHolding != null)
+            {
+                if (PlayerController.instance.objectHolding.CompareTag("GeneralWaste") && generalWasteTutDone == false)
+                {
+                    popUpIndex = 3;
+                }
+                if (PlayerController.instance.objectHolding.CompareTag("ContaminatedGlass") && glassTutDone == false)
+                {
+                    popUpIndex = 4;
+                }
+                if ((PlayerController.instance.objectHolding.CompareTag("ContaminatedPlastic") || PlayerController.instance.objectHolding.CompareTag("ContaminatedMetal")) && washTutDone == false)
+                {
+                    popUpIndex = 5;
+                }
+                if (PlayerController.instance.objectHolding.CompareTag("Paper") && paperTutDone == false)
+                {
+                    popUpIndex = 6;
+                }
+            }
+    }
+    
+
+    void Level2Tutorial()
     {
         if (popUpIndex == 0) //intro to the game
         {
