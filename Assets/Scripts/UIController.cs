@@ -42,7 +42,7 @@ public class UIController : MonoBehaviour
     [SerializeField]
     private FloatingJoystick joystick;
     [SerializeField]
-    private Vector2 joystickSize = new Vector2(200, 200);
+    private Vector2 joystickSize = new Vector2(300, 300);
 
     // Start is called before the first frame update
     private void Awake()
