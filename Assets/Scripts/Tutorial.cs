@@ -327,7 +327,7 @@ public class Tutorial : MonoBehaviour
             if (textWriter.isGeneratingText == false)
             {
                 characterMonologue.SetActive(true);
-                textWriter.AddWriter(msgTxt, "Paper waste items can be recyvled without any process. However some papers such as napkins and paper towels cant be recycled", 0.02f, true);
+                textWriter.AddWriter(msgTxt, "Paper waste items can be recycled without any process. However some papers such as napkins and paper towels cant be recycled", 0.02f, true);
 
             }
 
