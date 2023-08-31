@@ -30902,6 +30902,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2132011431}
+    - target: {fileID: 644002364756234883, guid: e365bfea41e4b794aa17dc5cfce0a512, type: 3}
+      propertyPath: m_Text
+      value: Newspaper
+      objectReference: {fileID: 0}
+    - target: {fileID: 1085651678008800910, guid: e365bfea41e4b794aa17dc5cfce0a512, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1882142352, guid: 4e0b68f59daf0404aae2585ac05ecc96, type: 3}
     - target: {fileID: 1949308392757384427, guid: e365bfea41e4b794aa17dc5cfce0a512, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -30939,6 +30947,10 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2652739767945683543, guid: e365bfea41e4b794aa17dc5cfce0a512, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3615657435384131863, guid: e365bfea41e4b794aa17dc5cfce0a512, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -31050,6 +31062,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5834788342970020882, guid: e365bfea41e4b794aa17dc5cfce0a512, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5846182647701921056, guid: e365bfea41e4b794aa17dc5cfce0a512, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -31062,10 +31078,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 2132011431}
+    - target: {fileID: 6178445185428077721, guid: e365bfea41e4b794aa17dc5cfce0a512, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6481062771248354084, guid: e365bfea41e4b794aa17dc5cfce0a512, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 586686760}
+    - target: {fileID: 7031117904888421985, guid: e365bfea41e4b794aa17dc5cfce0a512, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7061331880327948562, guid: e365bfea41e4b794aa17dc5cfce0a512, type: 3}
+      propertyPath: m_Text
+      value: "Plastic/Metal\n Items"
+      objectReference: {fileID: 0}
     - target: {fileID: 7189570876014712664, guid: e365bfea41e4b794aa17dc5cfce0a512, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -31096,6 +31124,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8664020337757189154, guid: e365bfea41e4b794aa17dc5cfce0a512, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9080697546062979243, guid: e365bfea41e4b794aa17dc5cfce0a512, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9206075404457357157, guid: e365bfea41e4b794aa17dc5cfce0a512, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9208262939913667514, guid: e365bfea41e4b794aa17dc5cfce0a512, type: 3}

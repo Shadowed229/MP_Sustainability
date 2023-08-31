@@ -168,7 +168,7 @@ public class Tutorial : MonoBehaviour
             if (textWriter.isGeneratingText == false)
             {
                 characterMonologue.SetActive(true);
-                textWriter.AddWriter(msgTxt, "Those general wastes can be thrown directly to the general waste bin", 0.02f, true);
+                textWriter.AddWriter(msgTxt, "These general wastes can be thrown directly to the general waste bin", 0.02f, true);
 
             }
 
@@ -221,7 +221,7 @@ public class Tutorial : MonoBehaviour
             if (textWriter.isGeneratingText == false)
             {
                 characterMonologue.SetActive(true);
-                textWriter.AddWriter(msgTxt, "Glass materials need to be rinsed at washing basin to clean it before throwing it inside the recycling bin", 0.02f, true);
+                textWriter.AddWriter(msgTxt, "Glass need to be rinsed at the washing basin, cleaning it before throwing it into the recycling bin!", 0.02f, true);
 
             }
 
@@ -274,7 +274,7 @@ public class Tutorial : MonoBehaviour
             if (textWriter.isGeneratingText == false)
             {
                 characterMonologue.SetActive(true);
-                textWriter.AddWriter(msgTxt, "Plastic and Metal materials need to be rinsed at washing basin to clean it before throwing it inside the recycling bin", 0.02f, true);
+                textWriter.AddWriter(msgTxt, "Plastic and Metal need to be rinsed at the washing basin, cleaning it before throwing it into the recycling bin!", 0.02f, true);
 
             }
 
@@ -327,7 +327,7 @@ public class Tutorial : MonoBehaviour
             if (textWriter.isGeneratingText == false)
             {
                 characterMonologue.SetActive(true);
-                textWriter.AddWriter(msgTxt, "Paper waste items can be recycled without any process. However some papers such as napkins and paper towels cant be recycled", 0.02f, true);
+                textWriter.AddWriter(msgTxt, "Paper waste items can be thrown directly into the recycling bins. However some papers such as napkins and paper towels cant be recycled", 0.02f, true);
 
             }
 
@@ -381,7 +381,7 @@ public class Tutorial : MonoBehaviour
             if (textWriter.isGeneratingText == false)
             {
                 characterMonologue.SetActive(true);
-                textWriter.AddWriter(msgTxt, "In every level, there will be a timer running at the center top screen, and you need to throw away all the rubbish within the given amount of time! Now, lets get started", 0.02f, true);
+                textWriter.AddWriter(msgTxt, "In every level, there will be a timer running at the top middle of your screen, and you need to throw away all the rubbish within the given amount of time! Now, lets get started!", 0.02f, true);
             }
 
             if (textWriter.uiText == null && waitTimeIndex <= 0)
