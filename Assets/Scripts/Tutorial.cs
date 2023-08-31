@@ -99,7 +99,7 @@ public class Tutorial : MonoBehaviour
                 characterMonologue.SetActive(false);
                 touchToProceed.SetActive(false);
                 tutorialing = false;
-                popUpIndex = 8;
+                popUpIndex = 7;
             }
 
 #if UNITY_EDITOR
@@ -120,7 +120,7 @@ public class Tutorial : MonoBehaviour
                 characterMonologue.SetActive(false);
                 touchToProceed.SetActive(false);
                 tutorialing = false;
-                popUpIndex = 8;
+                popUpIndex = 7;
             }
 # endif
 
@@ -368,7 +368,7 @@ public class Tutorial : MonoBehaviour
 #endif
         }
 
-        else if (popUpIndex == 8) //intro to the timer ------------------------------------------------
+        else if (popUpIndex == 7) //intro to the timer ------------------------------------------------
         {
             tutorialing = true;
 
