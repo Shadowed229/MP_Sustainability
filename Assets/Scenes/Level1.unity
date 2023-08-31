@@ -30792,7 +30792,7 @@ MonoBehaviour:
   isGameOver: 0
   score: 0
   rubbishspawn: 0
-  winMenu: {fileID: 0}
+  winMenu: {fileID: 4981565051906891232}
   sceneName: 
 --- !u!4 &2132011433
 Transform:
@@ -31108,6 +31108,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e365bfea41e4b794aa17dc5cfce0a512, type: 3}
+--- !u!1 &4981565051906891232 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5834788342970020882, guid: e365bfea41e4b794aa17dc5cfce0a512, type: 3}
+  m_PrefabInstance: {fileID: 4981565051906891231}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

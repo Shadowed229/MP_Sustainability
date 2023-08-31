@@ -2195,6 +2195,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1217508029290076008, guid: 1873bd422b277a742bf138b1deaf6f85, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -652483205963662088, guid: 5b3a920ba4731724786facb96c651562, type: 2}
     - target: {fileID: 3313385919945683778, guid: 1873bd422b277a742bf138b1deaf6f85, type: 3}
       propertyPath: m_Size.x
       value: 0.38
@@ -2342,6 +2346,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1132028536837898626, guid: a9eaf6bea6d75fc48b581b28c244b640, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -652483205963662088, guid: 5b3a920ba4731724786facb96c651562, type: 2}
     - target: {fileID: 2762750340659687660, guid: a9eaf6bea6d75fc48b581b28c244b640, type: 3}
       propertyPath: m_Name
       value: NRBin
@@ -2722,6 +2730,7 @@ GameObject:
   - component: {fileID: 704426763}
   - component: {fileID: 704426762}
   - component: {fileID: 704426761}
+  - component: {fileID: 704426765}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2736,7 +2745,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 704426760}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0758df7d1a3b0b4b80bc89f265ee3cd, type: 3}
   m_Name: 
@@ -2816,6 +2825,102 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &704426765
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704426760}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -5942823117050681881, guid: 5b3a920ba4731724786facb96c651562, type: 2}
+  m_audioClip: {fileID: 8300000, guid: b7da48c15e710a741842583fac3307c7, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &710369579 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3097145336816256350, guid: 58967973781b0f64ba84db0999bf58d5, type: 3}
@@ -2879,6 +2984,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7673702233310060340, guid: 179fd7abbd32048458a732976c5d6f49, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -652483205963662088, guid: 5b3a920ba4731724786facb96c651562, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29358,6 +29467,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6522777413105396793, guid: a4b7dccb99c911e4d95c65519f5e9d8d, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -652483205963662088, guid: 5b3a920ba4731724786facb96c651562, type: 2}
     - target: {fileID: 4742334302469715888, guid: a4b7dccb99c911e4d95c65519f5e9d8d, type: 3}
       propertyPath: m_Name
       value: GeneralWasteBin
@@ -30004,6 +30117,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -526184756015727565, guid: 015af177bbe0937448bd921d5539878b, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -652483205963662088, guid: 5b3a920ba4731724786facb96c651562, type: 2}
     - target: {fileID: 562510897004737358, guid: 015af177bbe0937448bd921d5539878b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.725773
@@ -30231,6 +30348,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8485589130634305496, guid: c07c64a7be7990e45b7a28bdcae19e87, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -652483205963662088, guid: 5b3a920ba4731724786facb96c651562, type: 2}
     - target: {fileID: 4557285964091921881, guid: c07c64a7be7990e45b7a28bdcae19e87, type: 3}
       propertyPath: m_Name
       value: CompostBin
