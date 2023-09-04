@@ -10,6 +10,7 @@ public class CompostBin : MonoBehaviour
     public Transform textTrans;
     public Animator animator;
     public AudioSource audioSource;
+    public Image backdrop;
     //public Slider progress;
     // Start is called before the first frame update
     void Start()
@@ -23,11 +24,29 @@ public class CompostBin : MonoBehaviour
         DistanceFromPlayer();
         if (PickUp.instance.holding)
         {
-            if (isClose && isCompost())
+            if (isClose && RandomTrash.instance.isCompost())
             {
                 Debug.Log("much close");
                 Recycling();
             }
+            if (isClose && !RandomTrash.instance.isCompost())
+            {
+                ErrorMessage();
+            }
+        }
+    }
+    void ErrorMessage()
+    {
+        if (InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup"))
+        {
+            InteractButton.instance.buttonPressed = false;
+            points.color = Color.white;
+            points.text = "Wrong Bin!";
+            points.gameObject.SetActive(true);
+            backdrop.GetComponent<Image>().color = new Color32(255, 0, 0, 150);
+            backdrop.gameObject.SetActive(true);
+
+            StartCoroutine(UpdateTextPos());
         }
     }
     void DistanceFromPlayer()
@@ -40,20 +59,6 @@ public class CompostBin : MonoBehaviour
         else
         {
             isClose = false;
-        }
-    }
-
-    bool isCompost()
-    {
-        if (PlayerController.instance.objectHolding.tag == "Compostable")
-        {
-            //animator.SetBool("CompostOpen", true);
-            audioSource.Play();
-            return true;
-        }
-        else
-        {
-            return false;
         }
     }
 
@@ -83,6 +88,7 @@ public class CompostBin : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
         points.gameObject.SetActive(false);
+        backdrop.gameObject.SetActive(false);
         animator.SetBool("CompostOpen", false);
         points.gameObject.transform.position = textTrans.position;
         audioSource.Stop();

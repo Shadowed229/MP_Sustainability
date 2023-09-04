@@ -358,6 +358,7 @@ MonoBehaviour:
   textTrans: {fileID: 5398236911230688308}
   animator: {fileID: 981484477786727031}
   audioSource: {fileID: 7673702233310060340}
+  backdrop: {fileID: 6983702823875132021}
 --- !u!95 &981484477786727031
 Animator:
   serializedVersion: 5

@@ -10,6 +10,7 @@ public class GeneralWaste : MonoBehaviour
     public Transform textTrans;
     public Animator animator;
     public AudioSource audioSource;
+    public Image backdrop;
     //public Slider progress;
     // Start is called before the first frame update
     void Start()
@@ -23,11 +24,29 @@ public class GeneralWaste : MonoBehaviour
         DistanceFromPlayer();
         if (PickUp.instance.holding)
         {
-            if (isClose && isGeneralWaste())
+            if (isClose && RandomTrash.instance.isGeneralWaste())
             {
                 Debug.Log("much close");
                 Recycling();
             }
+            if (isClose && !RandomTrash.instance.isGeneralWaste())
+            {
+                ErrorMessage();
+            }
+        }
+    }
+    void ErrorMessage()
+    {
+        if (InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup"))
+        {
+            InteractButton.instance.buttonPressed = false;
+            points.color = Color.white;
+            points.text = "Wrong Bin!";
+            points.gameObject.SetActive(true);
+            backdrop.GetComponent<Image>().color = new Color32(255, 0, 0, 150);
+            backdrop.gameObject.SetActive(true);
+
+            StartCoroutine(UpdateTextPos());
         }
     }
     void DistanceFromPlayer()
@@ -40,22 +59,6 @@ public class GeneralWaste : MonoBehaviour
         else
         {
             isClose = false;
-        }
-    }
-
-    bool isGeneralWaste()
-    {
-        if (PlayerController.instance.objectHolding.tag == "GeneralWaste")
-        {
-            
-            
-            return true;
-           
-
-        }
-        else
-        {
-            return false;
         }
     }
 
@@ -87,6 +90,7 @@ public class GeneralWaste : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
         points.gameObject.SetActive(false);
+        backdrop.gameObject.SetActive(false);
         points.gameObject.transform.position = textTrans.position;
         animator.SetBool("General", false);
         audioSource.Stop();

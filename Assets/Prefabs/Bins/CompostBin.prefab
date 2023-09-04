@@ -179,10 +179,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d46331c41822c0449b3f13309f1960e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: {fileID: 0}
+  points: {fileID: 8438378358522454375}
   textTrans: {fileID: 0}
   animator: {fileID: 3375976139636831245}
   audioSource: {fileID: -8485589130634305496}
+  backdrop: {fileID: 8728666003713129498}
 --- !u!95 &3375976139636831245
 Animator:
   serializedVersion: 5
@@ -213,7 +214,7 @@ AudioSource:
   m_GameObject: {fileID: 4557285964091921881}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -652483205963662088, guid: 5b3a920ba4731724786facb96c651562, type: 2}
   m_audioClip: {fileID: 8300000, guid: 5c82f8e8675bc2548b146ce6e4d3dbec, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1

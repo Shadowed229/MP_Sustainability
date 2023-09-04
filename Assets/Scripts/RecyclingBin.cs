@@ -10,6 +10,7 @@ public class RecyclingBin : MonoBehaviour
     public Transform textTrans;
     public Animator animator;
     public AudioSource audioSource;
+    public Image backdrop;
     //public Slider progress;
     // Start is called before the first frame update
     void Start()
@@ -23,13 +24,31 @@ public class RecyclingBin : MonoBehaviour
         DistanceFromPlayer();
         if(PickUp.instance.holding)
         {
-            if (isClose && isRecyclable())
+            if (isClose && RandomTrash.instance.isRecyclable())
             {
                 Debug.Log("much close");
                 Recycling();
             }
-            
+            if (isClose && !RandomTrash.instance.isRecyclable())
+            {
+                ErrorMessage();
+            }
+
         }   
+    }
+    void ErrorMessage()
+    {
+        if (InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup"))
+        {
+            InteractButton.instance.buttonPressed = false;
+            points.color = Color.white;
+            points.text = "Wrong Bin!";
+            points.gameObject.SetActive(true);
+            backdrop.GetComponent<Image>().color = new Color32(255, 0, 0, 150);
+            backdrop.gameObject.SetActive(true);
+
+            StartCoroutine(UpdateTextPos());
+        }
     }
 
     void DistanceFromPlayer()
@@ -46,35 +65,6 @@ public class RecyclingBin : MonoBehaviour
         }
     }
 
-    bool isRecyclable()
-    {
-        
-        if (PlayerController.instance.objectHolding.tag == "Glass")
-        {
-            
-            return true;
-        }
-        else if (PlayerController.instance.objectHolding.tag == "Plastic")
-        {
-           
-            return true;
-        }
-        else if (PlayerController.instance.objectHolding.tag == "Metal")
-        {
-           
-            return true;
-        }
-        else if (PlayerController.instance.objectHolding.tag == "Paper")
-        {
-            
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
     void Recycling()
     {
         if (InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup"))
@@ -82,7 +72,7 @@ public class RecyclingBin : MonoBehaviour
             InteractButton.instance.buttonPressed = false;
             Destroy(PlayerController.instance.objectHolding);
             LevelManager.instance.score += 1;
-            points.color = Color.green;
+            points.color = Color.white;
             points.text = "+ 10 pts";
             PickUp.instance.holding = false;
             points.gameObject.SetActive(true);
@@ -106,6 +96,7 @@ public class RecyclingBin : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
         points.gameObject.SetActive(false);
+        backdrop.gameObject.SetActive(false);
         points.gameObject.transform.position = textTrans.position;
         yield return true;
         animator.SetBool("Recycle", false);

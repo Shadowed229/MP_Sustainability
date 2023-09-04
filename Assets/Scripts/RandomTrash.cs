@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class RandomTrash : MonoBehaviour
 {
+    public static RandomTrash instance;
     public Transform spawn1;
     public Transform spawn2;
     public Transform spawn3;
@@ -19,12 +20,93 @@ public class RandomTrash : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
+        instance = this;
         Scene currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
     }
     void Start()
     {
         meow = 0;
+    }
+
+    public bool isGeneralWaste()
+    {
+        if (PlayerController.instance.objectHolding.tag == "GeneralWaste")
+        {
+
+
+            return true;
+
+
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public bool isCompost()
+    {
+        if (PlayerController.instance.objectHolding.tag == "Compostable")
+        {
+            //animator.SetBool("CompostOpen", true);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public bool isRecyclable()
+    {
+
+        if (PlayerController.instance.objectHolding.tag == "Glass")
+        {
+
+            return true;
+        }
+        else if (PlayerController.instance.objectHolding.tag == "Plastic")
+        {
+
+            return true;
+        }
+        else if (PlayerController.instance.objectHolding.tag == "Metal")
+        {
+
+            return true;
+        }
+        else if (PlayerController.instance.objectHolding.tag == "Paper")
+        {
+
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public bool isNonRegulated()
+    {
+        if (PlayerController.instance.objectHolding.tag == "NonRegulated")
+        {
+
+            return true;
+
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public bool isRegulated()
+    {
+        if (PlayerController.instance.objectHolding.tag == "Regulated")
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     // Update is called once per frame

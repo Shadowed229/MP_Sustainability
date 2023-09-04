@@ -10,11 +10,12 @@ public class RBin : MonoBehaviour
     public Transform textTrans;
     public Animator animator;
     public AudioSource audioSource;
+    public Image backdrop;
     //public Slider progress;
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -23,12 +24,31 @@ public class RBin : MonoBehaviour
         DistanceFromPlayer();
         if (PickUp.instance.holding)
         {
-            if (isClose && isRegulated())
+            if (isClose && RandomTrash.instance.isRegulated())
             {
-                Debug.Log("much close");
                 Recycling();
             }
+            if (isClose && !RandomTrash.instance.isRegulated())
+            {
+                Debug.Log("wrong bin bozo!");
+                ErrorMessage();
+            }
         }
+    }
+    void ErrorMessage()
+    {
+        if (InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup"))
+        {
+            InteractButton.instance.buttonPressed = false;
+            points.color = Color.white;
+            points.text = "Wrong Bin!";
+            points.gameObject.SetActive(true);
+            backdrop.GetComponent<Image>().color = new Color32(255, 0, 0, 150);
+            backdrop.gameObject.SetActive(true);
+
+            StartCoroutine(UpdateTextPos());
+        }
+            
     }
     void DistanceFromPlayer()
     {
@@ -43,20 +63,6 @@ public class RBin : MonoBehaviour
         }
     }
 
-    bool isRegulated()
-    {
-        if (PlayerController.instance.objectHolding.tag == "Regulated")
-        {
-            animator.SetBool("ROpen", true);
-            audioSource.Play();
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
     void Recycling()
     {
         if (InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup"))
@@ -64,11 +70,15 @@ public class RBin : MonoBehaviour
             InteractButton.instance.buttonPressed = false;
             Destroy(PlayerController.instance.objectHolding);
             LevelManager.instance.score += 1;
-            points.color = Color.green;
+            points.color = Color.white;
             points.text = "+ 10 pts";
             PickUp.instance.holding = false;
             points.gameObject.SetActive(true);
-            points.transform.Translate(Vector3.up * Time.deltaTime);
+
+            backdrop.GetComponent<Image>().color = new Color32(0, 255, 0, 150);
+            backdrop.gameObject.SetActive(true);
+
+            //points.transform.Translate(Vector3.up * Time.deltaTime);
             StartCoroutine(UpdateTextPos());
 
         }
@@ -82,10 +92,12 @@ public class RBin : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
         points.gameObject.SetActive(false);
+        backdrop.gameObject.SetActive(false);
         animator.SetBool("ROpen", false);
         audioSource.Stop();
         points.gameObject.transform.position = textTrans.position;
     }
+
     /*
     IEnumerator FinishWashing()
     {
