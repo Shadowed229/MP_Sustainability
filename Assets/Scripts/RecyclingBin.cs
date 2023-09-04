@@ -75,7 +75,9 @@ public class RecyclingBin : MonoBehaviour
             points.color = Color.white;
             points.text = "+ 10 pts";
             PickUp.instance.holding = false;
+            backdrop.GetComponent<Image>().color = new Color32(0, 255, 0, 150);
             points.gameObject.SetActive(true);
+            backdrop.gameObject.SetActive(true);
             points.transform.Translate(Vector3.up * Time.deltaTime);
             StartCoroutine(UpdateTextPos());
             PlayerController.instance.animator.SetTrigger("drop");
@@ -97,7 +99,7 @@ public class RecyclingBin : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         points.gameObject.SetActive(false);
         backdrop.gameObject.SetActive(false);
-        points.gameObject.transform.position = textTrans.position;
+        //points.gameObject.transform.position = textTrans.position;
         yield return true;
         animator.SetBool("Recycle", false);
         audioSource.Stop();

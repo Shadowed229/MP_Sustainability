@@ -42,8 +42,8 @@ public class GeneralWaste : MonoBehaviour
             InteractButton.instance.buttonPressed = false;
             points.color = Color.white;
             points.text = "Wrong Bin!";
-            points.gameObject.SetActive(true);
             backdrop.GetComponent<Image>().color = new Color32(255, 0, 0, 150);
+            points.gameObject.SetActive(true);
             backdrop.gameObject.SetActive(true);
 
             StartCoroutine(UpdateTextPos());
@@ -69,10 +69,12 @@ public class GeneralWaste : MonoBehaviour
             InteractButton.instance.buttonPressed = false;
             Destroy(PlayerController.instance.objectHolding);
             LevelManager.instance.score += 1;
-            points.color = Color.green;
+            points.color = Color.white;
             points.text = "+ 10 pts";
-            PickUp.instance.holding = false;
+            backdrop.GetComponent<Image>().color = new Color32(0, 255, 0, 150);
             points.gameObject.SetActive(true);
+            backdrop.gameObject.SetActive(true);
+            PickUp.instance.holding = false;
             PlayerController.instance.animator.SetTrigger("drop");
             audioSource.Play();
             animator.SetBool("General", true);
@@ -91,7 +93,7 @@ public class GeneralWaste : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         points.gameObject.SetActive(false);
         backdrop.gameObject.SetActive(false);
-        points.gameObject.transform.position = textTrans.position;
+        //points.gameObject.transform.position = textTrans.position;
         animator.SetBool("General", false);
         audioSource.Stop();
 

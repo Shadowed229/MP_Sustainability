@@ -71,7 +71,9 @@ public class NRBin : MonoBehaviour
             points.color = Color.white;
             points.text = "+ 10 pts";
             PickUp.instance.holding = false;
+            backdrop.GetComponent<Image>().color = new Color32(0, 255, 0, 150);
             points.gameObject.SetActive(true);
+            backdrop.gameObject.SetActive(true);
             points.transform.Translate(Vector3.up * Time.deltaTime);
             StartCoroutine(UpdateTextPos());
 
@@ -89,7 +91,7 @@ public class NRBin : MonoBehaviour
         backdrop.gameObject.SetActive(false);
         animator.SetBool("NROpen", false);
         audioSource.Stop();
-        points.gameObject.transform.position = textTrans.position;
+        //points.gameObject.transform.position = textTrans.position;
     }
     /*
     IEnumerator FinishWashing()

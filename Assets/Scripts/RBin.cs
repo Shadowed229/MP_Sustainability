@@ -95,7 +95,7 @@ public class RBin : MonoBehaviour
         backdrop.gameObject.SetActive(false);
         animator.SetBool("ROpen", false);
         audioSource.Stop();
-        points.gameObject.transform.position = textTrans.position;
+        //points.gameObject.transform.position = textTrans.position;
     }
 
     /*

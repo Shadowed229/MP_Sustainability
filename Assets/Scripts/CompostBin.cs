@@ -69,11 +69,13 @@ public class CompostBin : MonoBehaviour
             InteractButton.instance.buttonPressed = false;
             Destroy(PlayerController.instance.objectHolding);
             LevelManager.instance.score += 1;
-            points.color = Color.green;
+            points.color = Color.white;
             points.text = "+ 10 pts";
             PickUp.instance.holding = false;
             animator.SetBool("CompostOpen", true);
+            backdrop.GetComponent<Image>().color = new Color32(0, 255, 0, 150);
             points.gameObject.SetActive(true);
+            backdrop.gameObject.SetActive(true);
             points.transform.Translate(Vector3.up * Time.deltaTime);
             StartCoroutine(UpdateTextPos());
 
@@ -90,7 +92,7 @@ public class CompostBin : MonoBehaviour
         points.gameObject.SetActive(false);
         backdrop.gameObject.SetActive(false);
         animator.SetBool("CompostOpen", false);
-        points.gameObject.transform.position = textTrans.position;
+        //points.gameObject.transform.position = textTrans.position;
         audioSource.Stop();
     }
     /*
