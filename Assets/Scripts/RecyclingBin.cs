@@ -29,7 +29,12 @@ public class RecyclingBin : MonoBehaviour
                 Debug.Log("much close");
                 Recycling();
             }
-            if (isClose && !RandomTrash.instance.isRecyclable())
+            if(isClose && RandomTrash.instance.isNotWashed())
+            {
+                Debug.Log("Item not washed!");
+                notWash();
+            }
+            else if (isClose && !RandomTrash.instance.isRecyclable())
             {
                 ErrorMessage();
             }
@@ -104,6 +109,21 @@ public class RecyclingBin : MonoBehaviour
         animator.SetBool("Recycle", false);
         audioSource.Stop();
 
+    }
+
+    void notWash()
+    {
+        if (InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup"))
+        {
+            InteractButton.instance.buttonPressed = false;
+            points.color = Color.white;
+            points.text = "Wash Item!";
+            points.gameObject.SetActive(true);
+            backdrop.GetComponent<Image>().color = new Color32(255, 0, 0, 150);
+            backdrop.gameObject.SetActive(true);
+
+            StartCoroutine(UpdateTextPos());
+        }
     }
 
 

@@ -84,6 +84,25 @@ public class RandomTrash : MonoBehaviour
             return false;
         }
     }
+    public bool isNotWashed()
+    {
+        if (PlayerController.instance.objectHolding.tag == "ContaminatedPlastic")
+        {
+            return true;
+        }
+        else if (PlayerController.instance.objectHolding.tag == "ContaminatedMetal")
+        {
+            return true;
+        }
+        else if (PlayerController.instance.objectHolding.tag == "ContaminatedGlass")
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
     public bool isNonRegulated()
     {
         if (PlayerController.instance.objectHolding.tag == "NonRegulated")

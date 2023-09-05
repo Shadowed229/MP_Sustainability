@@ -3234,6 +3234,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1962797584951737578, guid: 58967973781b0f64ba84db0999bf58d5, type: 3}
   m_PrefabInstance: {fileID: 2098718501}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &952670179 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 669775130222014645, guid: 58967973781b0f64ba84db0999bf58d5, type: 3}
+  m_PrefabInstance: {fileID: 2098718501}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1002258167
 GameObject:
   m_ObjectHideFlags: 0
@@ -30162,7 +30167,7 @@ MonoBehaviour:
   isGameOver: 0
   score: 0
   rubbishspawn: 0
-  winMenu: {fileID: 0}
+  winMenu: {fileID: 952670179}
   sceneName: 
 --- !u!4 &1749549987
 Transform:
