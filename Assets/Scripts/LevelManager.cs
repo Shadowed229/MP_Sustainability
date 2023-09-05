@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
     public int rubbishspawn;
     public GameObject winMenu;
     public string sceneName;
+    public GameObject pauseBtn;
 
     private void Awake()
     {
@@ -46,6 +47,7 @@ public class LevelManager : MonoBehaviour
         {
             winMenu.SetActive(true);
             Debug.Log("YOU WIN!");
+            pauseBtn.SetActive(false);
             isGameOver = true;
         }
     }
