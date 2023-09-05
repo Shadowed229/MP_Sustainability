@@ -74,6 +74,7 @@ public class NRBin : MonoBehaviour
             backdrop.GetComponent<Image>().color = new Color32(0, 255, 0, 150);
             points.gameObject.SetActive(true);
             backdrop.gameObject.SetActive(true);
+            audioSource.Play();
             points.transform.Translate(Vector3.up * Time.deltaTime);
             StartCoroutine(UpdateTextPos());
 
