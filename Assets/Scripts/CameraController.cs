@@ -26,9 +26,9 @@ public class CameraController : MonoBehaviour
     }
     void Update()
     {
-            Vector3 targetPosition = target.position + offset;
-            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, cameraSpeed);
-            Debug.Log(Vector2.Distance(originalPos, gameObject.transform.position));
+            //Vector3 targetPosition = target.position + offset;
+            transform.position = new Vector3(Mathf.Clamp(target.position.x,-4.5f,4.5f), Mathf.Clamp(target.position.y,-3,8), target.position.x - 30);
+            //Debug.Log(Vector2.Distance(originalPos, gameObject.transform.position));
     }
     public Vector2 getTouchPosition(Vector2 touchPosition)
     {
