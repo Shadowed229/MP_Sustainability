@@ -23,6 +23,7 @@ public class Timer : MonoBehaviour
             {
                 loseMenu.SetActive(true);
                 Debug.Log("GAME OVER!!!");
+                LevelManager.instance.pauseBtn.SetActive(false);
                 LevelManager.instance.isGameOver = true;
 
             }
