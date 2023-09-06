@@ -30763,10 +30763,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1882142352, guid: 4e0b68f59daf0404aae2585ac05ecc96, type: 3}
+    - target: {fileID: 1093377212853224053, guid: e365bfea41e4b794aa17dc5cfce0a512, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f2a58ca99542e4a47b5e13423aa202ab, type: 3}
     - target: {fileID: 1462368742112942214, guid: e365bfea41e4b794aa17dc5cfce0a512, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1800155054934906606, guid: e365bfea41e4b794aa17dc5cfce0a512, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f2a58ca99542e4a47b5e13423aa202ab, type: 3}
     - target: {fileID: 1949308392757384427, guid: e365bfea41e4b794aa17dc5cfce0a512, type: 3}
       propertyPath: m_Name
       value: Canvas
