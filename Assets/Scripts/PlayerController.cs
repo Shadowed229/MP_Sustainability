@@ -149,7 +149,7 @@ public class PlayerController : MonoBehaviour
                 DashImage.fillAmount = 1;
                 activeMoveSpeed = stats.dashSpeed;
                 dashCounter = dashLength; //declaring how long the dash speed will last
-                animator.SetBool("Sprinting", true);
+                animator.SetTrigger("Sprinting");
             }
         }
 
@@ -173,7 +173,7 @@ public class PlayerController : MonoBehaviour
                 if (DashImage != null)
                 {
                     DashImage.fillAmount = 0;
-
+                    animator.SetBool("Walk", true);
                 }
             }
             else
