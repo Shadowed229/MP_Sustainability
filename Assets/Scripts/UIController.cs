@@ -141,6 +141,7 @@ public class UIController : MonoBehaviour
     }
     void Update()
     {
+
         int i = 0;
         while (i < Input.touchCount)
         {
@@ -159,7 +160,7 @@ public class UIController : MonoBehaviour
                 }
                 else
                 {
-                    joystick.rectTransform.position = new Vector3(t.position.x - maxMovement, t.position.y - maxMovement, 0f);
+                    //joystick.rectTransform.position = new Vector3(t.position.x - maxMovement, t.position.y - maxMovement, 0f);
                     leftTouch = t.fingerId;
                     startingPoint = touchPos;
                 }
@@ -169,16 +170,16 @@ public class UIController : MonoBehaviour
                 Vector2 knobPosition;
                 
 
-                if (Vector2.Distance(t.position, joystick.rectTransform.position) > maxMovement)
+                if (Vector2.Distance(t.position, joystick.transform.position) > maxMovement)
                 {
-                    knobPosition = new Vector2(t.position.x - maxMovement - joystick.rectTransform.position.x, t.position.y - maxMovement - joystick.rectTransform.position.y).normalized * maxMovement;
+                    knobPosition = new Vector2(t.position.x - maxMovement , t.position.y - maxMovement ).normalized * maxMovement;
                 }
                 else
                 {
-                    knobPosition = new Vector2(t.position.x - maxMovement - joystick.rectTransform.position.x, t.position.y - maxMovement - joystick.rectTransform.position.y);
+                    knobPosition = new Vector2(t.position.x - maxMovement , t.position.y - maxMovement );
                 }
-
-                joystick.knob.anchoredPosition = knobPosition;
+                Debug.Log(Vector2.Distance(t.position, joystick.transform.position));
+                joystick.knob.position = knobPosition;
                 direction = knobPosition / maxMovement;
 
                 
