@@ -94,8 +94,8 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            moveInput.x = UIController.instance.direction.x; //using unity input system to get the value of x (right: 1, Left: -1)
-            moveInput.y = UIController.instance.direction.y; //using unity input system to get the value of y (up: 1, down: -1)
+            moveInput.x = UIController.instance.movementAmt.x; //using unity input system to get the value of x (right: 1, Left: -1)
+            moveInput.y = UIController.instance.movementAmt.y; //using unity input system to get the value of y (up: 1, down: -1)
 
             moveInput.Normalize(); //make the player movement more consistent by noramlizing all the distance (can imagine the distance to be in a circle)
 
