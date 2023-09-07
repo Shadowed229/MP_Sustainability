@@ -172,11 +172,11 @@ public class UIController : MonoBehaviour
 
                 if (Vector2.Distance(t.position, joystick.transform.position) > maxMovement)
                 {
-                    knobPosition = new Vector2(t.position.x - maxMovement , t.position.y - maxMovement ).normalized * maxMovement;
+                    knobPosition = new Vector2(t.position.x + maxMovement + joystick.rectTransform.position.x, t.position.y + maxMovement + joystick.rectTransform.position.y).normalized * maxMovement;
                 }
                 else
                 {
-                    knobPosition = new Vector2(t.position.x - maxMovement , t.position.y - maxMovement );
+                    knobPosition = new Vector2(t.position.x + maxMovement + joystick.rectTransform.position.x, t.position.y + maxMovement + joystick.rectTransform.position.y);
                 }
                 Debug.Log(Vector2.Distance(t.position, joystick.transform.position));
                 joystick.knob.position = knobPosition;
