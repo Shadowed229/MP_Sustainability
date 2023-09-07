@@ -140,11 +140,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1790
-        width: 258
-        height: 258
+        y: 1792
+        width: 257
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -160,12 +160,12 @@ TextureImporter:
       name: UIButtons_1
       rect:
         serializedVersion: 2
-        x: 258
-        y: 1790
-        width: 258
-        height: 258
+        x: 256
+        y: 1792
+        width: 255
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,12 +181,12 @@ TextureImporter:
       name: UIButtons_2
       rect:
         serializedVersion: 2
-        x: 516
+        x: 511
         y: 1790
-        width: 258
+        width: 257
         height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -202,12 +202,12 @@ TextureImporter:
       name: UIButtons_3
       rect:
         serializedVersion: 2
-        x: 774
+        x: 768
         y: 1790
-        width: 258
+        width: 256
         height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
