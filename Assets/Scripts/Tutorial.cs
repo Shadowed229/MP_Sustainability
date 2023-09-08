@@ -381,7 +381,7 @@ public class Tutorial : MonoBehaviour
             if (textWriter.isGeneratingText == false)
             {
                 characterMonologue.SetActive(true);
-                textWriter.AddWriter(msgTxt, "In every level, there will be a timer running at the top middle of your screen, and you need to throw away all the rubbish within the given amount of time! Now, lets get started!", 0.02f, true);
+                textWriter.AddWriter(msgTxt, "A timer is located at the top of your screen, bin the trash before time runs out! Good luck!", 0.02f, true);
             }
 
             if (textWriter.uiText == null && waitTimeIndex <= 0)
