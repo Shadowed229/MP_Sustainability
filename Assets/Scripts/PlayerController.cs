@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     AudioSource audioSource;
     public bool isWorking;
     public Image DashImage;
+    public SpriteRenderer spriteRenderer;
     public Animator animator; 
 
 
