@@ -785,6 +785,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: daf2de42822095547a09cc1ec074d683, type: 3}
+    - target: {fileID: 251799321182812365, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2132011431}
+    - target: {fileID: 251799321182812365, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PauseBtn
+      objectReference: {fileID: 0}
     - target: {fileID: 1949308392757384427, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -792,6 +800,14 @@ PrefabInstance:
     - target: {fileID: 1949308392757384427, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2129044689304841641, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 586686760}
+    - target: {fileID: 2129044689304841641, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeLevel
       objectReference: {fileID: 0}
     - target: {fileID: 3626109239897091995, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
       propertyPath: m_Pivot.x
@@ -872,6 +888,82 @@ PrefabInstance:
     - target: {fileID: 3626109239897091995, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3850547393096380354, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 586686760}
+    - target: {fileID: 3850547393096380354, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607550967783407663, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 586686760}
+    - target: {fileID: 5607550967783407663, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846182647701921056, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2132011431}
+    - target: {fileID: 5846182647701921056, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InteractBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881441606507648405, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881441606507648405, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881441606507648405, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2132011431}
+    - target: {fileID: 5881441606507648405, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 586686760}
+    - target: {fileID: 5881441606507648405, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PauseBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881441606507648405, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ChangeLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881441606507648405, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881441606507648405, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MenuManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881441606507648405, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6481062771248354084, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 586686760}
+    - target: {fileID: 6481062771248354084, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189570876014712664, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2132011431}
+    - target: {fileID: 7189570876014712664, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DashBtn
       objectReference: {fileID: 0}
     - target: {fileID: 9208262939913667514, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
       propertyPath: m_IsActive
