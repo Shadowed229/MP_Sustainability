@@ -131,7 +131,7 @@ TextureImporter:
         width: 51
         height: 82
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -152,7 +152,7 @@ TextureImporter:
         width: 51
         height: 82
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -165,7 +165,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player animations final spritesheet_2
+      name: walk1
       rect:
         serializedVersion: 2
         x: 257
@@ -173,7 +173,7 @@ TextureImporter:
         width: 51
         height: 83
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -186,7 +186,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player animations final spritesheet_3
+      name: walk2
       rect:
         serializedVersion: 2
         x: 345
@@ -194,7 +194,7 @@ TextureImporter:
         width: 52
         height: 82
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -207,7 +207,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player animations final spritesheet_4
+      name: s1
       rect:
         serializedVersion: 2
         x: 507
@@ -215,7 +215,7 @@ TextureImporter:
         width: 52
         height: 83
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -236,7 +236,7 @@ TextureImporter:
         width: 9
         height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -249,7 +249,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player animations final spritesheet_6
+      name: s2
       rect:
         serializedVersion: 2
         x: 597
@@ -257,7 +257,7 @@ TextureImporter:
         width: 51
         height: 83
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -278,7 +278,7 @@ TextureImporter:
         width: 51
         height: 83
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -299,7 +299,7 @@ TextureImporter:
         width: 51
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -320,7 +320,7 @@ TextureImporter:
         width: 51
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -341,7 +341,7 @@ TextureImporter:
         width: 51
         height: 83
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -362,7 +362,7 @@ TextureImporter:
         width: 51
         height: 82
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -375,7 +375,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player animations final spritesheet_12
+      name: walk3
       rect:
         serializedVersion: 2
         x: 257
@@ -383,7 +383,7 @@ TextureImporter:
         width: 51
         height: 82
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -396,15 +396,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player animations final spritesheet_13
+      name: walk4
       rect:
         serializedVersion: 2
-        x: 345
+        x: 346
         y: 817
         width: 52
         height: 83
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -417,7 +417,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player animations final spritesheet_14
+      name: s3
       rect:
         serializedVersion: 2
         x: 502
@@ -425,7 +425,7 @@ TextureImporter:
         width: 57
         height: 83
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -438,7 +438,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player animations final spritesheet_15
+      name: s4
       rect:
         serializedVersion: 2
         x: 591
@@ -446,7 +446,7 @@ TextureImporter:
         width: 57
         height: 83
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -467,7 +467,7 @@ TextureImporter:
         width: 51
         height: 79
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -488,7 +488,7 @@ TextureImporter:
         width: 51
         height: 79
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -509,7 +509,7 @@ TextureImporter:
         width: 51
         height: 79
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -530,7 +530,7 @@ TextureImporter:
         width: 51
         height: 82
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -551,7 +551,7 @@ TextureImporter:
         width: 51
         height: 81
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -564,15 +564,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player animations final spritesheet_21
+      name: s5
       rect:
         serializedVersion: 2
         x: 500
-        y: 726
+        y: 728
         width: 59
         height: 84
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -593,7 +593,7 @@ TextureImporter:
         width: 51
         height: 79
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -614,7 +614,7 @@ TextureImporter:
         width: 51
         height: 83
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -635,7 +635,7 @@ TextureImporter:
         width: 51
         height: 82
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -648,7 +648,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player animations final spritesheet_25
+      name: cs1
       rect:
         serializedVersion: 2
         x: 256
@@ -656,7 +656,7 @@ TextureImporter:
         width: 52
         height: 83
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -677,7 +677,7 @@ TextureImporter:
         width: 9
         height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -690,7 +690,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player animations final spritesheet_27
+      name: cs2
       rect:
         serializedVersion: 2
         x: 346
@@ -698,7 +698,7 @@ TextureImporter:
         width: 51
         height: 83
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -719,7 +719,7 @@ TextureImporter:
         width: 52
         height: 83
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -740,7 +740,7 @@ TextureImporter:
         width: 55
         height: 83
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -753,7 +753,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player animations final spritesheet_30
+      name: ci1
       rect:
         serializedVersion: 2
         x: 780
@@ -761,7 +761,7 @@ TextureImporter:
         width: 53
         height: 86
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -774,7 +774,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player animations final spritesheet_31
+      name: ci2
       rect:
         serializedVersion: 2
         x: 874
@@ -782,7 +782,7 @@ TextureImporter:
         width: 53
         height: 86
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -795,7 +795,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player animations final spritesheet_32
+      name: cs3
       rect:
         serializedVersion: 2
         x: 251
@@ -803,7 +803,7 @@ TextureImporter:
         width: 57
         height: 82
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -816,7 +816,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player animations final spritesheet_33
+      name: cs4
       rect:
         serializedVersion: 2
         x: 340
@@ -824,7 +824,7 @@ TextureImporter:
         width: 57
         height: 82
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -845,7 +845,7 @@ TextureImporter:
         width: 4
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -866,7 +866,7 @@ TextureImporter:
         width: 51
         height: 82
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -887,7 +887,7 @@ TextureImporter:
         width: 51
         height: 83
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -900,7 +900,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player animations final spritesheet_37
+      name: cs5
       rect:
         serializedVersion: 2
         x: 249
@@ -908,7 +908,7 @@ TextureImporter:
         width: 59
         height: 83
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -929,7 +929,7 @@ TextureImporter:
         width: 52
         height: 84
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -942,7 +942,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player animations final spritesheet_39
+      name: ci3
       rect:
         serializedVersion: 2
         x: 780
@@ -950,7 +950,7 @@ TextureImporter:
         width: 53
         height: 86
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -963,7 +963,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player animations final spritesheet_40
+      name: ci4
       rect:
         serializedVersion: 2
         x: 874
@@ -971,7 +971,7 @@ TextureImporter:
         width: 53
         height: 86
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -984,7 +984,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player animations final spritesheet_41
+      name: ci5
       rect:
         serializedVersion: 2
         x: 780
@@ -992,7 +992,7 @@ TextureImporter:
         width: 53
         height: 86
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1005,7 +1005,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player animations final spritesheet_42
+      name: ci6
       rect:
         serializedVersion: 2
         x: 874
@@ -1013,7 +1013,7 @@ TextureImporter:
         width: 53
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1036,49 +1036,49 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      ci1: 1555712301
+      ci2: -1868973295
+      ci3: -849843428
+      ci4: 136396863
+      ci5: 328729487
+      ci6: 1232397834
+      cs1: -771816497
+      cs2: -2110737696
+      cs3: -1259869262
+      cs4: -96173157
+      cs5: 1827533211
       player animations final spritesheet_0: 363450228
       player animations final spritesheet_1: 684425620
       player animations final spritesheet_10: 605982985
       player animations final spritesheet_11: -20405435
-      player animations final spritesheet_12: 105804296
-      player animations final spritesheet_13: 1750712007
-      player animations final spritesheet_14: 643255129
-      player animations final spritesheet_15: -1890274372
       player animations final spritesheet_16: -1843568025
       player animations final spritesheet_17: -112022465
       player animations final spritesheet_18: -1466344304
       player animations final spritesheet_19: 1480078803
-      player animations final spritesheet_2: 1719513766
       player animations final spritesheet_20: -1286249746
-      player animations final spritesheet_21: 1040338896
       player animations final spritesheet_22: 1594523241
       player animations final spritesheet_23: 843466737
       player animations final spritesheet_24: 2039974947
-      player animations final spritesheet_25: -771816497
       player animations final spritesheet_26: 140838015
-      player animations final spritesheet_27: -2110737696
       player animations final spritesheet_28: -305944483
       player animations final spritesheet_29: 1875950380
-      player animations final spritesheet_3: -559218685
-      player animations final spritesheet_30: 1555712301
-      player animations final spritesheet_31: -1868973295
-      player animations final spritesheet_32: -1259869262
-      player animations final spritesheet_33: -96173157
       player animations final spritesheet_34: 1171253707
       player animations final spritesheet_35: 516401615
       player animations final spritesheet_36: -2023924424
-      player animations final spritesheet_37: 1827533211
       player animations final spritesheet_38: 504891730
-      player animations final spritesheet_39: -849843428
-      player animations final spritesheet_4: 1748302789
-      player animations final spritesheet_40: 136396863
-      player animations final spritesheet_41: 328729487
-      player animations final spritesheet_42: 1232397834
       player animations final spritesheet_5: 1306699508
-      player animations final spritesheet_6: -1087636733
       player animations final spritesheet_7: -211634693
       player animations final spritesheet_8: -727634720
       player animations final spritesheet_9: -1567163823
+      s1: 1748302789
+      s2: -1087636733
+      s3: 643255129
+      s4: -1890274372
+      s5: 1040338896
+      walk1: 1719513766
+      walk2: -559218685
+      walk3: 105804296
+      walk4: 1750712007
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
