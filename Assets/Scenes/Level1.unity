@@ -813,6 +813,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ChangeLevel
       objectReference: {fileID: 0}
+    - target: {fileID: 2652739767945683543, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3626109239897091995, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
