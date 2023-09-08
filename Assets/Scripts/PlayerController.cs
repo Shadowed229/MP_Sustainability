@@ -150,7 +150,15 @@ public class PlayerController : MonoBehaviour
                 DashImage.fillAmount = 1;
                 activeMoveSpeed = stats.dashSpeed;
                 dashCounter = dashLength; //declaring how long the dash speed will last
-                animator.SetTrigger("sprinting");
+                
+                if(objectHolding != null)
+                {
+                    animator.SetTrigger("carry and sprint");
+                }
+                else
+                {
+                    animator.SetTrigger("sprinting");
+                }
             }
         }
 
