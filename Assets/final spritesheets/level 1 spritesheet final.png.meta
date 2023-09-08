@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -119,9 +119,463 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: level 1 spritesheet final_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 896
+        width: 384
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cef1c5124ce9aa479d593de668e3c17
+      internalID: -1874981802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 1 spritesheet final_1
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 896
+        width: 90
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc10ed59943be6f49a963d246444cdaa
+      internalID: 894694909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 1 spritesheet final_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 935
+        width: 128
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b077dd215358f1e48818ccd85b08d78b
+      internalID: 675926151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 1 spritesheet final_3
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 925
+        width: 128
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f4b729a4dd33804eaee458f48b9a416
+      internalID: 1860384268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 1 spritesheet final_4
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 889
+        width: 128
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 667cbc640f135b348bc421543aee3a83
+      internalID: -30323899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 1 spritesheet final_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 783
+        width: 128
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f829a3a38bf7f54696ef19ef76cab6d
+      internalID: 1559463637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 1 spritesheet final_6
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 754
+        width: 94
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76f94bafae639be4ea26c6f24299137b
+      internalID: 1924276019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 1 spritesheet final_7
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 765
+        width: 94
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd1442eb4a164e344ac933d06b9b7b5a
+      internalID: -1174048918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 1 spritesheet final_8
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 767
+        width: 128
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2b998e51117c8d4ba8777b01fbfc907
+      internalID: 712929752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 1 spritesheet final_9
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 601
+        width: 16
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1dd50f94f171824e8b0ae97f7cb84ee
+      internalID: -1437052641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 1 spritesheet final_10
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 592
+        width: 94
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3d6ae4d2f6d1b54f934cfcefa7158a0
+      internalID: 356060447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 1 spritesheet final_11
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 468
+        width: 128
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7833e5e42099d6469f1edac13ee8de7
+      internalID: -305434407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 1 spritesheet final_12
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 473
+        width: 56
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e4c0b466c0305146b8ab37bd7272d74
+      internalID: 1360178065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 1 spritesheet final_13
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 480
+        width: 58
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b327eebcfe0910488aa204361929e28
+      internalID: 1761097894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 1 spritesheet final_14
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 473
+        width: 74
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbd9f7b81c68b524795f976bab72ce85
+      internalID: 304304327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 1 spritesheet final_15
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 501
+        width: 21
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c58503b0cc5549f4ba01b4a97945a1a6
+      internalID: 247515096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 1 spritesheet final_16
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 319
+        width: 56
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1b48553621abed448946f11df7d951e
+      internalID: 1125961897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 1 spritesheet final_17
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 334
+        width: 58
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 587bbe613661e9a498d3cee156a0818d
+      internalID: -1563714702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 1 spritesheet final_18
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 342
+        width: 74
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 153ad4c3ad916e844a20cd695e086b44
+      internalID: -1427404330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 1 spritesheet final_19
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 347
+        width: 79
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87ea1d6d76fa477439a02e42dfe23664
+      internalID: -389135587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 1 spritesheet final_20
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 373
+        width: 21
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1b409e8a57b06e4396f76ccb341cd4a
+      internalID: -2057579375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +586,28 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      level 1 spritesheet final_0: -1874981802
+      level 1 spritesheet final_1: 894694909
+      level 1 spritesheet final_10: 356060447
+      level 1 spritesheet final_11: -305434407
+      level 1 spritesheet final_12: 1360178065
+      level 1 spritesheet final_13: 1761097894
+      level 1 spritesheet final_14: 304304327
+      level 1 spritesheet final_15: 247515096
+      level 1 spritesheet final_16: 1125961897
+      level 1 spritesheet final_17: -1563714702
+      level 1 spritesheet final_18: -1427404330
+      level 1 spritesheet final_19: -389135587
+      level 1 spritesheet final_2: 675926151
+      level 1 spritesheet final_20: -2057579375
+      level 1 spritesheet final_3: 1860384268
+      level 1 spritesheet final_4: -30323899
+      level 1 spritesheet final_5: 1559463637
+      level 1 spritesheet final_6: 1924276019
+      level 1 spritesheet final_7: -1174048918
+      level 1 spritesheet final_8: 712929752
+      level 1 spritesheet final_9: -1437052641
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
