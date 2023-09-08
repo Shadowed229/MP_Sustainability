@@ -31,14 +31,26 @@ SpriteAtlas:
       enableAlphaDilation: 0
     secondaryTextureSettings: {}
     variantMultiplier: 1
-    packables: []
+    packables:
+    - {fileID: 657831339, guid: 534b66cdebe42e5498cba95d34abc444, type: 3}
+    - {fileID: 1890358385, guid: 534b66cdebe42e5498cba95d34abc444, type: 3}
+    - {fileID: 2093399893, guid: 534b66cdebe42e5498cba95d34abc444, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
-    packedSpriteRenderDataKeys: []
+    packedSpriteRenderDataKeys:
+    - 534b66cdebe42e5498cba95d34abc444: 657831339
+    - 534b66cdebe42e5498cba95d34abc444: 2093399893
+    - 534b66cdebe42e5498cba95d34abc444: 1890358385
   m_MasterAtlas: {fileID: 0}
-  m_PackedSprites: []
-  m_PackedSpriteNamesToIndex: []
+  m_PackedSprites:
+  - {fileID: 657831339, guid: 534b66cdebe42e5498cba95d34abc444, type: 3}
+  - {fileID: 2093399893, guid: 534b66cdebe42e5498cba95d34abc444, type: 3}
+  - {fileID: 1890358385, guid: 534b66cdebe42e5498cba95d34abc444, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - edited spritesheet level 2_0
+  - edited spritesheet level 2_21
+  - edited spritesheet level 2_28
   m_RenderDataMap: {}
   m_Tag: Level 2
   m_IsVariant: 0
