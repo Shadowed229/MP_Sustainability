@@ -78,7 +78,7 @@ public class UIController : MonoBehaviour
                     knobPosition = t.position - joystickPos;
                 }
 
-                Debug.Log(Vector2.Distance(t.position, joystickPos));
+                //Debug.Log(Vector2.Distance(t.position, joystickPos));
                 joystick.knob.anchoredPosition = knobPosition;
                 movementAmt = knobPosition / maxMovement;
 

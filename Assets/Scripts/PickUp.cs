@@ -64,8 +64,10 @@ public class PickUp : MonoBehaviour
     public bool holding;
     public bool trashholding;
     //private Collider2D itemCollider;
-    private Collider2D[] itemColliders;
+    public Collider2D[] itemColliders = new Collider2D[0];
     public GameObject closestObject;
+    private GameObject[] allTrash;
+    public int arrayLen;
     //public GameObject objectHolding;
     public Animator animator;
 
@@ -80,36 +82,44 @@ public class PickUp : MonoBehaviour
 
     public void pickUp()
     {
+        itemColliders = Physics2D.OverlapCircleAll(transform.position, pickupRadius, pickupLayer);
+        // We create two temporary variables that exist only in the scope of this if statement...
+        // Both are initialized in regards to the first element in the array...
+        if (itemColliders.Length >= 1)
+        {
+            float shortestDistanceSoFar = Vector2.Distance(gameObject.transform.position, itemColliders[0].gameObject.transform.position);
+
+            closestObject = itemColliders[0].gameObject;
+
+            // We loop through each element of the array...
+            for (int i = 0; i < itemColliders.Length; i++)
+            {
+                // Using a temporary float variable that holds the calculated distance for each element...
+                float currentDistance = Vector2.Distance(gameObject.transform.position, itemColliders[i].gameObject.transform.position);
+                Debug.Log(itemColliders[i]);
+                // We check if said distance is smaller than the shortest distance we have stored so far...
+                if (currentDistance < shortestDistanceSoFar)
+                {
+                    // If that's true, we make that element the closest object and set the new shortest distance as the current one...
+                    closestObject = itemColliders[i].gameObject;
+                    shortestDistanceSoFar = currentDistance;
+                }
+            }
+
+            closestObject.transform.GetChild(0).gameObject.SetActive(true);
+        }
+        else if (itemColliders.Length < 1 && closestObject != null)
+        {
+            closestObject.transform.GetChild(0).gameObject.SetActive(false);
+        }
+
         if (InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup"))
         {
             
             if (holding == false)
             {
-                
-                
-                itemColliders = Physics2D.OverlapCircleAll(transform.position, pickupRadius, pickupLayer);
                 if (itemColliders.Length >= 1)
-                {
-                    // We create two temporary variables that exist only in the scope of this if statement...
-                    // Both are initialized in regards to the first element in the array...
-                    float shortestDistanceSoFar = Vector2.Distance(gameObject.transform.position, itemColliders[0].gameObject.transform.position);
-                    closestObject = itemColliders[0].gameObject;
-
-                    // We loop through each element of the array...
-                    for (int i = 0; i < itemColliders.Length; i++)
-                    {
-                        // Using a temporary float variable that holds the calculated distance for each element...
-                        float currentDistance = Vector2.Distance(gameObject.transform.position, itemColliders[i].gameObject.transform.position);
-
-                        // We check if said distance is smaller than the shortest distance we have stored so far...
-                        if (currentDistance < shortestDistanceSoFar)
-                        {
-                            // If that's true, we make that element the closest object and set the new shortest distance as the current one...
-                            closestObject = itemColliders[i].gameObject;
-                            shortestDistanceSoFar = currentDistance;
-
-                        }
-                    }
+                { 
                     //animator.SetTrigger("carry");
                     PlayerController.instance.objectHolding = closestObject;
                     Debug.Log("You picked up an item!");

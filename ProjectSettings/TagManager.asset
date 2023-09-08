@@ -79,6 +79,9 @@ TagManager:
   - name: PickUps
     uniqueID: 330455205
     locked: 0
+  - name: Highlight
+    uniqueID: 2201591611
+    locked: 0
   - name: UI
     uniqueID: 3687629545
     locked: 0
