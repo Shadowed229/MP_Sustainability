@@ -70,17 +70,14 @@ TagManager:
   - name: Furnitures
     uniqueID: 768538735
     locked: 0
-  - name: Player
-    uniqueID: 3675490691
-    locked: 0
-  - name: Highlights
-    uniqueID: 1455939855
-    locked: 0
   - name: PickUps
     uniqueID: 330455205
     locked: 0
   - name: Highlight
     uniqueID: 2201591611
+    locked: 0
+  - name: Player
+    uniqueID: 3675490691
     locked: 0
   - name: UI
     uniqueID: 3687629545
