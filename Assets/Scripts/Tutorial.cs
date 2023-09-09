@@ -97,11 +97,13 @@ public class Tutorial : MonoBehaviour
 
             if (skipTut == true)
             {
-                popUpIndex = 7;
-                textWriter.uiText = null;
-                characterMonologue.SetActive(false);
-                tutorialing = false;
                 skipTut = false;
+                textWriter.uiText = null;
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touchToProceed.SetActive(false);
+                tutorialing = false;
+                popUpIndex = 7;
             }
 
             if (textWriter.uiText == null && waitTimeIndex <= 0)
@@ -189,11 +191,12 @@ public class Tutorial : MonoBehaviour
 
             if (skipTut == true)
             {
-                popUpIndex = popUps.Length + 1;
+                
                 textWriter.uiText = null;
                 characterMonologue.SetActive(false);
                 tutorialing = false;
                 skipTut = false;
+                popUpIndex = popUps.Length + 1;
             }
 
             if (textWriter.uiText == null && waitTimeIndex <= 0)
@@ -251,11 +254,12 @@ public class Tutorial : MonoBehaviour
 
             if (skipTut == true)
             {
-                popUpIndex = popUps.Length + 1;
+                
                 textWriter.uiText = null;
                 characterMonologue.SetActive(false);
                 tutorialing = false;
                 skipTut = false;
+                popUpIndex = popUps.Length + 1;
             }
 
             if (textWriter.uiText == null && waitTimeIndex <= 0)
@@ -313,11 +317,12 @@ public class Tutorial : MonoBehaviour
 
             if (skipTut == true)
             {
-                popUpIndex = popUps.Length + 1;
+               
                 textWriter.uiText = null;
                 characterMonologue.SetActive(false);
                 tutorialing = false;
                 skipTut = false;
+                popUpIndex = popUps.Length + 1;
             }
 
             if (textWriter.uiText == null && waitTimeIndex <= 0)
@@ -375,11 +380,11 @@ public class Tutorial : MonoBehaviour
 
             if (skipTut == true)
             {
-                popUpIndex = popUps.Length + 1;
                 textWriter.uiText = null;
                 characterMonologue.SetActive(false);
                 tutorialing = false;
                 skipTut = false;
+                popUpIndex = popUps.Length + 1;
             }
 
             if (textWriter.uiText == null && waitTimeIndex <= 0)
@@ -437,11 +442,11 @@ public class Tutorial : MonoBehaviour
 
             if (skipTut == true)
             {
-                popUpIndex = popUps.Length + 1;
                 textWriter.uiText = null;
                 characterMonologue.SetActive(false);
                 tutorialing = false;
                 skipTut = false;
+                popUpIndex = popUps.Length + 1;
             }
 
             if (textWriter.uiText == null && waitTimeIndex <= 0)
@@ -522,11 +527,12 @@ public class Tutorial : MonoBehaviour
 
             if (skipTut == true)
             {
-                popUpIndex = popUps.Length + 1;
+
                 textWriter.uiText = null;
                 characterMonologue.SetActive(false);
                 tutorialing = false;
                 skipTut = false;
+                popUpIndex = popUps.Length + 1;
             }
 
             if (textWriter.uiText == null && waitTimeIndex <= 0)
@@ -585,11 +591,12 @@ public class Tutorial : MonoBehaviour
 
             if (skipTut == true)
             {
-                popUpIndex = popUps.Length + 1;
+
                 textWriter.uiText = null;
                 characterMonologue.SetActive(false);
                 tutorialing = false;
                 skipTut = false;
+                popUpIndex = popUps.Length + 1;
             }
 
             if (textWriter.uiText == null && waitTimeIndex <= 0)
@@ -656,11 +663,12 @@ public class Tutorial : MonoBehaviour
 
             if (skipTut == true)
             {
-                popUpIndex = popUps.Length + 1;
+
                 textWriter.uiText = null;
                 characterMonologue.SetActive(false);
                 tutorialing = false;
                 skipTut = false;
+                popUpIndex = popUps.Length + 1;
             }
 
             if (textWriter.uiText == null && waitTimeIndex <= 0)
@@ -719,11 +727,12 @@ public class Tutorial : MonoBehaviour
 
             if (skipTut == true)
             {
-                popUpIndex = popUps.Length + 1;
+
                 textWriter.uiText = null;
                 characterMonologue.SetActive(false);
                 tutorialing = false;
                 skipTut = false;
+                popUpIndex = popUps.Length + 1;
             }
 
             if (textWriter.uiText == null && waitTimeIndex <= 0)
@@ -783,11 +792,12 @@ public class Tutorial : MonoBehaviour
 
             if (skipTut == true)
             {
-                popUpIndex = popUps.Length + 1;
+
                 textWriter.uiText = null;
                 characterMonologue.SetActive(false);
                 tutorialing = false;
                 skipTut = false;
+                popUpIndex = popUps.Length + 1;
             }
 
             if (textWriter.uiText == null && waitTimeIndex <= 0)
