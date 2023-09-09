@@ -4,58 +4,6 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
-    /*
-    private Transform trashpile;
-    public Transform Workstation;
-    public GameObject trashBagPrefab;
-    public Transform ItemHolder;
-    public static bool holding;
-    public static bool trashholding;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        holding = false;
-        trashholding = false;
-    }
-    private void FixedUpdate()
-    {
-        trashpile = GameObject.FindGameObjectWithTag("TrashPile").transform;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        float distancebetweentrashpile = Vector3.Distance(transform.position, trashpile.transform.position);
-        if (distancebetweentrashpile < 2)
-        {
-            Debug.Log("Close to Pile");
-            if (holding == false)
-            {
-                if (Input.GetButtonDown("Pickup"))
-                {
-                    holding = true;
-                    trashholding = true;
-                    Instantiate(trashBagPrefab, ItemHolder);
-                }
-            }         
-        }
-        if (WorkStation.occupied == true)
-        {
-            float distancebetweenWorkstation = Vector3.Distance(transform.position, Workstation.transform.position);
-            GameObject egg = GameObject.FindGameObjectWithTag("Egg");
-            GameObject can = GameObject.FindGameObjectWithTag("Can");
-            GameObject plasticBottle = GameObject.FindGameObjectWithTag("PlasticBottle");
-            if (holding == false)
-            {
-                if (distancebetweenWorkstation < 2)
-                {
-                    
-                }
-            }
-        }      
-    }
-    */
     public static PickUp instance;
     public float pickupRadius = 1f;
     public LayerMask pickupLayer;
@@ -77,6 +25,7 @@ public class PickUp : MonoBehaviour
     }
     private void Update()
     {
+        allTrash = FindGameObjectsInLayer(6);
         pickUp();
     }
 
@@ -112,6 +61,17 @@ public class PickUp : MonoBehaviour
         {
             closestObject.transform.GetChild(0).gameObject.SetActive(false);
         }
+
+        int x = 0;
+        while(allTrash.Length > x)
+        {
+            if (allTrash[x].gameObject != closestObject)
+            {
+                allTrash[x].gameObject.transform.GetChild(0).gameObject.SetActive(false);
+            }
+            x++;
+        }
+
 
         if (InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup"))
         {
@@ -158,7 +118,23 @@ public class PickUp : MonoBehaviour
         }
     }
 
-    
+    GameObject[] FindGameObjectsInLayer(int layer)
+    {
+        var goArray = FindObjectsOfType(typeof(GameObject)) as GameObject[];
+        var goList = new System.Collections.Generic.List<GameObject>();
+        for (int i = 0; i < goArray.Length; i++)
+        {
+            if (goArray[i].layer == layer)
+            {
+                goList.Add(goArray[i]);
+            }
+        }
+        if (goList.Count == 0)
+        {
+            return null;
+        }
+        return goList.ToArray();
+    }
 
     private void OnDrawGizmosSelected()
     {

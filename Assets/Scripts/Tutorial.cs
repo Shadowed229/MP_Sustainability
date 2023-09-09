@@ -25,6 +25,7 @@ public class Tutorial : MonoBehaviour
     public string sceneName;
     public Scene currentScene;
     public static bool tutorialing;
+    private bool skipTut;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -77,6 +78,11 @@ public class Tutorial : MonoBehaviour
 
     }
 
+    public void SkipBtn()
+    {
+        skipTut = true;
+    }
+
     private void Level1Tutorial()
     {
         if (popUpIndex == 0) //intro to the game
@@ -87,6 +93,15 @@ public class Tutorial : MonoBehaviour
             {
                 characterMonologue.SetActive(true);
                 textWriter.AddWriter(msgTxt, "Hello! Welcome to Eco Warrior! In this level, we will learn the basics of this game!", 0.02f, true);
+            }
+
+            if (skipTut == true)
+            {
+                popUpIndex = 7;
+                textWriter.uiText = null;
+                characterMonologue.SetActive(false);
+                tutorialing = false;
+                skipTut = false;
             }
 
             if (textWriter.uiText == null && waitTimeIndex <= 0)
@@ -172,6 +187,15 @@ public class Tutorial : MonoBehaviour
 
             }
 
+            if (skipTut == true)
+            {
+                popUpIndex = popUps.Length + 1;
+                textWriter.uiText = null;
+                characterMonologue.SetActive(false);
+                tutorialing = false;
+                skipTut = false;
+            }
+
             if (textWriter.uiText == null && waitTimeIndex <= 0)
             {
                 touchToProceed.SetActive(true);
@@ -223,6 +247,15 @@ public class Tutorial : MonoBehaviour
                 characterMonologue.SetActive(true);
                 textWriter.AddWriter(msgTxt, "Glass need to be rinsed at the washing basin, cleaning it before throwing it into the recycling bin!", 0.02f, true);
 
+            }
+
+            if (skipTut == true)
+            {
+                popUpIndex = popUps.Length + 1;
+                textWriter.uiText = null;
+                characterMonologue.SetActive(false);
+                tutorialing = false;
+                skipTut = false;
             }
 
             if (textWriter.uiText == null && waitTimeIndex <= 0)
@@ -278,6 +311,15 @@ public class Tutorial : MonoBehaviour
 
             }
 
+            if (skipTut == true)
+            {
+                popUpIndex = popUps.Length + 1;
+                textWriter.uiText = null;
+                characterMonologue.SetActive(false);
+                tutorialing = false;
+                skipTut = false;
+            }
+
             if (textWriter.uiText == null && waitTimeIndex <= 0)
             {
                 touchToProceed.SetActive(true);
@@ -331,6 +373,15 @@ public class Tutorial : MonoBehaviour
 
             }
 
+            if (skipTut == true)
+            {
+                popUpIndex = popUps.Length + 1;
+                textWriter.uiText = null;
+                characterMonologue.SetActive(false);
+                tutorialing = false;
+                skipTut = false;
+            }
+
             if (textWriter.uiText == null && waitTimeIndex <= 0)
             {
                 touchToProceed.SetActive(true);
@@ -382,6 +433,15 @@ public class Tutorial : MonoBehaviour
             {
                 characterMonologue.SetActive(true);
                 textWriter.AddWriter(msgTxt, "A timer is located at the top of your screen, bin the trash before time runs out! Good luck!", 0.02f, true);
+            }
+
+            if (skipTut == true)
+            {
+                popUpIndex = popUps.Length + 1;
+                textWriter.uiText = null;
+                characterMonologue.SetActive(false);
+                tutorialing = false;
+                skipTut = false;
             }
 
             if (textWriter.uiText == null && waitTimeIndex <= 0)
@@ -460,6 +520,15 @@ public class Tutorial : MonoBehaviour
                 textWriter.AddWriter(msgTxt, "Welcome to Level 2, a new compost bin has been added!", 0.02f, true);
             }
 
+            if (skipTut == true)
+            {
+                popUpIndex = popUps.Length + 1;
+                textWriter.uiText = null;
+                characterMonologue.SetActive(false);
+                tutorialing = false;
+                skipTut = false;
+            }
+
             if (textWriter.uiText == null && waitTimeIndex <= 0)
             {
                 touchToProceed.SetActive(true);
@@ -514,6 +583,15 @@ public class Tutorial : MonoBehaviour
 
             }
 
+            if (skipTut == true)
+            {
+                popUpIndex = popUps.Length + 1;
+                textWriter.uiText = null;
+                characterMonologue.SetActive(false);
+                tutorialing = false;
+                skipTut = false;
+            }
+
             if (textWriter.uiText == null && waitTimeIndex <= 0)
             {
                 touchToProceed.SetActive(true);
@@ -556,7 +634,7 @@ public class Tutorial : MonoBehaviour
             }
 # endif
         }
-        if(PlayerController.instance.objectHolding != null)
+        if (PlayerController.instance.objectHolding != null)
         {
             if (PlayerController.instance.objectHolding.CompareTag("Compostable") && compostTutDone == false)
             {
@@ -574,6 +652,15 @@ public class Tutorial : MonoBehaviour
             {
                 characterMonologue.SetActive(true);
                 textWriter.AddWriter(msgTxt, "Welcome to Level 3, there is 2 bins added, Non-Regulated Bin and Regulated Bin. This are both for E-Waste!", 0.02f, true);
+            }
+
+            if (skipTut == true)
+            {
+                popUpIndex = popUps.Length + 1;
+                textWriter.uiText = null;
+                characterMonologue.SetActive(false);
+                tutorialing = false;
+                skipTut = false;
             }
 
             if (textWriter.uiText == null && waitTimeIndex <= 0)
@@ -630,6 +717,15 @@ public class Tutorial : MonoBehaviour
 
             }
 
+            if (skipTut == true)
+            {
+                popUpIndex = popUps.Length + 1;
+                textWriter.uiText = null;
+                characterMonologue.SetActive(false);
+                tutorialing = false;
+                skipTut = false;
+            }
+
             if (textWriter.uiText == null && waitTimeIndex <= 0)
             {
                 touchToProceed.SetActive(true);
@@ -673,60 +769,69 @@ public class Tutorial : MonoBehaviour
 #endif
         }
 
-            else if (popUpIndex == 2) //general waste tutorial -----------------------------------------------------------------
+        else if (popUpIndex == 2) //general waste tutorial -----------------------------------------------------------------
+        {
+            tutorialing = true;
+            ReguTutDone = true;
+
+            if (textWriter.isGeneratingText == false)
             {
-                tutorialing = true;
-                ReguTutDone = true;
+                characterMonologue.SetActive(true);
+                textWriter.AddWriter(msgTxt, "This are Regulated E-Waste, They are to be thrown into the Regulated Bin!", 0.02f, true);
 
-                if (textWriter.isGeneratingText == false)
-                {
-                    characterMonologue.SetActive(true);
-                    textWriter.AddWriter(msgTxt, "This are Regulated E-Waste, They are to be thrown into the Regulated Bin!", 0.02f, true);
+            }
 
-                }
+            if (skipTut == true)
+            {
+                popUpIndex = popUps.Length + 1;
+                textWriter.uiText = null;
+                characterMonologue.SetActive(false);
+                tutorialing = false;
+                skipTut = false;
+            }
 
-                if (textWriter.uiText == null && waitTimeIndex <= 0)
-                {
-                    touchToProceed.SetActive(true);
-                    waitTimeIndex = waitTime;
-                }
-                else
-                {
-                    waitTimeIndex -= Time.deltaTime;
-                }
+            if (textWriter.uiText == null && waitTimeIndex <= 0)
+            {
+                touchToProceed.SetActive(true);
+                waitTimeIndex = waitTime;
+            }
+            else
+            {
+                waitTimeIndex -= Time.deltaTime;
+            }
 
-                if (textWriter.uiText == null && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
-                {
-                    textWriter.isGeneratingText = false;
-                    characterMonologue.SetActive(false);
-                    touchToProceed.SetActive(false);
-                    tutorialing = false;
-                    popUpIndex = popUps.Length + 1;
-                    Debug.Log(popUpIndex);
-                }
+            if (textWriter.uiText == null && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+            {
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touchToProceed.SetActive(false);
+                tutorialing = false;
+                popUpIndex = popUps.Length + 1;
+                Debug.Log(popUpIndex);
+            }
 
 #if UNITY_EDITOR
-                if (textWriter.uiText == null && waitTimeIndex <= 0)
-                {
-                    touchToProceed.SetActive(true);
-                    waitTimeIndex = waitTime;
-                }
-                else
-                {
-                    waitTimeIndex -= Time.deltaTime;
-                }
-
-                if (textWriter.uiText == null && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
-                {
-                    textWriter.isGeneratingText = false;
-                    characterMonologue.SetActive(false);
-                    touchToProceed.SetActive(false);
-                    tutorialing = false;
-                    popUpIndex = popUps.Length + 1;
-                    Debug.Log(popUpIndex);
-                }
-#endif
+            if (textWriter.uiText == null && waitTimeIndex <= 0)
+            {
+                touchToProceed.SetActive(true);
+                waitTimeIndex = waitTime;
             }
+            else
+            {
+                waitTimeIndex -= Time.deltaTime;
+            }
+
+            if (textWriter.uiText == null && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+            {
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touchToProceed.SetActive(false);
+                tutorialing = false;
+                popUpIndex = popUps.Length + 1;
+                Debug.Log(popUpIndex);
+            }
+#endif
+        }
         if (PlayerController.instance.objectHolding != null)
         {
             if (PlayerController.instance.objectHolding.CompareTag("NonRegulated") && nonReguTutDone == false)
@@ -737,8 +842,8 @@ public class Tutorial : MonoBehaviour
             {
                 popUpIndex = 2;
             }
-        }   
-    } 
+        }
+    }
 }
 
 
