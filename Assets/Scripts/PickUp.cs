@@ -119,9 +119,10 @@ public class PickUp : MonoBehaviour
             if (holding == false)
             {
                 if (itemColliders.Length >= 1)
-                { 
+                {
                     //animator.SetTrigger("carry");
                     PlayerController.instance.objectHolding = closestObject;
+                    PlayerController.instance.objectHolding.GetComponent<Collider2D>().enabled = false;
                     Debug.Log("You picked up an item!");
                     PlayerController.instance.objectHolding.transform.position = PlayerController.instance.itemHolder.position;
                     PlayerController.instance.objectHolding.transform.SetParent(PlayerController.instance.itemHolder.transform);
@@ -140,6 +141,7 @@ public class PickUp : MonoBehaviour
             }
             else if (holding == true && WorkStation.isClose == false && RecyclingBin.isClose == false && WashingBasin.isClose == false && WrappingStation.isClose == false && WrapGlass.isClose == false && GeneralWaste.isClose == false && CompostBin.isClose == false && NRBin.isClose == false && RBin.isClose == false)
             {
+                PlayerController.instance.objectHolding.GetComponent<Collider2D>().enabled = true;
                 Debug.Log("You dropped up an item!");
                 PlayerController.instance.objectHolding.transform.Translate(Vector3.down * 2);
                 PlayerController.instance.objectHolding.transform.SetParent(null);
@@ -147,7 +149,7 @@ public class PickUp : MonoBehaviour
                 PlayerController.instance.animator.SetBool("carry and walk", false);
                 PlayerController.instance.animator.SetTrigger("drop");
                 PlayerController.instance.animator.SetBool("walk", true);
-
+                
 
                 InteractButton.instance.buttonPressed = false;
 
