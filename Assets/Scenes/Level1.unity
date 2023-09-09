@@ -931,7 +931,7 @@ PrefabInstance:
       objectReference: {fileID: 2132011431}
     - target: {fileID: 5846182647701921056, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: InteractBtn
+      value: PauseBtn
       objectReference: {fileID: 0}
     - target: {fileID: 5881441606507648405, guid: e37eaae0f5584e84981a2f9fb629ec4e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode

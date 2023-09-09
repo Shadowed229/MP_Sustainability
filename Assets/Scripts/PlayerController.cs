@@ -108,13 +108,25 @@ public class PlayerController : MonoBehaviour
                     audioSource.Play();
 
                 }
-                animator.SetBool("walking", true);
                 
+                if (objectHolding != null && (moveInput.x > 0 || moveInput.y > 0))
+                {
+                    animator.SetBool("carry and walk", true);
+                    Debug.Log("workkkkkkkkkkkk");
+
+                }
+                if (moveInput.x > 0 || moveInput.y > 0)
+                {
+                    animator.SetBool("walking", true);
+                }
+
             }
             else
             {
                 audioSource.Stop();
                 animator.SetBool("walking", false);
+                animator.SetBool("is carrying", false);
+                animator.SetBool("carry and walk", false);
             }
 
             if(moveInput.x < 0)
@@ -127,17 +139,7 @@ public class PlayerController : MonoBehaviour
                 sr.flipX = false;
             }
 
-            if (objectHolding != null)
-            {
-                animator.SetBool("carry and walk", true);
-                Debug.Log("workkkkkkkkkkkk");
-
-            }
-            else
-            {
-                animator.SetBool("is carrying", false);
-                animator.SetBool("carry and walk", false);
-            }
+            
         }
     }
     
