@@ -191,11 +191,13 @@ public class Tutorial : MonoBehaviour
 
             if (skipTut == true)
             {
-                
-                textWriter.uiText = null;
-                characterMonologue.SetActive(false);
-                tutorialing = false;
+
                 skipTut = false;
+                textWriter.uiText = null;
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touchToProceed.SetActive(false);
+                tutorialing = false;
                 popUpIndex = popUps.Length + 1;
             }
 
@@ -254,11 +256,13 @@ public class Tutorial : MonoBehaviour
 
             if (skipTut == true)
             {
-                
-                textWriter.uiText = null;
-                characterMonologue.SetActive(false);
-                tutorialing = false;
+
                 skipTut = false;
+                textWriter.uiText = null;
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touchToProceed.SetActive(false);
+                tutorialing = false;
                 popUpIndex = popUps.Length + 1;
             }
 
@@ -317,11 +321,12 @@ public class Tutorial : MonoBehaviour
 
             if (skipTut == true)
             {
-               
-                textWriter.uiText = null;
-                characterMonologue.SetActive(false);
-                tutorialing = false;
                 skipTut = false;
+                textWriter.uiText = null;
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touchToProceed.SetActive(false);
+                tutorialing = false;
                 popUpIndex = popUps.Length + 1;
             }
 
@@ -380,10 +385,12 @@ public class Tutorial : MonoBehaviour
 
             if (skipTut == true)
             {
-                textWriter.uiText = null;
-                characterMonologue.SetActive(false);
-                tutorialing = false;
                 skipTut = false;
+                textWriter.uiText = null;
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touchToProceed.SetActive(false);
+                tutorialing = false;
                 popUpIndex = popUps.Length + 1;
             }
 
@@ -442,10 +449,12 @@ public class Tutorial : MonoBehaviour
 
             if (skipTut == true)
             {
-                textWriter.uiText = null;
-                characterMonologue.SetActive(false);
-                tutorialing = false;
                 skipTut = false;
+                textWriter.uiText = null;
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touchToProceed.SetActive(false);
+                tutorialing = false;
                 popUpIndex = popUps.Length + 1;
             }
 
@@ -527,11 +536,12 @@ public class Tutorial : MonoBehaviour
 
             if (skipTut == true)
             {
-
-                textWriter.uiText = null;
-                characterMonologue.SetActive(false);
-                tutorialing = false;
                 skipTut = false;
+                textWriter.uiText = null;
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touchToProceed.SetActive(false);
+                tutorialing = false;
                 popUpIndex = popUps.Length + 1;
             }
 
@@ -591,11 +601,12 @@ public class Tutorial : MonoBehaviour
 
             if (skipTut == true)
             {
-
-                textWriter.uiText = null;
-                characterMonologue.SetActive(false);
-                tutorialing = false;
                 skipTut = false;
+                textWriter.uiText = null;
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touchToProceed.SetActive(false);
+                tutorialing = false;
                 popUpIndex = popUps.Length + 1;
             }
 
@@ -663,11 +674,12 @@ public class Tutorial : MonoBehaviour
 
             if (skipTut == true)
             {
-
-                textWriter.uiText = null;
-                characterMonologue.SetActive(false);
-                tutorialing = false;
                 skipTut = false;
+                textWriter.uiText = null;
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touchToProceed.SetActive(false);
+                tutorialing = false;
                 popUpIndex = popUps.Length + 1;
             }
 
@@ -727,11 +739,12 @@ public class Tutorial : MonoBehaviour
 
             if (skipTut == true)
             {
-
-                textWriter.uiText = null;
-                characterMonologue.SetActive(false);
-                tutorialing = false;
                 skipTut = false;
+                textWriter.uiText = null;
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touchToProceed.SetActive(false);
+                tutorialing = false;
                 popUpIndex = popUps.Length + 1;
             }
 
@@ -792,11 +805,12 @@ public class Tutorial : MonoBehaviour
 
             if (skipTut == true)
             {
-
-                textWriter.uiText = null;
-                characterMonologue.SetActive(false);
-                tutorialing = false;
                 skipTut = false;
+                textWriter.uiText = null;
+                textWriter.isGeneratingText = false;
+                characterMonologue.SetActive(false);
+                touchToProceed.SetActive(false);
+                tutorialing = false;
                 popUpIndex = popUps.Length + 1;
             }
 
