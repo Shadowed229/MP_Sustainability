@@ -110,6 +110,7 @@ public class WashingBasin : MonoBehaviour
                 {
                     Destroy(washCurrent);
                     PlayerController.instance.objectHolding = Instantiate(cleanPlastic[i], PlayerController.instance.itemHolder);
+                    PlayerController.instance.objectHolding.GetComponent<Collider2D>().enabled = false;
                     Debug.Log("cleaned plastic");
                     
                     
@@ -127,6 +128,7 @@ public class WashingBasin : MonoBehaviour
                 {
                     Destroy(washCurrent);
                     PlayerController.instance.objectHolding = Instantiate(cleanMetal[i], PlayerController.instance.itemHolder);
+                    PlayerController.instance.objectHolding.GetComponent<Collider2D>().enabled = false;
                     break;
                 }
             }
@@ -140,6 +142,7 @@ public class WashingBasin : MonoBehaviour
                 {
                     Destroy(washCurrent);
                     PlayerController.instance.objectHolding = Instantiate(cleanGlass[i], PlayerController.instance.itemHolder);
+                    PlayerController.instance.objectHolding.GetComponent<Collider2D>().enabled = false;
                     break;
                 }
             }
