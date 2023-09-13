@@ -8,15 +8,12 @@ public class PickUp : MonoBehaviour
     public float pickupRadius = 1f;
     public LayerMask pickupLayer;
 
-    //public Transform itemHolder;
     public bool holding;
-    public bool trashholding;
-    //private Collider2D itemCollider;
+    //public bool trashholding;
     public Collider2D[] itemColliders = new Collider2D[0];
     public GameObject closestObject;
     private GameObject[] allTrash;
     public int arrayLen;
-    //public GameObject objectHolding;
     public Animator animator;
 
     private void Awake()
@@ -32,24 +29,24 @@ public class PickUp : MonoBehaviour
     public void pickUp()
     {
         itemColliders = Physics2D.OverlapCircleAll(transform.position, pickupRadius, pickupLayer);
-        // We create two temporary variables that exist only in the scope of this if statement...
-        // Both are initialized in regards to the first element in the array...
+        //we create two temporary variables that exist only in the scope of this if statement
+        //both are initialized in regards to the first element in the array
         if (itemColliders.Length >= 1)
         {
             float shortestDistanceSoFar = Vector2.Distance(gameObject.transform.position, itemColliders[0].gameObject.transform.position);
 
             closestObject = itemColliders[0].gameObject;
 
-            // We loop through each element of the array...
+            //we loop through each element of the array
             for (int i = 0; i < itemColliders.Length; i++)
             {
-                // Using a temporary float variable that holds the calculated distance for each element...
+                //using a temporary float variable that holds the calculated distance for each element
                 float currentDistance = Vector2.Distance(gameObject.transform.position, itemColliders[i].gameObject.transform.position);
                 Debug.Log(itemColliders[i]);
-                // We check if said distance is smaller than the shortest distance we have stored so far...
+                //we check if said distance is smaller than the shortest distance we have stored so far
                 if (currentDistance < shortestDistanceSoFar)
                 {
-                    // If that's true, we make that element the closest object and set the new shortest distance as the current one...
+                    //if that's true, we make that element the closest object and set the new shortest distance as the current one
                     closestObject = itemColliders[i].gameObject;
                     shortestDistanceSoFar = currentDistance;
                 }

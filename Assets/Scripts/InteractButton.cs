@@ -22,7 +22,11 @@ public class InteractButton : MonoBehaviour, IPointerClickHandler
 
     IEnumerator ResetButton()
     {
-        yield return new WaitForSeconds(0.1f);
-        buttonPressed = false;
+        while(buttonPressed == true)
+        {
+            yield return new WaitForSeconds(0.5f);
+            buttonPressed = false;
+        }
+        
     }
 }
