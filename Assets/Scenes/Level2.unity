@@ -11773,7 +11773,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 567344238382957356, guid: 3bbdcb5e40a7a0b498a32bbb5da30159, type: 3}
       propertyPath: allTrash.Array.size
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 567344238382957356, guid: 3bbdcb5e40a7a0b498a32bbb5da30159, type: 3}
       propertyPath: allTrash.Array.data[3]
@@ -11784,13 +11784,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6441520797120551177, guid: 599ee2b0d9365ed4a82c5d3c5ebe86b7, type: 3}
     - target: {fileID: 567344238382957356, guid: 3bbdcb5e40a7a0b498a32bbb5da30159, type: 3}
-      propertyPath: allTrash.Array.data[8]
+      propertyPath: allTrash.Array.data[7]
       value: 
       objectReference: {fileID: 4587416890710654011, guid: da3cd21b583a7084588fbedb26932286, type: 3}
     - target: {fileID: 567344238382957356, guid: 3bbdcb5e40a7a0b498a32bbb5da30159, type: 3}
-      propertyPath: allTrash.Array.data[9]
+      propertyPath: allTrash.Array.data[8]
       value: 
       objectReference: {fileID: 6441520797120551177, guid: 613a2926cbb3c4047a7c86f14167011a, type: 3}
+    - target: {fileID: 567344238382957356, guid: 3bbdcb5e40a7a0b498a32bbb5da30159, type: 3}
+      propertyPath: allTrash.Array.data[9]
+      value: 
+      objectReference: {fileID: 6441520797120551177, guid: 84b04a79f4f06b24d82763a69de136d7, type: 3}
     - target: {fileID: 567344238382957356, guid: 3bbdcb5e40a7a0b498a32bbb5da30159, type: 3}
       propertyPath: allTrash.Array.data[10]
       value: 
