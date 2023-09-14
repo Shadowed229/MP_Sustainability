@@ -35,7 +35,7 @@ public class RBin : MonoBehaviour
             }
         }
     }
-    void ErrorMessage()
+    void ErrorMessage() //if rubbish is not supposed to be in this bin, error message plays, which says wrong bin in red
     {
         if (InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup"))
         {
@@ -50,7 +50,7 @@ public class RBin : MonoBehaviour
         }
             
     }
-    void DistanceFromPlayer()
+    void DistanceFromPlayer() //checks the distance from player in relation to compost bin
     {
         float distancebetweenPlayer = Vector3.Distance(transform.position, PlayerController.instance.transform.position);
         if (distancebetweenPlayer < 3.5)
@@ -62,7 +62,7 @@ public class RBin : MonoBehaviour
             isClose = false;
         }
     }
-
+    //if the correct rubbish is thrown, rubbish is destroyed and there will be points showing and a animation to let the player know that they are correct
     void Recycling()
     {
         if (InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup"))
@@ -85,7 +85,7 @@ public class RBin : MonoBehaviour
         }
     }
 
-
+    //show the points for a few seconds before turning it off.
     IEnumerator UpdateTextPos() //washing anim
     {
         Debug.Log("Updating");

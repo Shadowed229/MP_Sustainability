@@ -90,7 +90,7 @@ public class GeneralWaste : MonoBehaviour
     }
 
     //function to disable the +point/error message prompt after few seconds
-    //animation for opening and closing the general wast bin is also being called in this function
+    //animation for opening and closing the general waste bin is also being called in this function
     IEnumerator UpdateTextPos()
     {
         Debug.Log("Updating");
