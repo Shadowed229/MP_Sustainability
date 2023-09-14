@@ -37,10 +37,10 @@ public class WorkStation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Scene currentScene = SceneManager.GetActiveScene();
+        Scene currentScene = SceneManager.GetActiveScene(); //checks which scene that player is on
         sceneName = currentScene.name;
-        float distancebetweenPlayer = Vector3.Distance(transform.position, player.transform.position);
-        if(distancebetweenPlayer < 5)
+        float distancebetweenPlayer = Vector3.Distance(transform.position, player.transform.position); //checks distance between workstation and player
+        if(distancebetweenPlayer < 5) // if player is between 5f away from the workstation, is close = true
         {
             isClose = true;
         }
@@ -49,14 +49,14 @@ public class WorkStation : MonoBehaviour
             isClose = false;
         }
 
-        if (PickUp.instance.holding == true && occupied == false  && isClose == true)
+        if (PickUp.instance.holding == true && occupied == false  && isClose == true) //checks whether player is holding anything, if the table has objects, and if the player is close
         {
             Debug.Log("Close to Workstation!"); 
-            if ((InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup")) && PlayerController.instance.objectHolding.tag == "Trash")
+            if ((InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup")) && PlayerController.instance.objectHolding.tag == "Trash") //checks for button press and if the player is holding a trash bag.
             {
-                InteractButton.instance.buttonPressed = false;
-                Destroy(PlayerController.instance.objectHolding);
-                PickUp.instance.holding = false;
+                InteractButton.instance.buttonPressed = false; //sets the button press to false
+                Destroy(PlayerController.instance.objectHolding); //deletes the trash bag
+                PickUp.instance.holding = false; //sets the holding value to false as player put bag on workstation
                 StartCoroutine(UpdateProgressBar());
                 
             }
@@ -64,7 +64,7 @@ public class WorkStation : MonoBehaviour
 
         if(placeholder.childCount == 0 && placeholder2.childCount == 0 && placeholder3.childCount == 0)
         {
-            occupied = false;
+            occupied = false; //checks if the workstation is occupied by checking the placeholders
         }
         else
         {
@@ -76,23 +76,24 @@ public class WorkStation : MonoBehaviour
     {
         Debug.Log("Updating");
         PlayerController.instance.isWorking = true;
-        progress.gameObject.SetActive(true);
+        progress.gameObject.SetActive(true); //sets the progress bar on the workstation to show
 
-        float score = 0f;
+        float score = 0f; //sets the score of progress bar
         while (score < 3f)
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1f); //waits 1 second to add 1 score
             score += 1;
             Debug.Log(score);
-            progress.value = score;
+            progress.value = score; //progress.value is the progress on the progress bar
         }
         if(score == 3f)
         {
-            StartCoroutine(WorkstationSpawn());
+            StartCoroutine(WorkstationSpawn()); // when score reaches 3 which is 3 seconds rubbish will spawn
         }
            
     }
-    IEnumerator WorkstationSpawn()
+    IEnumerator WorkstationSpawn() ////Has a chance to spawn 1-3 items in the workbench, the it will randomly spawn different types of trash in the placeholders.
+                                   ////It also checks the scene it is in so it spawns the appropriate trash for each level.
     {
         if (sceneName == "Level1")
         {
@@ -167,9 +168,9 @@ public class WorkStation : MonoBehaviour
             }
         }
 
-        progress.gameObject.SetActive(false);
-        PlayerController.instance.isWorking = false;
-        progress.value = progress.minValue;
+        progress.gameObject.SetActive(false); //sets the progress to false to hide it
+        PlayerController.instance.isWorking = false; //sets the value of isworking to false
+        progress.value = progress.minValue; //resets the progress bar for next trash bag
         yield break;
     }
 

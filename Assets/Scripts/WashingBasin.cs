@@ -55,8 +55,10 @@ public class WashingBasin : MonoBehaviour
             isClose = false;
         }
     }
+    //The washing basin checks what the player is holding and If the item is washable it will allow the player to put it into the washing basin to wash,
+    //once the player interacts with the basin it will put the item into basin wash the item and put it back into the players hands.
 
-    void WashingWaste()
+    void WashingWaste() //checks if interact button is pressed and if the player is holding a washable item
     {
         if((InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup")) && (PlayerController.instance.objectHolding.tag == "ContaminatedPlastic" || PlayerController.instance.objectHolding.tag == "ContaminatedMetal" || PlayerController.instance.objectHolding.tag == "ContaminatedGlass"))
         {
@@ -76,18 +78,18 @@ public class WashingBasin : MonoBehaviour
     IEnumerator UpdateProgressBar() //washing anim
     {
         Debug.Log("Updating");
-        PlayerController.instance.isWorking = true;
-        progress.gameObject.SetActive(true);
+        PlayerController.instance.isWorking = true; //sets the boolean of isworking to true(not allowing the player to move)
+        progress.gameObject.SetActive(true); //sets progress bar to true
 
-        float score = 0f;
+        float score = 0f; //sets the score to 0 
         while (score < 2f)
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1f); //waits for 1 second
             score += 1;
             Debug.Log(score);
-            progress.value = score;
+            progress.value = score; //sets the progress bar value to the score
         }
-        if (score == 2f)
+        if (score == 2f) //once 2 sec has passed
         {
             StartCoroutine(FinishWashing());
             animator.SetBool("Basinon", false);
@@ -98,9 +100,9 @@ public class WashingBasin : MonoBehaviour
     }
     IEnumerator FinishWashing()
     {
-        progress.gameObject.SetActive(false);
-        PlayerController.instance.isWorking = false;
-        if(washCurrent.tag == "ContaminatedPlastic")
+        progress.gameObject.SetActive(false); //sets progress bar to false
+        PlayerController.instance.isWorking = false; //sets the boolean of isworking to false(allowing the player to move)
+        if (washCurrent.tag == "ContaminatedPlastic") //check the tag of the item
         {
             
             for (int i = 0; i < contaminatedPlastic.Length; i++)
@@ -109,8 +111,8 @@ public class WashingBasin : MonoBehaviour
                 if (washCurrent.name == contaminatedPlastic[i].name + "(Clone)" + "(Clone)")
                 {
                     Destroy(washCurrent);
-                    PlayerController.instance.objectHolding = Instantiate(cleanPlastic[i], PlayerController.instance.itemHolder);
-                    PlayerController.instance.objectHolding.GetComponent<Collider2D>().enabled = false;
+                    PlayerController.instance.objectHolding = Instantiate(cleanPlastic[i], PlayerController.instance.itemHolder); //gives the player the same rubbish placed in but clean
+                    PlayerController.instance.objectHolding.GetComponent<Collider2D>().enabled = false; //turns off the collider
                     Debug.Log("cleaned plastic");
                     
                     
@@ -119,7 +121,7 @@ public class WashingBasin : MonoBehaviour
 }
             }
         }
-        else if(washCurrent.tag == "ContaminatedMetal")
+        else if(washCurrent.tag == "ContaminatedMetal") //check the tag of the item
         {
             for (int i = 0; i < contaminatedMetal.Length; i++)
             {
@@ -127,8 +129,8 @@ public class WashingBasin : MonoBehaviour
                 if (washCurrent.name == contaminatedMetal[i].name + "(Clone)" + "(Clone)")
                 {
                     Destroy(washCurrent);
-                    PlayerController.instance.objectHolding = Instantiate(cleanMetal[i], PlayerController.instance.itemHolder);
-                    PlayerController.instance.objectHolding.GetComponent<Collider2D>().enabled = false;
+                    PlayerController.instance.objectHolding = Instantiate(cleanMetal[i], PlayerController.instance.itemHolder); //gives the player the same rubbish placed in but clean
+                    PlayerController.instance.objectHolding.GetComponent<Collider2D>().enabled = false; //turns off the collider
                     break;
                 }
             }
@@ -141,14 +143,14 @@ public class WashingBasin : MonoBehaviour
                 if (washCurrent.name == contaminatedGlass[i].name + "(Clone)" + "(Clone)")
                 {
                     Destroy(washCurrent);
-                    PlayerController.instance.objectHolding = Instantiate(cleanGlass[i], PlayerController.instance.itemHolder);
-                    PlayerController.instance.objectHolding.GetComponent<Collider2D>().enabled = false;
+                    PlayerController.instance.objectHolding = Instantiate(cleanGlass[i], PlayerController.instance.itemHolder); //gives the player the same rubbish placed in but clean
+                    PlayerController.instance.objectHolding.GetComponent<Collider2D>().enabled = false; //turns off the collider
                     break;
                 }
             }
         }
-        audioSource.Stop();
-        PlayerController.instance.animator.SetBool("busy", false);
+        audioSource.Stop(); //stops the water sound
+        PlayerController.instance.animator.SetBool("busy", false); 
         PlayerController.instance.animator.SetBool("is carrying", true);
         progress.value = progress.minValue;
         yield break;

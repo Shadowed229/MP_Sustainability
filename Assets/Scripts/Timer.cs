@@ -13,18 +13,18 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Tutorial.tutorialing == false && LevelManager.instance.isGameOver == false)
+        if(Tutorial.tutorialing == false && LevelManager.instance.isGameOver == false) //checks if the time should continue counting down
         {
-            if (timeValue > 0)
+            if (timeValue > 0) //if the time value is more then 0
             {
-                timeValue -= Time.deltaTime;
+                timeValue -= Time.deltaTime; //minus the time
             }
             else
             {
-                loseMenu.SetActive(true);
+                loseMenu.SetActive(true); //once time value is less then 0, lose menu is activated
                 Debug.Log("GAME OVER!!!");
-                LevelManager.instance.pauseBtn.SetActive(false);
-                LevelManager.instance.isGameOver = true;
+                LevelManager.instance.pauseBtn.SetActive(false); //hides the pause button
+                LevelManager.instance.isGameOver = true; //sets the isGameOver to true
 
             }
         }
@@ -32,7 +32,7 @@ public class Timer : MonoBehaviour
         DisplayTime(timeValue);
     }
 
-    void DisplayTime(float timeToDisplay)
+    void DisplayTime(float timeToDisplay) //displays the time in the timer in the scene
     {
         if (timeToDisplay < 0)
         {

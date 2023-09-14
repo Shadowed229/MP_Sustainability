@@ -662,17 +662,18 @@ public class Tutorial : MonoBehaviour
     }
     void Level3Tutorial()
     {
-        if (popUpIndex == 0) //intro to the game
+        if (popUpIndex == 0) //intro to level 3 with information on bins---------------------------------   
         {
             tutorialing = true;
 
             if (textWriter.isGeneratingText == false)
             {
                 characterMonologue.SetActive(true);
-                textWriter.AddWriter(msgTxt, "Welcome to Level 3, there is 2 bins added, Non-Regulated Bin and Regulated Bin. This are both for E-Waste!", 0.02f, true);
+                textWriter.AddWriter(msgTxt, "Welcome to Level 3, there is 2 bins added, Non-Regulated Bin and Regulated Bin. This are both for E-Waste!", 0.02f, true);//ser the character monologue active so that people can see the texts and generate the below message.
+                                                                                                                                                                        //Each letters are being printed in 0.02 seconds 
             }
 
-            if (skipTut == true)
+            if (skipTut == true)  //stop all the activities for text generating using textwriter script and move on to the next popUpIndex
             {
                 skipTut = false;
                 textWriter.uiText = null;
@@ -683,7 +684,8 @@ public class Tutorial : MonoBehaviour
                 popUpIndex = popUps.Length + 1;
             }
 
-            if (textWriter.uiText == null && waitTimeIndex <= 0)
+            if (textWriter.uiText == null && waitTimeIndex <= 0) //once all the texts are done generating and waitTimeIndex also become 0,
+                                                                 //it will prompt the touch to proceed message to let the player know how they can proceed
             {
                 touchToProceed.SetActive(true);
                 waitTimeIndex = waitTime;
@@ -693,7 +695,8 @@ public class Tutorial : MonoBehaviour
                 waitTimeIndex -= Time.deltaTime;
             }
 
-            if (textWriter.uiText == null && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+            if (textWriter.uiText == null && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began) // //Once all the texts are generated for tutorial and the player touches the screen,
+                                                                                                                 // clear the texts then proceed to the next tutorial by changing tutorial index 
             {
                 textWriter.isGeneratingText = false;
                 characterMonologue.SetActive(false);
@@ -701,7 +704,8 @@ public class Tutorial : MonoBehaviour
                 tutorialing = false;
                 popUpIndex = popUps.Length + 1;
             }
-
+            //below codes function exactly the same as above script, just that since unity editor don’t get touch input,
+            //in order to try testing in the editor, we changed the touchinput to mouse input when using unity editor
 #if UNITY_EDITOR
             if (textWriter.uiText == null && waitTimeIndex <= 0)
             {
@@ -725,7 +729,7 @@ public class Tutorial : MonoBehaviour
 # endif
 
         }
-        else if (popUpIndex == 1) //general waste tutorial -----------------------------------------------------------------
+        else if (popUpIndex == 1) //non regulated e-waste tutorial -----------------------------------------------------------------
         {
             tutorialing = true;
             nonReguTutDone = true;
@@ -791,7 +795,7 @@ public class Tutorial : MonoBehaviour
 #endif
         }
 
-        else if (popUpIndex == 2) //general waste tutorial -----------------------------------------------------------------
+        else if (popUpIndex == 2)  //regulated e-waste tutorial -----------------------------------------------------------------
         {
             tutorialing = true;
             ReguTutDone = true;

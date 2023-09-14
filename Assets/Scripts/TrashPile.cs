@@ -25,7 +25,7 @@ public class TrashPile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (distancebetweentrashpile < 2)
+        if (distancebetweentrashpile < 2) //checks the distance between the trashpile
         {
             isClose = true;
         }
@@ -38,16 +38,16 @@ public class TrashPile : MonoBehaviour
         if (isClose)
         {
             Debug.Log("Close to Pile");
-            if (InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup"))
+            if (InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup")) // checks if interact button is pressed
             {
                 Debug.Log("trashh");
                 InteractButton.instance.buttonPressed = false;
-                if (PickUp.instance.holding == false)
+                if (PickUp.instance.holding == false) //checks if the player is holding anything
                 {
 
                     PlayerController.instance.animator.SetTrigger("carry");
                     PickUp.instance.holding = true;
-                    PlayerController.instance.objectHolding = Instantiate(trashBagPrefab, PlayerController.instance.itemHolder);
+                    PlayerController.instance.objectHolding = Instantiate(trashBagPrefab, PlayerController.instance.itemHolder); //instantiates the trashbag in the hands of the player
 
                 }
                 else
