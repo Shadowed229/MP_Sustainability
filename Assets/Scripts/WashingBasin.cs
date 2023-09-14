@@ -9,12 +9,12 @@ public class WashingBasin : MonoBehaviour
 {
     
     public Slider progress;
-    public GameObject[] contaminatedGlass;
-    public GameObject[] cleanGlass;
-    public GameObject[] contaminatedPlastic;
-    public GameObject[] cleanPlastic;
-    public GameObject[] contaminatedMetal;
-    public GameObject[] cleanMetal;
+    public GameObject[] contaminatedGlass; //arraylist to store all the contaminated glass objects
+    public GameObject[] cleanGlass; //arraylist to store all the clean glass objects
+    public GameObject[] contaminatedPlastic; //arraylist to store all the contaminated plastic objects
+    public GameObject[] cleanPlastic; //arraylist to store all the clean plastic objects
+    public GameObject[] contaminatedMetal; //arraylist to store all the contaminated metal objects
+    public GameObject[] cleanMetal; //arraylist to store all the clean metal objects
     public Transform Wash;
     public GameObject washCurrent;
     public AudioSource audioSource;
@@ -29,6 +29,8 @@ public class WashingBasin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //find the distance between the player and the washing basin and player can only interact with the washing basin within certain distance
+        //and while holding either contaminated glass, plastic, metal rubbish 
         DistanceFromPlayer();
 
         if(isClose && PickUp.instance.holding == true && PlayerController.instance.objectHolding != null)
@@ -60,8 +62,13 @@ public class WashingBasin : MonoBehaviour
 
     void WashingWaste() //checks if interact button is pressed and if the player is holding a washable item
     {
-        if((InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup")) && (PlayerController.instance.objectHolding.tag == "ContaminatedPlastic" || PlayerController.instance.objectHolding.tag == "ContaminatedMetal" || PlayerController.instance.objectHolding.tag == "ContaminatedGlass"))
+        //will only work if the player press the interact button while holding contaminated plastic, metal and glass objects
+        if ((InteractButton.instance.buttonPressed == true || Input.GetButtonDown("Pickup")) && (PlayerController.instance.objectHolding.tag == "ContaminatedPlastic" || PlayerController.instance.objectHolding.tag == "ContaminatedMetal" || PlayerController.instance.objectHolding.tag == "ContaminatedGlass"))
         {
+            //set back the bool value for buttonPressed in InteracrtButton.cs to false, then run the coroutine to show the progress of the “washing”
+            //while washing, player will be busy and wont be able to move or perform any other action
+            //instantiate the same object that the player was holding into the wash position, then destroy the object that player was holding
+
             InteractButton.instance.buttonPressed = false;
             //PickUp.instance.holding = false;
             //PlayerController.instance.objectHolding.SetActive(false);
@@ -75,6 +82,7 @@ public class WashingBasin : MonoBehaviour
         
     }
 
+    //coroutine to show the progress of player washing visually. Little progress bar will appear and filled up as the time pass by
     IEnumerator UpdateProgressBar() //washing anim
     {
         Debug.Log("Updating");
@@ -98,8 +106,13 @@ public class WashingBasin : MonoBehaviour
         }
 
     }
+    //once the updateprogressbar coroutine is done, finishwashing coroutine will run
     IEnumerator FinishWashing()
     {
+        //deactivate the progresbar. Then using the tag in each rubbish object, perform different tasks accordingly
+        //once the rubbish objects are sorted using the tag, we will then use the gameobjects name to find the index of the identical contaminated object in the array list
+        //then, using that index, instantiate the clean object inside the cleanobj arraylist. Hence, when setting up the project the index for both clean and contaminated objects must be the same (e.g. if contaminated glassJar is in index 0 of contaminated obj array list, clean glassJar needs to be in index 0 of clean obj array list as well) 
+
         progress.gameObject.SetActive(false); //sets progress bar to false
         PlayerController.instance.isWorking = false; //sets the boolean of isworking to false(allowing the player to move)
         if (washCurrent.tag == "ContaminatedPlastic") //check the tag of the item

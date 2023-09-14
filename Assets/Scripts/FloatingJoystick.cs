@@ -8,13 +8,13 @@ public class FloatingJoystick : MonoBehaviour
 {
     [HideInInspector]
     public static FloatingJoystick instance;
-    public RectTransform rectTransform;
-    public RectTransform knob;
+    public RectTransform rectTransform; //rectTransform of the whole joysticks gameobject
+    public RectTransform knob; //rectTransform of the knob inside the joystick
 
 
     private void Awake()
     {
         instance = this;
-        rectTransform = GetComponent<RectTransform>();
+        rectTransform = GetComponent<RectTransform>(); //getting component of recttransform to refer from different script
     }
 }
