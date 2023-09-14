@@ -24,7 +24,7 @@ public class CameraController : MonoBehaviour
     {
         //originalPos = transform.position;
     }
-    void Update()
+    void Update() //Sets the max of the camera movement to a certain value which makes it stop moving when the character moves to the edge of the game
     {
             //Vector3 targetPosition = target.position + offset;
             transform.position = new Vector3(Mathf.Clamp(target.position.x,-4.5f,4.5f), Mathf.Clamp(target.position.y,-3,8), target.position.x - 30);
