@@ -24,7 +24,6 @@ public class PlayerController : MonoBehaviour
     {
         public float moveSpeed;
         public float dashSpeed;
-        public float stamina;
     }
 
     [SerializeField]
@@ -36,16 +35,7 @@ public class PlayerController : MonoBehaviour
     public float dashLength = 0.5f, dashCooldown = 1f;
     [HideInInspector]
     public float dashCounter, dashCoolCounter;
-    /*
-    // Joystick
-    [SerializeField]
-    private Vector2 joystickSize = new Vector2(100, 100);
-    [SerializeField]
-    private FloatingJoystick joystick;
 
-    private Finger movementFinger;
-    private Vector2 movementAmount;
-    */
     [HideInInspector]
     public bool canDash;
     [HideInInspector]

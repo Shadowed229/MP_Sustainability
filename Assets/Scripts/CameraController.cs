@@ -5,10 +5,10 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public static CameraController instance;
-    private Vector3 offset = new Vector3(0f, 0f, -30f);
-    private float cameraSpeed = 0.2f;
-    private Vector3 velocity = Vector3.zero;
-    private Vector3 originalPos;
+    //private Vector3 offset = new Vector3(0f, 0f, -30f);
+    //private float cameraSpeed = 0.2f;
+    //private Vector3 velocity = Vector3.zero;
+    //private Vector3 originalPos;
 
     [SerializeField]
     private Transform target;
@@ -22,7 +22,7 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
-        originalPos = transform.position;
+        //originalPos = transform.position;
     }
     void Update()
     {
